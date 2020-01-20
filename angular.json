@@ -28,9 +28,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/njc-custom.css",
+              "src/assets/css/njc-custom-1.css",
+              "src/assets/css/njc-custom-2.css",
+              "src/assets/css/layout.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.js",
+              "src/assets/js/njc-library.js"
+              
+            ]
           },
           "configurations": {
             "production": {
