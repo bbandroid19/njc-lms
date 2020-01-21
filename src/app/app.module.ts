@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layout/header/header.component';
@@ -18,6 +18,9 @@ import { FaqComponent } from './components/sites/faq/faq.component';
 import { ErrorComponent } from './components/layout/error/error.component';
 import { ContactComponent } from './components/sites/contact/contact.component';
 import { SubscribeComponent } from './components/layout/subscribe/subscribe.component';
+import { ContentComponent } from './components/sites/content/content.component';
+import { RestserviceService } from './service/restservice.service';
+import { SubheaderComponent } from './components/layout/subheader/subheader.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +39,16 @@ import { SubscribeComponent } from './components/layout/subscribe/subscribe.comp
     FaqComponent,
     ErrorComponent,
     ContactComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    ContentComponent,
+    SubheaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RestserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

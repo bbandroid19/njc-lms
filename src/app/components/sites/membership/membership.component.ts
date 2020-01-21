@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MembershipComponent implements OnInit {
 
+  childTitle:string = 'Membership';
   constructor() { }
 
   ngOnInit() {

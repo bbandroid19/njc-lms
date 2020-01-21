@@ -11,6 +11,7 @@ import { from } from 'rxjs';
 import { AboutComponent } from './components/sites/about/about.component';
 import { FaqComponent } from './components/sites/faq/faq.component';
 import { ErrorComponent } from './components/layout/error/error.component';
+import { ContentComponent } from './components/sites/content/content.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
 { path: 'membership', component: MembershipComponent },
 { path: 'about-us', component: AboutComponent },
 { path: 'faq', component: FaqComponent},
-{ path: 'not-found', component: ErrorComponent}
+{ path: 'not-found', component: ErrorComponent},
+{ path: 'content', component:ContentComponent}
 ];
 
 @NgModule({

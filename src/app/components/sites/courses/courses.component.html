@@ -1,20 +1,5 @@
-<section class="content-area" style="transform: none; min-height: 330px;">
-    <div class="top_heading  _out">
-        <div class="top_site_main " style="color: rgb(255, 255, 255); background-image: url(&quot;https://educationwp.thimpress.com/wp-content/themes/eduma/images/bg-page.jpg&quot;); padding-top: 140px;"> <span class="overlay-top-header" style="background:rgba(0,0,0,0.5);"></span>
-            <div class="page-title-wrapper">
-                <div class="banner-wrapper container">
-                    <h1>All Courses</h1></div>
-            </div>
-        </div>
-        <div class="breadcrumbs-wrapper">
-            <div class="container">
-                <ul itemprop="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" id="breadcrumbs" class="breadcrumbs">
-                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://educationwp.thimpress.com" title="Home"><span itemprop="name">Home</span></a></li>
-                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name" title="All courses">All courses</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<section class="content-area" style="transform: none; min-height: 330px;" *ngIf="isDataAvailable">
+    <app-subheader [title]='childTitle'></app-subheader>
     <div class="container site-content sidebar-right" style="transform: none;">
         <div class="row" style="transform: none;">
             <main id="main" class="site-main col-sm-9 alignleft">
@@ -41,21 +26,21 @@
                                 </div>
                             </div>
                             <div id="thim-course-archive" class="thim-course-grid" data-cookie="grid-layout">
-                                <div id="post-5428" class="course-grid-3 lpr_course post-5428 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-general pmpro-has-access course">
+                                <div id="post-5428" *ngFor="let course of courses"  class="course-grid-3 lpr_course post-5428 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-general pmpro-has-access course">
                                     <div class="course-item">
                                         <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/learnpress-101/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/11/course-4-400x320.jpg" alt="LMS Interactive Content" title="course-4" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/learnpress-101/">Read More</a></div>
+                                            <a class="thumb" href="//courses/learnpress-101/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/11/course-4-400x320.jpg" alt="Dummy Content" title="course-4" width="400" height="320"></a><a class="course-readmore" href="//courses/learnpress-101/">Read More</a></div>
                                         <div class="thim-course-content">
                                             <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2-40x40.jpg" alt="author-avatar" title="author-avatar">
                                                 <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/keny/">Keny White</a></div>
+                                                    <div class="value" itemprop="name"> <a href="//profile/keny/">{{course.author}}</a></div>
                                                 </div>
                                             </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/learnpress-101/" rel="bookmark">LMS Interactive Content</a></h2>
+                                            <h2 class="course-title"><a routerLink = "/content" rel="bookmark">{{course.title}}</a></h2>
                                             <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2-40x40.jpg" alt="author-avatar" title="author-avatar">
+                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="course.imageUrl" alt="author-avatar" title="author-avatar">
                                                     <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/keny/">Keny White</a></div>
+                                                        <div class="value" itemprop="name"> <a href="//profile/keny/">{{course.author}}</a></div>
                                                     </div>
                                                 </div>
                                                 <div class="course-review">
@@ -85,500 +70,29 @@
                                                     <div class="value"><i class="fa fa-comment"></i>3</div>
                                                 </div>
                                                 <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value  free-course" itemprop="price"> Free</div>
+                                                    <div class="value  has-origin" itemprop="price"> <span class="course-origin-price">{{course.originalPrice}}</span> {{course.actualrPrice}}</div>
                                                     <meta itemprop="priceCurrency" content="USD">
                                                 </div>
                                             </div>
                                             <div class="course-description">
-                                                <p>A WordPress LMS Plugin to create WordPress Learning Management System. Turn your WP to LMS WordPress with Courses, Lessons, Quizzes &amp; more.</p>
+                                                <!-- <p>A WordPress LMS Plugin to create WordPress Learning Management System. Turn your WP to LMS WordPress with Courses, Lessons, Quizzes &amp; more.</p> -->
                                             </div>
                                             <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value  free-course" itemprop="price"> Free</div>
+                                                <div class="value  has-origin" itemprop="price"> <span class="course-origin-price">{{course.originalPrice}}</span> {{course.actualrPrice}}</div>
                                                 <meta itemprop="priceCurrency" content="USD">
                                             </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/learnpress-101/">Read More</a></div>
+                                            <div class="course-readmore"> <a href="//courses/learnpress-101/">Read More</a></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="post-5407" class="course-grid-3 lpr_course post-5407 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-backend pmpro-has-access course">
-                                    <div class="course-item">
-                                        <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/become-a-php-master-and-make-money-fast/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/06/course-2-400x320.jpg" alt="Become a PHP Master and Make Money" title="course-2" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/become-a-php-master-and-make-money-fast/">Read More</a></div>
-                                        <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                </div>
-                                            </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/become-a-php-master-and-make-money-fast/" rel="bookmark">Become a PHP Master and Make Money</a></h2>
-                                            <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                    <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-review">
-                                                    <label>Review</label>
-                                                    <div class="value">
-                                                        <div class="review-stars-rated">
-                                                            <ul class="review-stars">
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                            </ul>
-                                                            <ul class="review-stars filled" style="width: calc(100% - 2px)">
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                            </ul>
-                                                        </div> <span>(1 review)</span></div>
-                                                </div>
-                                                <div class="course-students">
-                                                    <label>Students</label>
-                                                    <div class="value"><i class="fa fa-group"></i> 33</div> <span>students</span></div>
-                                                <div class="course-comments-count">
-                                                    <div class="value"><i class="fa fa-comment"></i>1</div>
-                                                </div>
-                                                <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value  has-origin" itemprop="price"> <span class="course-origin-price">$80.00</span> $69.00</div>
-                                                    <meta itemprop="priceCurrency" content="USD">
-                                                </div>
-                                            </div>
-                                            <div class="course-description">
-                                                <p>This tutorial will introduce you to PHP, a server-side scripting language you can use to make dynamic websites and web applications.</p>
-                                            </div>
-                                            <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value  has-origin" itemprop="price"> <span class="course-origin-price">$80.00</span> $69.00</div>
-                                                <meta itemprop="priceCurrency" content="USD">
-                                            </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/become-a-php-master-and-make-money-fast/">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="post-5393" class="course-grid-3 lpr_course post-5393 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-frontend pmpro-has-access course">
-                                    <div class="course-item">
-                                        <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/learning-jquery-mobile-for-beginners/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/06/course-5-400x320.jpg" alt="Learning jQuery Mobile for Beginners" title="course-5" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/learning-jquery-mobile-for-beginners/">Read More</a></div>
-                                        <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                </div>
-                                            </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/learning-jquery-mobile-for-beginners/" rel="bookmark">Learning jQuery Mobile for Beginners</a></h2>
-                                            <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                    <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-review">
-                                                    <label>Review</label>
-                                                    <div class="value">
-                                                        <div class="review-stars-rated">
-                                                            <ul class="review-stars">
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                            </ul>
-                                                            <ul class="review-stars filled" style="width: calc(100% - 2px)">
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                            </ul>
-                                                        </div> <span>(1 review)</span></div>
-                                                </div>
-                                                <div class="course-students">
-                                                    <label>Students</label>
-                                                    <div class="value"><i class="fa fa-group"></i> 33</div> <span>students</span></div>
-                                                <div class="course-comments-count">
-                                                    <div class="value"><i class="fa fa-comment"></i>1</div>
-                                                </div>
-                                                <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value " itemprop="price"> $30.00</div>
-                                                    <meta itemprop="priceCurrency" content="USD">
-                                                </div>
-                                            </div>
-                                            <div class="course-description">
-                                                <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery will run exactly the same...</p>
-                                            </div>
-                                            <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value " itemprop="price"> $30.00</div>
-                                                <meta itemprop="priceCurrency" content="USD">
-                                            </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/learning-jquery-mobile-for-beginners/">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="post-5345" class="course-grid-3 lpr_course post-5345 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-css pmpro-has-access course">
-                                    <div class="course-item">
-                                        <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/html5css3-essentials-in-4-hours/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/06/course-6-400x320.jpg" alt="HTML5/CSS3 Essentials in 4-Hours" title="course-6" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/html5css3-essentials-in-4-hours/">Read More</a></div>
-                                        <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                </div>
-                                            </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/html5css3-essentials-in-4-hours/" rel="bookmark">HTML5/CSS3 Essentials in 4-Hours</a></h2>
-                                            <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                    <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-review">
-                                                    <label>Review</label>
-                                                    <div class="value">
-                                                        <div class="review-stars-rated">
-                                                            <ul class="review-stars">
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                            </ul>
-                                                            <ul class="review-stars filled" style="width: calc(100% - 2px)">
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                            </ul>
-                                                        </div> <span>(1 review)</span></div>
-                                                </div>
-                                                <div class="course-students">
-                                                    <label>Students</label>
-                                                    <div class="value"><i class="fa fa-group"></i> 27</div> <span>students</span></div>
-                                                <div class="course-comments-count">
-                                                    <div class="value"><i class="fa fa-comment"></i>1</div>
-                                                </div>
-                                                <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value " itemprop="price"> $36.00</div>
-                                                    <meta itemprop="priceCurrency" content="USD">
-                                                </div>
-                                            </div>
-                                            <div class="course-description">
-                                                <p>In this course, We'll learn how to create websites by structuring and styling your pages with HTML and CSS.</p>
-                                            </div>
-                                            <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value " itemprop="price"> $36.00</div>
-                                                <meta itemprop="priceCurrency" content="USD">
-                                            </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/html5css3-essentials-in-4-hours/">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="post-5332" class="course-grid-3 lpr_course post-5332 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-photography pmpro-has-access course">
-                                    <div class="course-item">
-                                        <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/the-art-of-black-and-white-photography/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/12/course-10-400x320.jpg" alt="The Art of Black and White Photography" title="course-10" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/the-art-of-black-and-white-photography/">Read More</a></div>
-                                        <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                </div>
-                                            </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/the-art-of-black-and-white-photography/" rel="bookmark">The Art of Black and White Photography</a></h2>
-                                            <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                    <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-review">
-                                                    <label>Review</label>
-                                                    <div class="value">
-                                                        <div class="review-stars-rated">
-                                                            <ul class="review-stars">
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                            </ul>
-                                                            <ul class="review-stars filled" style="width: calc(100% - 2px)">
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                            </ul>
-                                                        </div> <span>(1 review)</span></div>
-                                                </div>
-                                                <div class="course-students">
-                                                    <label>Students</label>
-                                                    <div class="value"><i class="fa fa-group"></i> 27</div> <span>students</span></div>
-                                                <div class="course-comments-count">
-                                                    <div class="value"><i class="fa fa-comment"></i>1</div>
-                                                </div>
-                                                <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value " itemprop="price"> $55.00</div>
-                                                    <meta itemprop="priceCurrency" content="USD">
-                                                </div>
-                                            </div>
-                                            <div class="course-description">
-                                                <p>Many of the most powerful, memorable and effective photographs are black and white images. With digital photography though you can no longer take a...</p>
-                                            </div>
-                                            <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value " itemprop="price"> $55.00</div>
-                                                <meta itemprop="priceCurrency" content="USD">
-                                            </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/the-art-of-black-and-white-photography/">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="post-5319" class="course-grid-3 lpr_course post-5319 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-it-software pmpro-has-access course">
-                                    <div class="course-item">
-                                        <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/introduction-to-networking-for-beginners/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/12/course-16-400x320.jpg" alt="Introduction to react for beginners" title="course-16" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/introduction-to-networking-for-beginners/">Read More</a></div>
-                                        <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                </div>
-                                            </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/introduction-to-networking-for-beginners/" rel="bookmark">Introduction to react for beginners</a></h2>
-                                            <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                    <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-review">
-                                                    <label>Review</label>
-                                                    <div class="value">
-                                                        <div class="review-stars-rated">
-                                                            <ul class="review-stars">
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                            </ul>
-                                                            <ul class="review-stars filled" style="width: calc(0% - 2px)">
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                            </ul>
-                                                        </div> <span>(0 review)</span></div>
-                                                </div>
-                                                <div class="course-students">
-                                                    <label>Students</label>
-                                                    <div class="value"><i class="fa fa-group"></i> 10</div> <span>students</span></div>
-                                                <div class="course-comments-count">
-                                                    <div class="value"><i class="fa fa-comment"></i>0</div>
-                                                </div>
-                                                <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value " itemprop="price"> $50.00</div>
-                                                    <meta itemprop="priceCurrency" content="USD">
-                                                </div>
-                                            </div>
-                                            <div class="course-description">
-                                                <p>Photography Masterclass: Your Complete Guide to Photography. The Best Selling Online Professional Photography Class: How to Take &amp; Sell Photos.</p>
-                                            </div>
-                                            <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value " itemprop="price"> $50.00</div>
-                                                <meta itemprop="priceCurrency" content="USD">
-                                            </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/introduction-to-networking-for-beginners/">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="post-5312" class="course-grid-3 lpr_course post-5312 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-photography pmpro-has-access course">
-                                    <div class="course-item">
-                                        <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/your-complete-guide-to-photography/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/11/course-9-400x320.jpg" alt="Your Complete Guide to Photography" title="course-9" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/your-complete-guide-to-photography/">Read More</a></div>
-                                        <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                </div>
-                                            </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/your-complete-guide-to-photography/" rel="bookmark">Your Complete Guide to Photography</a></h2>
-                                            <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                    <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-review">
-                                                    <label>Review</label>
-                                                    <div class="value">
-                                                        <div class="review-stars-rated">
-                                                            <ul class="review-stars">
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                            </ul>
-                                                            <ul class="review-stars filled" style="width: calc(100% - 2px)">
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                            </ul>
-                                                        </div> <span>(1 review)</span></div>
-                                                </div>
-                                                <div class="course-students">
-                                                    <label>Students</label>
-                                                    <div class="value"><i class="fa fa-group"></i> 45</div> <span>students</span></div>
-                                                <div class="course-comments-count">
-                                                    <div class="value"><i class="fa fa-comment"></i>1</div>
-                                                </div>
-                                                <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value  has-origin" itemprop="price"> <span class="course-origin-price">$60.00</span> $39.00</div>
-                                                    <meta itemprop="priceCurrency" content="USD">
-                                                </div>
-                                            </div>
-                                            <div class="course-description">
-                                                <p>Photography Masterclass: Your Complete Guide to Photography. The Best Selling Online Professional Photography Class: How to Take &amp; Sell Photos.</p>
-                                            </div>
-                                            <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value  has-origin" itemprop="price"> <span class="course-origin-price">$60.00</span> $39.00</div>
-                                                <meta itemprop="priceCurrency" content="USD">
-                                            </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/your-complete-guide-to-photography/">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="post-5299" class="course-grid-3 lpr_course post-5299 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-technology course_tag-node course_tag-tutorial pmpro-has-access course">
-                                    <div class="course-item">
-                                        <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/node/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/06/course-1-400x320.jpg" alt="From Zero to Hero with Nodejs" title="course-1" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/node/">Read More</a></div>
-                                        <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/keny/">Keny White</a></div>
-                                                </div>
-                                            </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/node/" rel="bookmark">From Zero to Hero with Nodejs</a></h2>
-                                            <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                    <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/keny/">Keny White</a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-review">
-                                                    <label>Review</label>
-                                                    <div class="value">
-                                                        <div class="review-stars-rated">
-                                                            <ul class="review-stars">
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                            </ul>
-                                                            <ul class="review-stars filled" style="width: calc(100% - 2px)">
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                            </ul>
-                                                        </div> <span>(1 review)</span></div>
-                                                </div>
-                                                <div class="course-students">
-                                                    <label>Students</label>
-                                                    <div class="value"><i class="fa fa-group"></i> 345</div> <span>students</span></div>
-                                                <div class="course-comments-count">
-                                                    <div class="value"><i class="fa fa-comment"></i>1</div>
-                                                </div>
-                                                <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value  free-course" itemprop="price"> Free</div>
-                                                    <meta itemprop="priceCurrency" content="USD">
-                                                </div>
-                                            </div>
-                                            <div class="course-description">
-                                                <p>Build and deploy a few Nodejs, MongoDB &amp; Expressjs apps while watching to lectures by the author of 9 books on JS/Node.</p>
-                                            </div>
-                                            <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value  free-course" itemprop="price"> Free</div>
-                                                <meta itemprop="priceCurrency" content="USD">
-                                            </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/node/">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="post-5286" class="course-grid-3 lpr_course post-5286 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-programming-language course_tag-python course_tag-tutorial pmpro-has-access course">
-                                    <div class="course-item">
-                                        <div class="course-thumbnail">
-                                            <a class="thumb" href="https://educationwp.thimpress.com/courses/python/"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/12/course-16-400x320.jpg" alt="Learn Python – Interactive Python" title="course-16" width="400" height="320"></a><a class="course-readmore" href="https://educationwp.thimpress.com/courses/python/">Read More</a></div>
-                                        <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                <div class="author-contain">
-                                                    <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                </div>
-                                            </div>
-                                            <h2 class="course-title"><a href="https://educationwp.thimpress.com/courses/python/" rel="bookmark">Learn Python – Interactive Python</a></h2>
-                                            <div class="course-meta">
-                                                <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/1/21232f297a57a5a743894a0e4a801fc3-40x40.jpg" alt="author-avatar" title="author-avatar">
-                                                    <div class="author-contain">
-                                                        <div class="value" itemprop="name"> <a href="https://educationwp.thimpress.com/profile/admin/">Hinata Hyuga</a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-review">
-                                                    <label>Review</label>
-                                                    <div class="value">
-                                                        <div class="review-stars-rated">
-                                                            <ul class="review-stars">
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                                <li><span class="fa fa-star-o"></span></li>
-                                                            </ul>
-                                                            <ul class="review-stars filled" style="width: calc(100% - 2px)">
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                                <li><span class="fa fa-star"></span></li>
-                                                            </ul>
-                                                        </div> <span>(1 review)</span></div>
-                                                </div>
-                                                <div class="course-students">
-                                                    <label>Students</label>
-                                                    <div class="value"><i class="fa fa-group"></i> 55</div> <span>students</span></div>
-                                                <div class="course-comments-count">
-                                                    <div class="value"><i class="fa fa-comment"></i>1</div>
-                                                </div>
-                                                <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                    <div class="value " itemprop="price"> $69.00</div>
-                                                    <meta itemprop="priceCurrency" content="USD">
-                                                </div>
-                                            </div>
-                                            <div class="course-description">
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the...</p>
-                                            </div>
-                                            <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                                <div class="value " itemprop="price"> $69.00</div>
-                                                <meta itemprop="priceCurrency" content="USD">
-                                            </div>
-                                            <div class="course-readmore"> <a href="https://educationwp.thimpress.com/courses/python/">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                                 <div class="cssload-loading"> <i></i><i></i><i></i><i></i></div>
                             </div>
                             <nav class="learn-press-pagination navigation pagination">
                                 <ul class="page-numbers">
                                     <li><span aria-current="page" class="page-numbers current">1</span></li>
-                                    <li><a class="page-numbers" href="https://educationwp.thimpress.com/courses/page/2/">2</a></li>
-                                    <li><a class="next page-numbers" href="https://educationwp.thimpress.com/courses/page/2/">2</a></li>
+                                    <li><a class="page-numbers" href="//courses/page/2/">2</a></li>
+                                    <li><a class="next page-numbers" href="//courses/page/2/">2</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -663,14 +177,14 @@
                         <div class="thim-widget-course-categories thim-widget-course-categories-base template-base-v3">
                             <h4 class="widget-title">All Courses</h4>
                             <ul>
-                                <li> <a href="https://educationwp.thimpress.com/course-category/backend/">Backend</a></li>
-                                <li> <a href="https://educationwp.thimpress.com/course-category/css/">CSS</a></li>
-                                <li> <a href="https://educationwp.thimpress.com/course-category/frontend/">Frontend</a></li>
-                                <li> <a href="https://educationwp.thimpress.com/course-category/general/">General</a></li>
-                                <li> <a href="https://educationwp.thimpress.com/course-category/it-software/">IT &amp; Software</a></li>
-                                <li> <a href="https://educationwp.thimpress.com/course-category/photography/">Photography</a></li>
-                                <li> <a href="https://educationwp.thimpress.com/course-category/programming-language/">Programming Language</a></li>
-                                <li> <a href="https://educationwp.thimpress.com/course-category/technology/">Technology</a></li>
+                                <li> <a href="//course-category/backend/">Backend</a></li>
+                                <li> <a href="//course-category/css/">CSS</a></li>
+                                <li> <a href="//course-category/frontend/">Frontend</a></li>
+                                <li> <a href="//course-category/general/">General</a></li>
+                                <li> <a href="//course-category/it-software/">IT &amp; Software</a></li>
+                                <li> <a href="//course-category/photography/">Photography</a></li>
+                                <li> <a href="//course-category/programming-language/">Programming Language</a></li>
+                                <li> <a href="//course-category/technology/">Technology</a></li>
                             </ul>
                         </div>
                     </aside>
@@ -679,9 +193,9 @@
                             <h4 class="widget-title">Latest Courses</h4>
                             <div class="thim-course-list-sidebar">
                                 <div class="lpr_course has-post-thumbnail">
-                                    <div class="course-thumbnail"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/11/course-4-150x150.jpg" alt="LMS Interactive Content"></div>
+                                    <div class="course-thumbnail"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/11/course-4-150x150.jpg" alt="Dummy Content"></div>
                                     <div class="thim-course-content">
-                                        <h3 class="course-title"> <a href="https://educationwp.thimpress.com/courses/learnpress-101/"> LMS Interactive Content</a></h3>
+                                        <h3 class="course-title"> <a href="//courses/learnpress-101/"> Dummy Content</a></h3>
                                         <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
                                             <div class="value  free-course" itemprop="price"> Free</div>
                                             <meta itemprop="priceCurrency" content="USD">
@@ -691,7 +205,7 @@
                                 <div class="lpr_course has-post-thumbnail">
                                     <div class="course-thumbnail"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/06/course-2-150x150.jpg" alt="Become a PHP Master and Make Money"></div>
                                     <div class="thim-course-content">
-                                        <h3 class="course-title"> <a href="https://educationwp.thimpress.com/courses/become-a-php-master-and-make-money-fast/"> Become a PHP Master and Make Money</a></h3>
+                                        <h3 class="course-title"> <a href="//courses/become-a-php-master-and-make-money-fast/"> Become a PHP Master and Make Money</a></h3>
                                         <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
                                             <div class="value  has-origin" itemprop="price"> <span class="course-origin-price">$80.00</span> $69.00</div>
                                             <meta itemprop="priceCurrency" content="USD">
@@ -701,7 +215,7 @@
                                 <div class="lpr_course has-post-thumbnail">
                                     <div class="course-thumbnail"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/06/course-5-150x150.jpg" alt="Learning jQuery Mobile for Beginners"></div>
                                     <div class="thim-course-content">
-                                        <h3 class="course-title"> <a href="https://educationwp.thimpress.com/courses/learning-jquery-mobile-for-beginners/"> Learning jQuery Mobile for Beginners</a></h3>
+                                        <h3 class="course-title"> <a href="//courses/learning-jquery-mobile-for-beginners/"> Learning jQuery Mobile for Beginners</a></h3>
                                         <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
                                             <div class="value " itemprop="price"> $30.00</div>
                                             <meta itemprop="priceCurrency" content="USD">

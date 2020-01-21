@@ -4,9 +4,9 @@
           <div class="row">
              <aside id="siteorigin-panels-builder-9" class="widget widget_siteorigin-panels-builder footer_widget">
                 <div id="pl-w57e9cc2c86af4" class="panel-layout">
-                   <div id="pg-w57e9cc2c86af4-0" class="panel-grid panel-no-style">
-                      <div id="pgc-w57e9cc2c86af4-0-0" class="panel-grid-cell">
-                         <div id="panel-w57e9cc2c86af4-0-0-0" class="so-panel widget widget_black-studio-tinymce widget_black_studio_tinymce panel-first-child" data-index="0">
+                   <div id="pg-0" class="panel-grid panel-no-style">
+                      <div id="pgc-0-0" class="panel-grid-cell">
+                         <div id="panel-0-0-0" class="so-panel widget widget_black-studio-tinymce widget_black_studio_tinymce panel-first-child" data-index="0">
                             <div class="textwidget">
                                <div class="thim-footer-location">
                                   <p><img class="alignnone size-full wp-image-10" src="../../../../assets/img/njclogo" alt="NJC Labs" width="145" height="40"></p>
@@ -15,7 +15,7 @@
                                </div>
                             </div>
                          </div>
-                         <div id="panel-w57e9cc2c86af4-0-0-1" class="so-panel widget widget_social panel-last-child" data-index="1">
+                         <div id="panel-0-0-1" class="so-panel widget widget_social panel-last-child" data-index="1">
                             <div class="thim-widget-social thim-widget-social-base template-base">
                                <div class="thim-social">
                                   <ul class="social_link">
@@ -28,34 +28,28 @@
                             </div>
                          </div>
                       </div>
-                      <div id="pgc-w57e9cc2c86af4-0-1" class="panel-grid-cell">
-                         <div id="panel-w57e9cc2c86af4-0-1-0" class="so-panel widget widget_nav_menu panel-first-child panel-last-child" data-index="2">
+                      <div id="pgc-0-1" class="panel-grid-cell">
+                         <div id="panel-0-1-0" class="so-panel widget widget_nav_menu panel-first-child panel-last-child" data-index="2">
                             <h3 class="widget-title">Company</h3>
                             <div class="menu-company-container">
                                <ul id="menu-company" class="menu">
-                                  <li id="menu-item-3421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3421 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a routerLink="/about-us" class="tc-menu-inner">About Us</a></li>
-                                  <li id="menu-item-3424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3424 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a routerLink="/blog" class="tc-menu-inner">Blog</a></li>
-                                  <li id="menu-item-3422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3422 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/contact/" class="tc-menu-inner">Contact</a></li>
-                                  <li id="menu-item-3423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3423 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/become-a-teacher/" class="tc-menu-inner">Become a Teacher</a></li>
+                                  <li  *ngFor="let menu of footerMenu" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3421 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a routerLink="{{menu.link}}" class="tc-menu-inner">{{menu.title}}</a></li>
                                </ul>
                             </div>
                          </div>
                       </div>
-                      <div id="pgc-w57e9cc2c86af4-0-2" class="panel-grid-cell">
-                         <div id="panel-w57e9cc2c86af4-0-2-0" class="so-panel widget widget_nav_menu panel-first-child panel-last-child" data-index="3">
+                      <div id="pgc-0-2" class="panel-grid-cell">
+                         <div id="panel-0-2-0" class="so-panel widget widget_nav_menu panel-first-child panel-last-child" data-index="3">
                             <h3 class="widget-title">Links</h3>
                             <div class="menu-links-container">
                                <ul id="menu-links" class="menu">
-                                  <li id="menu-item-5749" class="menu-item menu-item-type-post_type_archive menu-item-object-lp_course menu-item-5749 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/courses/" class="tc-menu-inner">Courses</a></li>
-                                  <li id="menu-item-3426" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3426 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/events" class="tc-menu-inner">Events</a></li>
-                                  <li id="menu-item-4591" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4591 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/gallery/" class="tc-menu-inner">Gallery</a></li>
-                                  <li id="menu-item-3427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3427 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/faqs/" class="tc-menu-inner">FAQs</a></li>
+                                  <li *ngFor="let menuLink of menuLinks"  class="menu-item menu-item-type-post_type_archive menu-item-object-lp_course menu-item-5749 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a routerLink="{{menuLink.link}}" class="tc-menu-inner">{{menuLink.title}}</a></li>
                                </ul>
                             </div>
                          </div>
                       </div>
-                      <div id="pgc-w57e9cc2c86af4-0-3" class="panel-grid-cell">
-                         <div id="panel-w57e9cc2c86af4-0-3-0" class="so-panel widget widget_nav_menu panel-first-child panel-last-child" data-index="4">
+                      <div id="pgc-0-3" class="panel-grid-cell">
+                         <div id="panel-0-3-0" class="so-panel widget widget_nav_menu panel-first-child panel-last-child" data-index="4">
                             <h3 class="widget-title">Support</h3>
                             <div class="menu-support-container">
                                <ul id="menu-support" class="menu">
@@ -67,13 +61,13 @@
                             </div>
                          </div>
                       </div>
-                      <div id="pgc-w57e9cc2c86af4-0-4" class="panel-grid-cell">
-                         <div id="panel-w57e9cc2c86af4-0-4-0" class="so-panel widget widget_nav_menu panel-first-child panel-last-child" data-index="5">
+                      <div id="pgc-0-4" class="panel-grid-cell">
+                         <div id="panel-0-4-0" class="so-panel widget widget_nav_menu panel-first-child panel-last-child" data-index="5">
                             <h3 class="widget-title">Recommend</h3>
                             <div class="menu-recommend-container">
                                <ul id="menu-recommend" class="menu">
-                                  <li id="menu-item-6718" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6718 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://themeforest.net/item/education-wordpress-theme-education-wp/14058034?ref=NJC Labs&amp;utm_source=demo&amp;utm_medium=demofooter" class="tc-menu-inner">WordPress</a></li>
-                                  <li id="menu-item-6719" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6719 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://wordpress.org/plugins/learnpress/" class="tc-menu-inner">LearnPress</a></li>
+                                  <li id="menu-item-6718" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6718 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://tfditem/education-NJC-theme-education-wp/14058034?ref=NJC Labs&amp;utm_source=demo&amp;utm_medium=demofooter" class="tc-menu-inner">NJC</a></li>
+                                  <li id="menu-item-6719" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6719 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC.org/plugins/NJC/" class="tc-menu-inner">NJC</a></li>
                                   <li id="menu-item-3429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3429 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/shop/" class="tc-menu-inner">WooCommerce</a></li>
                                   <li id="menu-item-5930" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5930 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/forums/" class="tc-menu-inner">bbPress</a></li>
                                </ul>
@@ -91,7 +85,7 @@
           <div class="copyright-content">
              <div class="row">
                 <div class="col-sm-6">
-                   <p class="text-copyright"><a href="https://themeforest.net/item/education-wordpress-theme-education-wp/14058034?ref=NJC Labs&amp;utm_source=demo&amp;utm_medium=demofooter">LMS Application</a> by <a class="color_primary" href="http://njclabs.com" target="_blank">NJC Labs.</a></p>
+                   <p class="text-copyright"><a href="https://tfditem/education-NJC-theme-education-wp/14058034?ref=NJC Labs&amp;utm_source=demo&amp;utm_medium=demofooter">LMS Application</a> by <a class="color_primary" href="http://njclabs.com" target="_blank">NJC Labs.</a></p>
                 </div>
                 <div class="col-sm-6 text-right">
                    <aside id="nav_menu-14" class="widget widget_nav_menu">
@@ -100,7 +94,7 @@
                             <li id="menu-item-1765" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1765 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/#" class="tc-menu-inner">Privacy</a></li>
                             <li id="menu-item-1766" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1766 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/#" class="tc-menu-inner">Terms</a></li>
                             <li id="menu-item-1767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1767 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://NJC Labs.com/#" class="tc-menu-inner">Sitemap</a></li>
-                            <li id="menu-item-6720" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6720 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://themeforest.net/item/education-wordpress-theme-education-wp/14058034?ref=NJC Labs&amp;utm_source=demo&amp;utm_medium=demofooter" class="tc-menu-inner">Purchase</a></li>
+                            <li id="menu-item-6720" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6720 tc-menu-item tc-menu-depth-0 tc-menu-layout-default"><a href="https://tfditem/education-NJC-theme-education-wp/14058034?ref=NJC Labs&amp;utm_source=demo&amp;utm_medium=demofooter" class="tc-menu-inner">Purchase</a></li>
                          </ul>
                       </div>
                    </aside>
