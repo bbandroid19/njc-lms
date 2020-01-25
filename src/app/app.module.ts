@@ -21,6 +21,7 @@ import { SubscribeComponent } from './components/layout/subscribe/subscribe.comp
 import { ContentComponent } from './components/sites/content/content.component';
 import { RestserviceService } from './service/restservice.service';
 import { SubheaderComponent } from './components/layout/subheader/subheader.component';
+import { LoaderComponent } from './components/layout/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SubheaderComponent } from './components/layout/subheader/subheader.comp
     ContactComponent,
     SubscribeComponent,
     ContentComponent,
-    SubheaderComponent
+    SubheaderComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
