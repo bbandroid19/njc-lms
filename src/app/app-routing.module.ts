@@ -12,17 +12,26 @@ import { AboutComponent } from './components/sites/about/about.component';
 import { FaqComponent } from './components/sites/faq/faq.component';
 import { ErrorComponent } from './components/layout/error/error.component';
 import { ContentComponent } from './components/sites/content/content.component';
+import { AuthGuard } from './auth.guard';
+import { ProfileComponent } from './components/sites/profile/profile.component';
+import { TestComponent } from './components/layout/test/test.component';
+import { ManagecourseComponent } from './components/sites/admin/managecourse/managecourse.component';
+import { AdminGuard } from './admin.guard';
 
 
 const routes: Routes = [
 { path: '', component: HomeComponent},
-{ path: 'login', component: LoginComponent },
-{ path: 'courses', component: CoursesComponent },
+{
+  path: 'login', component: LoginComponent },
+{ path: 'courses', component: CoursesComponent, canActivate : [AuthGuard] },
 { path: 'membership', component: MembershipComponent },
-{ path: 'about-us', component: AboutComponent },
-{ path: 'faq', component: FaqComponent},
-{ path: 'not-found', component: ErrorComponent},
-{ path: 'content', component:ContentComponent}
+{ path: 'about-us', component: AboutComponent  },
+{ path: 'faq', component: FaqComponent },
+{ path: 'not-found', component: ErrorComponent , canActivate : [AuthGuard]},
+{ path: 'content', component: ContentComponent, canActivate : [AuthGuard]},
+{ path: 'profile', component: ProfileComponent, canActivate : [AuthGuard]},
+{ path: 'tests', component: TestComponent, canActivate : [AuthGuard]},
+{ path: 'manage-course', component: ManagecourseComponent, canActivate : [AdminGuard]},
 ];
 
 @NgModule({

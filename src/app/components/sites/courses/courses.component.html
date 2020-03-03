@@ -5,7 +5,7 @@
             <main id="main" class="site-main col-sm-9 alignleft">
                 <article id="post-0" class="post-0 post type-post status-publish format-standard hentry pmpro-has-access page type-page">
                     <div class="entry-content">
-                        <div id="lp-archive-courses" data-all-courses-url="https://educationwp.thimpress.com/courses/">
+                        <div id="lp-archive-courses">
                             <div class="thim-course-top switch-layout-container ">
                                 <div class="thim-course-switch-layout switch-layout"> <a href="#" class="list switchToGrid switch-active"><i class="fa fa-th-large"></i></a> <a href="#" class="grid switchToList"><i class="fa fa-list-ul"></i></a></div>
                                 <div class="course-index"> <span>Showing 1-9 of 18 results</span></div>
@@ -17,7 +17,7 @@
                                     </select>
                                 </div>
                                 <div class="courses-searching">
-                                    <form method="get" action="https://educationwp.thimpress.com/courses/">
+                                    <form method="get" action="">
                                         <input type="text" value="" name="s" placeholder="Search our courses" class="form-control course-search-filter" autocomplete="off">
                                         <input type="hidden" value="course" name="ref">
                                         <input type="hidden" name="post_type" value="lp_course">
@@ -26,17 +26,17 @@
                                 </div>
                             </div>
                             <div id="thim-course-archive" class="thim-course-grid" data-cookie="grid-layout">
-                                <div id="post-5428" *ngFor="let course of courses"  class="course-grid-3 lpr_course post-5428 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-general pmpro-has-access course">
+                                <div id="post-5428" *ngFor="let course of courses" class="course-grid-3 lpr_course post-5428 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-general pmpro-has-access course">
                                     <div class="course-item">
                                         <div class="course-thumbnail">
-                                            <a class="thumb" routerLink = "/content" ><img src="{{course.imageUrl}}" alt="Dummy Content" title="course-4" width="400" height="320"></a><a class="course-readmore" href="//courses/learnpress-101/">Read More</a></div>
+                                            <a class="thumb" routerLink="/content"><img src="{{course.imageUrl}}" alt="Dummy Content" title="course-4" width="400" height="320"></a><a class="course-readmore" href="//courses/learnpress-101/">Read More</a></div>
                                         <div class="thim-course-content">
-                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="https://educationwp.thimpress.com/wp-content/uploads/learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2-40x40.jpg" alt="author-avatar" title="author-avatar">
+                                            <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="/src/assets/img/9c081444f942cc8fe0ddf55631b584e2-40x40jpg" alt="author-avatar" title="author-avatar">
                                                 <div class="author-contain">
                                                     <div class="value" itemprop="name"> <a href="//profile/keny/">{{course.author}}</a></div>
                                                 </div>
                                             </div>
-                                            <h2 class="course-title"><a routerLink = "/content" rel="bookmark">{{course.title}}</a></h2>
+                                            <h2 class="course-title"><a routerLink="/content" rel="bookmark">{{course.title}}</a></h2>
                                             <div class="course-meta">
                                                 <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="course.imageUrl" alt="author-avatar" title="author-avatar">
                                                     <div class="author-contain">
@@ -85,7 +85,7 @@
                                         </div>
                                     </div>
                                 </div>
-                               
+
                                 <div class="cssload-loading"> <i></i><i></i><i></i><i></i></div>
                             </div>
                             <nav class="learn-press-pagination navigation pagination">
@@ -193,7 +193,9 @@
                             <h4 class="widget-title">Latest Courses</h4>
                             <div class="thim-course-list-sidebar">
                                 <div class="lpr_course has-post-thumbnail">
-                                    <div class="course-thumbnail"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/11/course-4-150x150.jpg" alt="Dummy Content"></div>
+                                    <div class="course-thumbnail">
+
+                                    </div>
                                     <div class="thim-course-content">
                                         <h3 class="course-title"> <a href="//courses/learnpress-101/"> Dummy Content</a></h3>
                                         <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
@@ -203,7 +205,9 @@
                                     </div>
                                 </div>
                                 <div class="lpr_course has-post-thumbnail">
-                                    <div class="course-thumbnail"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/06/course-2-150x150.jpg" alt="Become a PHP Master and Make Money"></div>
+                                    <div class="course-thumbnail">
+
+                                    </div>
                                     <div class="thim-course-content">
                                         <h3 class="course-title"> <a href="//courses/become-a-php-master-and-make-money-fast/"> Become a PHP Master and Make Money</a></h3>
                                         <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
@@ -213,7 +217,9 @@
                                     </div>
                                 </div>
                                 <div class="lpr_course has-post-thumbnail">
-                                    <div class="course-thumbnail"><img src="https://educationwp.thimpress.com/wp-content/uploads/2015/06/course-5-150x150.jpg" alt="Learning jQuery Mobile for Beginners"></div>
+                                    <div class="course-thumbnail">
+
+                                    </div>
                                     <div class="thim-course-content">
                                         <h3 class="course-title"> <a href="//courses/learning-jquery-mobile-for-beginners/"> Learning jQuery Mobile for Beginners</a></h3>
                                         <div class="course-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">

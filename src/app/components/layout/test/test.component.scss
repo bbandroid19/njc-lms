@@ -1,0 +1,117 @@
+// #learn-press-course-curriculum {
+//     left: 0px;
+//     position: fixed;
+//     bottom: 0;
+//     z-index: 10;
+//     left: 0;
+//     width: 400px;
+//     background-color: #fff;
+//     display: block;
+// }
+// #learn-press-content-item #course-item-content-header {
+//     top: 0;
+//     left: 0;
+//     background: #ffb606;
+//     z-index: 100;
+//     padding: 0;
+//     position: fixed;
+//     right: 0;
+//     height: 90px;
+//     line-height: 90px;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     -o-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+// }
+// #learn-press-content-item {
+//     position: fixed;
+//     z-index: 99999;
+//     background: #fff;
+//     left: 400px;
+//     top: 90px;
+//     right: 0;
+//     bottom: 0;
+// }
+// #learn-press-right {
+//     left: 400px;
+//     position: fixed;
+//     z-index: 99999;
+//     background: #fff;
+//     left: 400px;
+//     top: 90px;
+//     right: 0;
+//     bottom: 0;
+// }
+// #learn-press-course-curriculum {
+//     position: fixed;
+//     bottom: 0;
+//     z-index: 10;
+//     left: 0;
+//     width: 400px;
+//     background-color: #fff;
+// }
+// #learn-press-content-item,
+// body.course-item-popup div#learn-press-course-curriculum {
+//     top: 90px;
+// }
+// #learn-press-course-curriculum:before {
+//     height: 100%;
+//     content: '';
+//     position: absolute;
+//     left: 399px;
+//     width: 1px;
+//     background: #eee;
+//     top: 0;
+//     bottom: 0;
+//     z-index: 10;
+//     min-height: calc(100vh - 200px);
+//     min-height: -webkit-calc(100vh - 200px);
+//     min-height: -moz-calc(100vh - 200px);
+// }
+.testComplete-btn-group {
+    text-align: center;
+}
+
+.testComplete-btn-group button {
+    color: #fff;
+}
+
+.btn-complete {
+    background-color: #00d637;
+}
+
+.btn-review {
+    background-color: #f7b532;
+}
+
+.btn-quiz {
+    background-color: #333;
+}
+
+.testComplete-btn-group button {
+    margin-right: 1%;
+}
+
+.status-completed {
+    color: #fff;
+    border-radius: 50%;
+    background-color: #54b551;
+    width: 22px;
+    line-height: 22px;
+    display: block;
+    height: 22px;
+    text-align: center;
+}
+
+.course-item-status:before {
+    font-size: 14px;
+}
+
+.li-disabled {
+    color: grey;
+    opacity: 0.5;
+}
+
+.complete-step {
+    background-color: #54b551;
+    cursor: none;
+}

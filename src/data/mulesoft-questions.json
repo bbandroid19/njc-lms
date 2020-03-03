@@ -1,0 +1,787 @@
+{
+    "questions": [{
+            "_id": "5e53d79feb05af1cbb0a695f",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "53.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "48.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "35.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "40.0"
+                }
+            ],
+            "question": "If  3+4=21, 5+2=35, 4+2=24 what is the value of 5+3?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6960",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "3.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "5.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "7.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "8.0"
+                }
+            ],
+            "question": "Normally, numbers are written with a base of 10. Binary numbers have a base of 2. If 19257 = 3 x 7 x 7 x 131, in what base can it be written as 110100?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6961",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "4.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "10.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "15.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "16.0"
+                }
+            ],
+            "question": "Six bells commence tolling together and toll at intervals of 2, 4, 6, 8 10 and 12 seconds respectively. In 30 minutes, how many times do they toll together?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6962",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "24.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "72.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "66.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "55.0"
+                }
+            ],
+            "question": "Of the three numbers, second is twice the first and is also thrice the third, if the average of the three numbers is 44. Find the largest number?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6963",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "9.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "11.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "8.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "15.0"
+                }
+            ],
+            "question": "Three times the first of three consecutive odd integers is 3 more than twice the third. The third integer is:\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6964",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "2.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "3.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "4.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "6.0"
+                }
+            ],
+            "question": "When 1100010 is divided by 0101, what will be the decimal remainder ?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6965",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "10.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "12.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "15.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "18.0"
+                }
+            ],
+            "question": "If a - b = 3 and a2 + b2 = 29, find the value of ab.\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6966",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "120, 122, 124, 126"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "120, 122, 124, 126"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "\n120, 122, 122, 126"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "\n120, 122, 122, 126"
+                }
+            ],
+            "question": "Find four consecutive even integers so that the sum of the first two added to twice the sum of the last two is equal to 742.\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6967",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "10.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "6.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "4.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "8.0"
+                }
+            ],
+            "question": "Find the base k of the number system, if (543)6=(317)k.\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6968",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "45.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "46.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "47.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "48.0"
+                }
+            ],
+            "question": "The square of a two digit number is divided by half the number. After 36 is added to the quotient, this sum is then divided by 2. The digits of the resulting number are the same as those in the original number, but they are in reverse order. The ten's place of the original number is equal to twice the difference between its digits. What is the number?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6969",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "121.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "3267.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "363.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "33.0"
+                }
+            ],
+            "question": "If both 112 and 33 are factors of the number a * 43 * 62 * 1311, what is the smallest possible value of 'a'?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a696a",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "99,840"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "99900.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "99960.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "99990.0"
+                }
+            ],
+            "question": "Find the largest five digit number that is divisible by 7, 10, 15, 21 and 28.\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a696b",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "1050"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "540"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "1440"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "1520"
+                }
+            ],
+            "question": "Anita had to multiply two positive integers. Instead of taking 35 as one of the multipliers, she incorrectly took 53. As a result, the product went up by 540. What is the new product?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a696c",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "(x - z)2 y is even"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "(x - z) y2 is odd"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "(x - z) y is odd"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "(x - y)2 z is even"
+                }
+            ],
+            "question": "Let x, y and z be distinct integers. x and y are odd and positive, and z is even and positive. Which one of the following statements cannot be true?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a696d",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "10.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "7"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "19"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "192"
+                }
+            ],
+            "question": "When a number is divided by 36, it leaves a remainder of 19. What will be the remainder when the number is divided by 12?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a696e",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "2, 4 and 8"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "2 and 4"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "2"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "100"
+                }
+            ],
+            "question": "The sum of the first 100 natural numbers, 1 to 100 is divisible by ____\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a696f",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "12.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "4"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "8"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "10"
+                }
+            ],
+            "question": "How many different factors does 48 have, excluding 1 and 48?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6970",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "2.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "3"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "9"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "Both (2) and (3)"
+                }
+            ],
+            "question": "1025 - 7 is divisible by _____\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6971",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "6xy2z2"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "6x3y4z3"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "24xy2z2"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "24xy3z2"
+                }
+            ],
+            "question": "Find the G.C.D of 12x2y3z2, 18x3y2z4, and 24xy4z3\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6972",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "M = 7; N = 8"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "M = 8; N = 6"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "M = 6; N = 4"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "M = 5; N = 4"
+                }
+            ],
+            "question": "What is the value of M and N respectively? If M39048458N is divisible by 8 & 11; where M & N take integer values from 0 to 9, inclusive?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6973",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "4.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "10"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "8"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "7"
+                }
+            ],
+            "question": "48 students have to be seated such that each row has the same number of students as the others. If at least 3 students are to be seated per row and at least 2 rows have to be there, how many arrangements are possible?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6974",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "always greater than either of the original fractions"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "always less than either of the original fractions"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "sometimes greater and sometimes less than either of the original fractions"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "\nremains the same"
+                }
+            ],
+            "question": "If two fractions, each of which has a value between 0 and 1, are multiplied together, the product will be ___\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6975",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "February 6, 2012"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "February 7, 2012"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "February 8, 2012"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "February 9, 2012"
+                }
+            ],
+            "question": "Three Vice Presidents (VP) regularly visit the plant on different days. Due to labour unrest, VP (HR) regularly visits the plant after a gap of 2 days. VP (Operations) regularly visits the plant after a gap of 3 days. VP (sales) regularly visits the plant after a gap of 5 days. The VPs do not deviate from their individual schedules. CEO of the company meets the VPs when all the three VPs come to the plant together. CEO is on leave from January 5th to January 28th, 2012. Last time the CEO met the VPs on January 3, 2012. When is the next time the CEO will meet all the VPs?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6976",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "20.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "4"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "54"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "32"
+                }
+            ],
+            "question": "How many divisors does 7200 have?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6977",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "4998.0"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "714"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "832"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "816"
+                }
+            ],
+            "question": "What is the highest power of 7 that will divide 5000! without leaving a remainder? (5000! means factorial 5000)\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6978",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "13.0"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "23"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "37"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "41"
+                }
+            ],
+            "question": "a' and 'b' are the lengths of the base and height of a right angled triangle whose hypotenuse is 'h'. If the values of 'a' and 'b' are positive integers, which of the following cannot be a value of the square of the hypotenuse?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a6979",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "-3/8"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "16"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "24"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "36"
+                }
+            ],
+            "question": "If x, y, z are chosen from the three numbers, -3, 1/2 and 2, what is the largest possible value of the expression (x/y)z^2z2?\"",
+            "type": "Objective",
+            "version": 1
+        },
+        {
+            "_id": "5e53d79feb05af1cbb0a697a",
+            "created_on": "Mon, 24 Feb 2020 14:03:11 GMT",
+            "options": [{
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "-3/8"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "3"
+                },
+                {
+                    "is_answer": false,
+                    "type": "text",
+                    "value": "5"
+                },
+                {
+                    "is_answer": true,
+                    "type": "text",
+                    "value": "8"
+                }
+            ],
+            "question": "If ( 0.004 * 10a )( 0.32 * 10b ) = 128 * 103, a + b = ?\"",
+            "type": "Objective",
+            "version": 1
+        }
+    ]
+}

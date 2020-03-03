@@ -1,0 +1,192 @@
+{
+    "course": {
+        "_id": "5e53d7a0eb05af1cbb0a69a5",
+        "created_on": "Mon, 24 Feb 2020 14:03:12 GMT",
+        "description": "Mulesoft Certification 1",
+        "name": "Mulesoft Certification",
+        "phases": [{
+                "introduction_notes": "On completion of this phase you have completed the first 25%",
+                "modules": [{
+                        "description": "Phase 1 Module 1",
+                        "module_id": "5e53d7a0eb05af1cbb0a6986",
+                        "name": "P1 M1",
+                        "quiz_id": "5e53d7a0eb05af1cbb0a6984",
+                        "steps": [{
+                                "name": "Phase 1 Module 1 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a6987",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 1 Module 1 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a6988",
+                                "step_type": "video"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Phase 1 Module 2",
+                        "module_id": "5e53d7a0eb05af1cbb0a6989",
+                        "name": "P1 M2",
+                        "quiz_id": "5e53d7a0eb05af1cbb0a697d",
+                        "steps": [{
+                                "name": "Phase 1 Module 2 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a698a",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 1 Module 2 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a698b",
+                                "step_type": "video"
+                            }
+                        ]
+                    }
+                ],
+                "name": "Phase 1",
+                "phase_id": "5e53d7a0eb05af1cbb0a6985"
+            },
+            {
+                "introduction_notes": "On completion of this phase you have completed the first 25%",
+                "modules": [{
+                        "description": "Phase 2 Module 1",
+                        "module_id": "5e53d7a0eb05af1cbb0a698d",
+                        "name": "P2 M1",
+                        "quiz_id": "5e53d7a0eb05af1cbb0a697f",
+                        "steps": [{
+                                "name": "Phase 2 Module 1 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a698e",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 2 Module 1 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a698f",
+                                "step_type": "video"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Phase 2 Module 2",
+                        "module_id": "5e53d7a0eb05af1cbb0a6990",
+                        "name": "P2 M2",
+                        "quiz_id": "5e53d7a0eb05af1cbb0a6983",
+                        "steps": [{
+                                "name": "Phase 2 Module 2 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a6991",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 2 Module 2 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a6992",
+                                "step_type": "video"
+                            }
+                        ]
+                    }
+                ],
+                "name": "Phase 2",
+                "phase_id": "5e53d7a0eb05af1cbb0a698c"
+            },
+            {
+                "introduction_notes": "On completion of this phase you have completed the first 25%",
+                "modules": [{
+                        "description": "Phase 3 Module 1",
+                        "module_id": "5e53d7a0eb05af1cbb0a6994",
+                        "name": "P3 M1",
+                        "quiz_id": "5e53d7a0eb05af1cbb0a697e",
+                        "steps": [{
+                                "name": "Phase 3 Module 1 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a6995",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 3 Module 1 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a6996",
+                                "step_type": "video"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Phase 3 Module 2",
+                        "module_id": "5e53d7a0eb05af1cbb0a6997",
+                        "name": "P3 M2",
+                        "quiz_id": "5e53d7a0eb05af1cbb0a697e",
+                        "steps": [{
+                                "name": "Phase 3 Module 2 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a6998",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 3 Module 2 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a6999",
+                                "step_type": "video"
+                            }
+                        ]
+                    }
+                ],
+                "name": "Phase 3",
+                "phase_id": "5e53d7a0eb05af1cbb0a6993"
+            },
+            {
+                "introduction_notes": "On completion of this phase you have completed the first 25%",
+                "modules": [{
+                        "description": "Phase 4 Module 1",
+                        "module_id": "5e53d7a0eb05af1cbb0a699b",
+                        "name": "P4 M1",
+                        "quiz_id": "5e53d7a0eb05af1cbb0a6983",
+                        "steps": [{
+                                "name": "Phase 4 Module 1 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a699c",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 4 Module 1 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a699d",
+                                "step_type": "video"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Phase 4 Module 2",
+                        "module_id": "5e53d7a0eb05af1cbb0a699e",
+                        "name": "P4 M2",
+                        "quiz_id": "5e53d79feb05af1cbb0a697b",
+                        "steps": [{
+                                "name": "Phase 4 Module 2 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a699f",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 4 Module 2 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a69a0",
+                                "step_type": "video"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Phase 4 Module 3",
+                        "module_id": "5e53d7a0eb05af1cbb0a69a1",
+                        "name": "P4 M3",
+                        "quiz_id": "5e53d7a0eb05af1cbb0a6982",
+                        "steps": [{
+                                "name": "Phase 4 Module 3 Step 1",
+                                "step_id": "5e53d7a0eb05af1cbb0a69a2",
+                                "step_type": "text"
+                            },
+                            {
+                                "name": "Phase 4 Module 3 Step 2",
+                                "step_id": "5e53d7a0eb05af1cbb0a69a3",
+                                "step_type": "video"
+                            },
+                            {
+                                "name": "Phase 4 Module 3 Step 3",
+                                "step_id": "5e53d7a0eb05af1cbb0a69a4",
+                                "step_type": "video"
+                            }
+                        ]
+                    }
+                ],
+                "name": "Phase 4",
+                "phase_id": "5e53d7a0eb05af1cbb0a699a"
+            }
+        ],
+        "version": 1
+    }
+}

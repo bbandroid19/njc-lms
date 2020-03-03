@@ -1,0 +1,191 @@
+<div id="learn-press-content-item">
+    <div id="course-item-content-header">
+        <div id="popup-header">
+            <a href="javascript:void(0);" (click)="quizService.stopTest()" class="back_course"><i class="fa fa-close"></i></a>
+            <a class="toggle-content-item" href="javascript:void(0);" (click)="isOpen= !isOpen"></a>
+        </div>
+    </div>
+    <div *ngIf="testStarted" class="scroll-wrapper content-item-scrollable scrollbar-light" style="position: absolute; top: 0px; bottom: 0px; width: 100%; opacity: 1;">
+        <div class="content-item-scrollable scrollbar-light scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; opacity: 1; ">
+            <div class="content-item-wrap" *ngIf="mode=='quiz' && quiz">
+                <div *ngFor="let question of filteredQuestions;" id="content-item-quiz" class="content-item-summary single-quiz">
+                    <h1 class="course-item-title quiz-title">{{quiz.name}}</h1>
+                    <!-- <div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div> -->
+                    <div class="quiz-progress quiz-clock">
+                        <div class="progress-items">
+                            <div class="progress-item quiz-current-question quiz-total"> <i class="fa fa-bullhorn"></i> <span class="progress-number quiz-text"> Question <span class="number"> {{pager.index + 1}} / {{pager.count}}. </span> </span>
+                            </div>
+                            <div *ngIf="config.duration" class="progress-item quiz-countdown quiz-timer"> <i class="fa fa-clock-o"></i> <span class="quiz-text">Time</span> <span id="quiz-countdown" class="progress-number">Time: {{ellapsedTime}} / {{duration}}</span> <span class="quiz-countdown-label quiz-text"></span></div>
+                        </div>
+                    </div>
+                    <div class="content-question-summary">
+                        <!-- <h4 class="question-title">{{currentQuestion.question}}</h4> -->
+                        <h3 class="font-weight-normal">{{pager.index + 1}}.
+                            <span [innerHTML]="question.name"></span>
+                        </h3>
+                        <div class="quiz-question-nav">
+                            <!-- <div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div> -->
+                            <div class="lp-question-wrap">
+                                <div class="row text-left options">
+                                    <div class="col-6" *ngFor="let option of question.options">
+                                        <div class="option">
+                                            <label class="font-weight-normal" [attr.for]="option.id">
+                                              <input id="{{option.id}}" type="checkbox" [(ngModel)]="option.selected" (change)="onSelect(question, option);" /> {{option.name}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lp-quiz-buttons">
+                        <div class="quiz-buttons">
+                            <!-- <button type="submit" class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(0);">First</button>
+                            <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
+
+                            <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);">Last</button> -->
+                            <form name="next-question" class="button-next-question next-question form-button lp-form" method="post">
+                                <button type="submit" *ngIf="config.allowBack" (click)="goTo(0);">First</button>
+                            </form>
+                            <form name="next-question" class="button-next-question next-question form-button lp-form" method="post">
+                                <button type="submit" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
+                            </form>
+                            <form name="next-question" class="button-next-question next-question form-button lp-form" method="post">
+                                <button type="submit" (click)="goTo(pager.index + 1);">Next</button>
+                            </form>
+                            <form name="skip-question" class="button-skip-question skip-question form-button" method="post">
+                                <button *ngIf="config.allowBack" (click)="goTo(pager.count - 1);" type="submit">Last</button>
+                            </form>
+                        </div>
+                        <!-- <form name="check-answer-question" class="check-answer-question form-button lp-form" method="post" enctype="multipart/form-data"> <button type="submit">Check</button> <input type="hidden" name="noajax" value="yes"> <input type="hidden" name="quiz-id" value="8810"> <input type="hidden" name="course-id" value="5428"> <input type="hidden" name="lp-ajax" value="check-answer-quiz">                            <input type="hidden" name="check-answer-quiz-nonce" value="a403ed37eb"> <input type="hidden" name="question-id" value="8811"> <input type="hidden" name="question-id" value="8811"></form>
+                        <form name="complete-quiz" class="complete-quiz form-button lp-form" method="post" enctype="multipart/form-data"> <button type="submit" class="button-finish-quiz">Complete</button> <input type="hidden" name="quiz-id" value="8810"> <input type="hidden" name="course-id" value="5428"> <input type="hidden" name="lp-complete-quiz" value="8810">                            <input type="hidden" name="complete-quiz-nonce" value="2453e277c4"> <input type="hidden" name="noajax" value="yes"></form> -->
+
+
+                    </div>
+                </div>
+
+                <!-- <div class="row">
+                    <div class="col-6">
+                        <h3>Quiz Application</h3>
+                    </div>
+                    <div class="col-6 text-right">
+                        Select Quiz:
+                        <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
+                      <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
+                    </select>
+                    </div>
+                </div> -->
+            </div>
+            <div class="row text-center" *ngIf="mode=='review'">
+                <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index;">
+                    <div (click)="goTo(index)" class="p-3 mb-2 {{ isAnswered(question) == 'Answered'? 'bg-info': 'bg-warning' }}">{{index + 1}}. {{ isAnswered(question) }}</div>
+                </div>
+            </div>
+            <div class="result" *ngIf="mode=='result'">
+                <h2>Quiz Result</h2>
+                <div *ngFor="let question of quiz.questions; let index = index">
+                    <div class="result-question">
+                        <h5>{{index + 1}}. {{question.name}}</h5>
+                        <div class="row">
+                            <div class="col-6" *ngFor="let Option of question.options">
+                                <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{Option.name}}
+                            </div>
+                        </div>
+                        <div class="p-1 m-2 alert {{ isCorrect(question) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is {{isCorrect(question)}}.</div>
+                    </div>
+                </div>
+                <h4 (click)="testStarted=!testStarted" class="alert alert-info text-center">You may close this window now.</h4>
+            </div>
+            <hr />
+            <div *ngIf="mode!='result'" class="testComplete-btn-group">
+                <form>
+                    <button class="btn-quiz" type="submit" (click)="mode = 'quiz'">Quiz</button>
+                    <button class="btn-review" (click)="mode = 'review'" type="submit">Review</button>
+                    <button class="btn-complete" (click)="onSubmit();" type="submit">Complete Test</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!testStarted" class="scroll-wrapper content-item-scrollable scrollbar-light" style="position: absolute; top: 0px; bottom: 0px; width: 100%; opacity: 1;">
+        <div class="content-item-scrollable scrollbar-light scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; opacity: 1; max-height: 650px;">
+            <div class="content-item-wrap">
+                <div class="learn-press-video-intro" *ngIf="moduleContent.step_type === 'video'">
+                    <div class="video-content"> <iframe width="900" height="500" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+                </div>
+                <div class="content-item-summary">
+                    <!-- <h1 class="course-item-title question-title">What is LearnPress</h1> -->
+                    <div class="content-item-description lesson-description" *ngIf="moduleContent.step_type === 'text'">
+                        <p>LearnPress is a comprehensive <em>WordPress LMS Plugin</em> for WordPress, just like WordPress Moodle or Moodle for WordPress if you know what Moodle is. This is one of the best WordPress LMS Plugins can be used to easily create
+                            &amp; sell courses online. Each course curriculum can be made with lessons &amp; quizzes which can be managed with easy-to-use user interface, we really made it for lazy people.</p>
+                        <p>LearnPress is free and always be free, but it has premium high quality WordPress Plugin which will probably help you make money from your <strong>WordPress based LMS</strong>, try and see how it is. LearnPress WordPress Online
+                            Course plugin is lightweight but super powerful with lots of add-ons to empower its core system.</p>
+                        <h4>LearnPress features</h4>
+                        <p><strong>LearnPress – WordPress LMS Plugin works with your theme</strong><br> We create LearnPress LMS Plugin to work with any WordPress themes.</p>
+                        <p><strong>LearnPress supports WordPress Multisite</strong><br> Create WordPress based LMS as multiple sites.</p>
+                        <p><strong>Create course</strong><br> LearnPress LMS Plugin provide an excellent user interface to create a course with options you need. You can find it easy to make a full curriculum layout as well as edit and maintain it. You can
+                            also export course and import to other website which also using LearnPress. We will provide the feature allow you to import course from other WordPress LMS plugins soon.</p>
+                        <p><strong>Manage course</strong><br> With the course you’ve created, you can share it, manage it, watch statistic about number of student, its trend, etc.</p>
+                        <p><strong>Sell course</strong><br> LearnPress is free but it still allow you to sell courses you create with support many billing method such as Paypal, WooCommerce, Stripe, etc.</p>
+                        <p><strong>Communicate with your students</strong><br> With BuddyPress support, LearnPress will help you to communicate with your student or instructor via WordPress forum. Learning is not only on your own. Study, make friends and
+                            have fun.</p>
+                        <p><strong>LearnPress provide a bunch of add-on</strong><br> Add-on is used to providing extra features for LearnPress and you can also write it.</p>
+                        <p><strong>LearnPress is free and always will be</strong><br> Education should be free and we want you to bring it to as many people as you can. Therefore, we create LearnPress as a tool for you to create course and share it. We’ll
+                            continue developing it as long as we can and make it better and better.</p>
+                        <p><strong>LearnPress is actively developed</strong><br> We are developing and improving LearnPress day by day and bringing new features to you cos we want LearnPress to become the <strong>best WordPress LMS plugin</strong>.</p>
+                    </div>
+                    <form method="post" name="learn-press-form-complete-lesson" class="learn-press-form form-button">
+                        <button class="lp-button button button-complete-item button-complete-lesson" [ngClass]="{'complete-step':isComplete()}" (click)="completeStep()">Complete</button>
+                    </form>
+                </div>
+                <div class="course-item-nav">
+                    <div class="course-content-lesson-nav course-item-next"> <span>Next</span> <a href="javascript:void(0)" (click)="nextModule()"> How to use LearnPress </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-element scroll-x scroll-scrolly_visible">
+            <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar" style="width: 0px;"></div>
+            </div>
+        </div>
+        <div class="scroll-element scroll-y scroll-scrolly_visible">
+            <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar" style="height: 216px; top: 134.333px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="course-curriculum" id="learn-press-course-curriculum" [@openClose]="isOpen ? true : false">
+        <div class="scroll-wrapper curriculum-scrollable scrollbar-light" style="position: absolute; top: 0px; bottom: 0px; width: 100%; opacity: 1;">
+            <div class="curriculum-scrollable scrollbar-light scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; opacity: 1;">
+                <nav class="thim-font-heading learn-press-breadcrumb" itemprop="breadcrumb"><a href="">Courses</a><i class="fa-angle-right fa"></i><a href="/course-category/general/">General</a><i class="fa-angle-right fa"></i><span class="item-name">Sample Test</span></nav>
+                <ul class="curriculum-sections">
+                    <li *ngFor="let phases of courseContent.phases;index as i" class="section">
+                        <h4 class="section-header"> <span class="collapse"></span> {{phases.name}}<span class="meta"> <span class="step">0/{{phases.modules.length}}</span> </span>
+                        </h4>
+                        <ul class="section-content" *ngFor="let modules of phases.modules;index as j">
+                            <span><h5>{{modules.description}}</h5></span>
+                            <li *ngFor="let steps of modules.steps;index as k" class="course-item course-item-lp_lesson course-lesson">
+                                <div class="meta-left"> <span class="course-format-icon"><i class="fa fa-file-o"></i></span>
+                                    <div class="index"><span class="label">Lecture</span>1.1</div>
+                                </div> <a class="lesson-title course-item-title button-load-item" (click)="moduleChange(i,j,k,steps)" href="javascript:void(0);"> {{steps.name}} </a> <span class="meta duration">05 min</span>
+                                <div class="course-item-meta">
+                                    <i class="fa item-meta course-item-status trans" [ngClass]="{'status-completed':steps.completed}"></i></div>
+                            </li>
+                            <li class="course-item course-item-lp_lesson course-lesson" [ngClass]="{'li-disabled':!modules.completed}">
+                                <div class="meta-left"> <span class="course-format-icon"><i class="a fa-puzzle-piece"></i></span>
+                                    <div class="index"><span class="label">Test</span>1.1</div>
+                                </div>
+                                <a class="lesson-title course-item-title button-load-item" (click)="modules.completed?startQuiz(modules.module_id):false;$event.stopPropagation();" href="javascript:void(0)"> {{modules.description}} Test</a> <span class="meta duration ">05 min</span>
+
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>

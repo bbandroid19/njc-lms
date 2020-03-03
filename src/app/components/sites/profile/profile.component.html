@@ -1,0 +1,223 @@
+<section class="content-area" style="min-height: 359px;">
+    <div class="top_heading  _out">
+        <div class="top_site_main " style="color: rgb(255, 255, 255); background-image: url(&quot;https://3ek5k1tux0822q3g83e30fye-wpengine.netdna-ssl.com/wp-content/themes/eduma/images/bg-page.jpg&quot;); padding-top: 140px;"> <span class="overlay-top-header" style="background:rgba(0,0,0,0.5);"></span>
+            <div class="page-title-wrapper">
+                <div class="banner-wrapper container">
+                    <h1>Profile</h1>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs-wrapper">
+            <div class="container">
+                <ul itemprop="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" id="breadcrumbs" class="breadcrumbs">
+                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="" title="Home"><span itemprop="name">Home</span></a></li>
+                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name" title="Profile"> Profile</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container site-content">
+        <div class="row">
+            <main id="main" class="site-main col-sm-12 full-width">
+                <article id="post-8" class="post-8 page type-page status-publish hentry pmpro-has-access">
+                    <div class="entry-content">
+                        <div class="rjs">
+                            <div class="learn-press-user-profile profile-container" id="learn-press-user-profile">
+                                <div class="user-tab">
+                                    <div class="user-info">
+                                        <div class="author-avatar"><img alt="User Avatar" src="//www.gravatar.com/avatar/ad715359f660732d944d8a93a7fa89a1?s=270&amp;r=g" srcset="//www.gravatar.com/avatar/ad715359f660732d944d8a93a7fa89a1?s=270&amp;r=g 2x" class="avatar avatar-270 photo"
+                                                height="270" width="270"></div>
+                                        <div class="user-information">
+                                            <ul class="thim-author-social"></ul>
+                                            <h3 class="author-name">bbandroid19</h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-tabs">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="courses thim-profile-list-6" [class.active]="viewMode == 'course'">
+                                            <a href="javascript:void(0);" (click)=" viewMode='course' "> <i class="fa fa-book "></i><span class="text ">Courses</span> </a>
+                                        </li>
+                                        <li class="orders thim-profile-list-6 " [class.active]="viewMode == 'orders'">
+                                            <a href=" javascript:void(0);" (click)="viewMode='orders' "> <i class="fa fa-shopping-cart "></i><span class="text ">Orders</span> </a>
+                                        </li>
+                                        <li class="settings thim-profile-list-6 " [class.active]="viewMode == 'settings'">
+                                            <a href=" javascript:void(0);" (click)="viewMode='settings' "> <i class="fa fa-cog "></i><span class="text ">Settings</span> </a>
+                                        </li>
+                                        <li class="quizzes thim-profile-list-6 " [class.active]="viewMode == 'quizzes'">
+                                            <a href=" javascript:void(0);" (click)="viewMode='quizzes' " data-slug=" "> <i class="fa fa-check-square-o "></i><span class="text ">Quiz Results</span> </a>
+                                        </li>
+                                        <li class="wishlist thim-profile-list-6 " [class.active]="viewMode == 'wishlist'">
+                                            <a href="javascript:void(0); " (click)="viewMode='wishlist' " data-slug=" "> <i class="fa fa-heart-o "></i><span class="text ">Wishlist</span> </a>
+                                        </li>
+
+                                    </ul>
+                                    <div id="learn-press-profile-content " class="tab-content " [ngSwitch]="viewMode">
+                                        <div id="profile-content-courses " *ngSwitchCase="'course'">
+                                            <div id="your-profile ">
+                                                <ul class="learn-press-subtabs ">
+                                                    <li class="section-tab purchased current "> <span>Purchased</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="learn-press-subtab-content ">
+                                                <ul class="lp-sub-menu ">
+                                                    <li class="all "><span>All</span></li>
+                                                    <li class="finished "><a href="/profile/bbandroid19/courses/purchased/?filter-status=finished ">Finished</a></li>
+                                                    <li class="passed "><a href="/profile/bbandroid19/courses/purchased/?filter-status=passed ">Passed</a></li>
+                                                    <li class="failed "><a href="/profile/bbandroid19/courses/purchased/?filter-status=failed ">Failed</a></li>
+                                                    <li class="not-enrolled "><a href="/profile/bbandroid19/courses/purchased/?filter-status=not-enrolled ">Not enrolled</a></li>
+                                                </ul>
+                                                <table class="lp-list-table profile-list-courses profile-list-table ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="column-course ">Course</th>
+                                                            <th class="column-date ">Date</th>
+                                                            <th class="column-passing-grade ">Passing Grade</th>
+                                                            <th class="column-status ">Progress</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="column-course "> <a href="/courses/rjs-101/ "> Reactjs </a></td>
+                                                            <td class="column-date ">22/01/2020</td>
+                                                            <td class="column-passing-grade ">80%</td>
+                                                            <td class="column-status "> <span class="result-percent ">0%</span> <span class="lp-label label-in-progress "> In Progress </span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr class="list-table-nav ">
+                                                            <td colspan="2 " class="nav-text "> Displaying 1 to 1 of 1 course.</td>
+                                                            <td colspan="2 " class="nav-pages "></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div id="profile-content-orders " *ngSwitchCase=" 'orders' ">
+                                            <div class="profile-orders ">
+                                                <h3 class="profile-heading ">My Orders</h3>
+                                                <table class="lp-list-table profile-list-orders profile-list-table ">
+                                                    <thead>
+                                                        <tr class="order-row ">
+                                                            <th class="column-order-number ">Order</th>
+                                                            <th class="column-order-date ">Date</th>
+                                                            <th class="column-order-status ">Status</th>
+                                                            <th class="column-order-total ">Total</th>
+                                                            <th class="column-order-action ">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="order-row ">
+                                                            <td class="column-order-number ">#0000010120</td>
+                                                            <td class="column-order-date ">22/01/2020</td>
+                                                            <td class="column-order-status "> <span class="lp-label label-completed "><span class="order-status order-status-completed ">Completed</span></span>
+                                                            </td>
+                                                            <td class="column-order-total ">$0.00</td>
+                                                            <td class="column-order-action "> <a href="/profile/bbandroid19/order-details/10120/ ">View</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr class="list-table-nav ">
+                                                            <td colspan="2 " class="nav-text ">Displaying 1 to 1 of 1 item.</td>
+                                                            <td colspan="3 " class="nav-pages "></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                                <!-- <div class="profile-recover-order ">
+                                                    <p>If you have a valid order key you can recover it here.</p>
+                                                    <div class="order-recover "> <input type="text " name="order-key " value=" " placeholder="Order key "> <input type="hidden " name="recover-order-nonce " value="0584510022 "> <input type="hidden
+                                                " name="lp-ajax " value="recover-order ">
+                                                        <button type="button " class="lp-button button-recover-order " disabled="disabled ">Recover</button>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <div id="profile-content-settings " *ngSwitchCase=" 'settings' ">
+                                            <div id="your-profile ">
+                                                <ul class="learn-press-subtabs ">
+                                                    <li class="section-tab basic-information current "> <span>General</span></li>
+                                                    <li class="section-tab avatar "> <a href="/profile/bbandroid19/settings/avatar/ ">Avatar</a></li>
+                                                    <li class="section-tab change-password "> <a href="/profile/bbandroid19/settings/change-password/ ">Password</a></li>
+                                                    <li class="section-tab publicity "> <a href="/profile/bbandroid19/settings/publicity/ ">Publicity</a></li>
+                                                </ul>
+                                            </div>
+                                            <form method="post " id="your-profile " name="profile-basic-information " enctype="multipart/form-data " class="learn-press-form ">
+                                                <div class="learn-press-subtab-content ">
+                                                    <ul class="lp-form-field-wrap ">
+                                                        <li class="lp-form-field "> <label for="lp-form-field-label ">Biographical Info</label>
+                                                            <div class="lp-form-field-input "><textarea name="description " id="description " rows="5 " cols="30 "></textarea>
+                                                                <p class="description ">Share a little biographical information to fill out your profile. This may be shown publicly.</p>
+                                                            </div>
+                                                        </li>
+                                                        <li class="form-field "> <label for="lp-form-field-label ">First Name</label>
+                                                            <div class="lp-form-field-input "> <input type="text " name="first_name " id="first_name " value=" " class="regular-text "></div>
+                                                        </li>
+                                                        <li class="form-field "> <label for="lp-form-field-label ">Last Name</label>
+                                                            <div class="lp-form-field-input "> <input type="text " name="last_name " id="last_name " value=" " class="regular-text "></div>
+                                                        </li>
+                                                        <li class="form-field "> <label for="lp-form-field-label ">Nickname</label>
+                                                            <div class="lp-form-field-input "> <input type="text " name="nickname " id="nickname " value="bbandroid19 " class="regular-text "></div>
+                                                        </li>
+                                                        <li class="form-field "> <label for="lp-form-field-label ">Display name publicly as</label>
+                                                            <div class="lp-form-field-input "> <select name="display_name " id="display_name "><option value="bbandroid19 " selected="selected ">bbandroid19</option></select></div>
+                                                        </li>
+                                                    </ul>
+                                                    <p>
+                                                        <!-- <input type="hidden " name="save-profile-basic-information " value="3ce8bb176b "></p> <button type="submit " name="submit ">Save changes</button> -->
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div id="profile-content-quizzes " *ngSwitchCase=" 'quizzes' ">
+                                            <div class="learn-press-subtab-content ">
+                                                <h3 class="profile-heading ">My Quizzes</h3>
+                                                <ul class="lp-sub-menu ">
+                                                    <li class="all "><span>All</span></li>
+                                                    <li class="completed "><a href="/profile/bbandroid19/quizzes/?filter-status=completed ">Finished</a></li>
+                                                    <li class="passed "><a href="/profile/bbandroid19/quizzes/?filter-status=passed ">Passed</a></li>
+                                                    <li class="failed "><a href="/profile/bbandroid19/quizzes/?filter-status=failed ">Failed</a></li>
+                                                </ul>
+                                                <table class="lp-list-table profile-list-quizzes profile-list-table ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="column-course ">Course</th>
+                                                            <th class="column-quiz ">Quiz</th>
+                                                            <th class="column-date ">Date</th>
+                                                            <th class="column-status ">Progress</th>
+                                                            <th class="column-time-interval ">Interval</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="column-course "> <a href="/courses/rjs-101/ "> Reactjs </a></td>
+                                                            <td class="column-quiz column-quiz-8810 "> <a href="/courses/rjs-101/quizzes/simple-test/ "> Simple test </a></td>
+                                                            <td class="column-date ">08/02/2020</td>
+                                                            <td class="column-status "> <span class="result-percent ">25%</span> <span class="lp-label label-started "> In Progress </span></td>
+                                                            <td class="column-time-interval "> --:--</td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr class="list-table-nav ">
+                                                            <td colspan="3 " class="nav-text "> Displaying 1 to 1 of 1 quiz.</td>
+                                                            <td colspan="2 " class="nav-pages "></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div id="profile-content-wishlist " *ngSwitchCase=" 'wishlist' ">
+                                            <div id="learn-press-profile-tab-course-wishlist " class=" ">
+                                                <div class="message message-notice "> <i class="fa "></i>No records.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+</section>

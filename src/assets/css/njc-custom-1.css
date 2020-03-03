@@ -4504,42 +4504,6 @@ span.wpcf7-list-item-label:after {
     display: none
 }
 
-div.wpcf7 .ajax-loader {
-    visibility: hidden;
-    display: inline-block;
-    background-image: url(//educationwp.thimpress.com/wp-content/plugins/contact-form-7/includes/css/../../images/ajax-loader.gif);
-    width: 16px;
-    height: 16px;
-    border: none;
-    padding: 0;
-    margin: 0 0 0 4px;
-    vertical-align: middle
-}
-
-div.wpcf7 .ajax-loader.is-active {
-    visibility: visible
-}
-
-div.wpcf7 div.ajax-error {
-    display: none
-}
-
-div.wpcf7 .placeheld {
-    color: #888
-}
-
-div.wpcf7 input[type=file] {
-    cursor: pointer
-}
-
-div.wpcf7 input[type=file]:disabled {
-    cursor: default
-}
-
-div.wpcf7 .wpcf7-submit:disabled {
-    cursor: not-allowed
-}
-
 .clear_fix:after,
 .clear_fix:before {
     clear: both;
@@ -13665,7 +13629,7 @@ iframe.h5peditor-semi-fullscreen {
 }
 
 .scroll-wrapper {
-    overflow: hidden!important;
+    overflow: scroll!important;
     padding: 0!important;
     position: relative
 }
@@ -25819,10 +25783,12 @@ pre code {
     }
 }
 
+
+/* 
 .row {
     margin-left: -15px;
     margin-right: -15px
-}
+} */
 
 .col-lg-1,
 .col-lg-10,
@@ -58792,7 +58758,7 @@ form#lostpasswordform p input[type=submit] {
 }
 
 #thim-popup-login {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     position: fixed;

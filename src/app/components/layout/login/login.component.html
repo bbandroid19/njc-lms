@@ -1,43 +1,60 @@
 <div id="thim-popup-login">
     <div class="popup-login-wrapper">
-       <div class="thim-login-container has-shortcode">
-          <div class="mo-openid-app-icons">
-             <p style="color:#000000"> Login with social networks</p>
-             <a rel="nofollow" style="margin-left: 4px !important;width: 240px !important;padding-top:11px !important;padding-bottom:11px !important;margin-bottom: -1px !important;border-radius: 4px !important;" class="btn btn-mo btn-block btn-social btn-facebook btn-custom-dec login-button" onclick="moOpenIdLogin(&#39;facebook&#39;,&#39;true&#39;);"> <i style="padding-top:5px !important" class="fa fa-facebook"></i> Facebook</a>
-             <a rel="nofollow" style="margin-left: 4px !important;width: 240px !important;padding-top:11px !important;padding-bottom:11px !important;margin-bottom: -1px !important;border-radius: 4px !important;" class="btn btn-mo btn-block btn-social btn-google btn-custom-dec login-button" onclick="moOpenIdLogin(&#39;google&#39;,&#39;false&#39;);"> <i style="padding-top:5px !important" class="fa fa-google"></i> Google</a><a rel="nofollow" style="margin-left: 4px !important;width: 240px !important;padding-top:11px !important;padding-bottom:11px !important;margin-bottom: -1px !important;border-radius: 4px !important;" class="btn btn-mo btn-block btn-social btn-twitter btn-custom-dec login-button" onclick="moOpenIdLogin(&#39;twitter&#39;,&#39;false&#39;);"> <i style="padding-top:5px !important" class="fa fa-twitter"></i> Twitter</a><a rel="nofollow" style="margin-left: 4px !important;width: 240px !important;padding-top:11px !important;padding-bottom:11px !important;margin-bottom: -1px !important;border-radius: 4px !important;" class="btn btn-mo btn-block btn-social btn-linkedin btn-custom-dec login-button" onclick="moOpenIdLogin(&#39;linkedin&#39;,&#39;false&#39;);"> <i style="padding-top:5px !important" class="fa fa-linkedin"></i> LinkedIn</a>
-          </div>
-          <br>
-          <div class="thim-popup-inner">
-             <div class="thim-login">
-                <h4 class="title">Login with your site account</h4>
-                <form name="loginpopopform" action="https://educationwp.thimpress.com/wp-login.php?wpe-login=true" method="post">
-                   <p class="login-username"> <input type="text" name="log" placeholder="Username or email" class="input required" value="" size="20"></p>
-                   <p class="login-password"> <input type="password" name="pwd" placeholder="Password" class="input required" value="" size="20"><span id="show_pass"><i class="fa fa-eye"></i></span></p>
-                   <a class="lost-pass-link" href="//account/?action=lostpassword" title="Lost Password">Lost your password?</a>
-                   <p class="forgetmenot login-remember"> <label for="popupRememberme"><input name="rememberme" type="checkbox" value="forever" id="popupRememberme"> Remember Me </label></p>
-                   <p class="submit login-submit"> <input type="submit" name="wp-submit" class="button button-primary button-large" value="Login"> <input type="hidden" name="redirect_to" value="https://educationwp.thimpress.com"> <input type="hidden" name="testcookie" value="1"></p>
-                </form>
-                <p class="link-bottom">Not a member yet? <a class="register" href="//account/?action=register">Register now</a></p>
-             </div>
-             <div class="thim-register">
-                <h4 class="title">Register a new account</h4>
-                <form class="auto_login" name="registerformpopup" action="https://educationwp.thimpress.com/wp-login.php?action=register&amp;wpe-login=true" method="post" novalidate="novalidate">
-                   <input type="hidden" id="register_security" name="register_security" value="1cc6d1b528"><input type="hidden" name="_wp_http_referer" value="/">
-                   <p> <input placeholder="Username" type="text" name="user_login" class="input required"></p>
-                   <p> <input placeholder="Email" type="email" name="user_email" class="input required"></p>
-                   <p> <input placeholder="Password" type="password" name="password" class="input required"></p>
-                   <p> <input placeholder="Repeat Password" type="password" name="repeat_password" class="input required"></p>
-                   <p> <input type="hidden" name="redirect_to" value="https://educationwp.thimpress.com"> <input type="hidden" name="modify_user_notification" value="1"></p>
-                   <p class="submit"> <input type="submit" name="wp-submit" class="button button-primary button-large" value="Sign up"></p>
-                </form>
-                <p class="link-bottom">Are you a member? <a class="login" href="//account/">Login now</a></p>
-                <div class="popup-message"></div>
-             </div>
-          </div>
-          <span class="close-popup"><i class="fa fa-times" aria-hidden="true"></i></span>
-          <div class="cssload-container">
-             <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
-          </div>
-       </div>
+        <span class="close-popup" (click)="_auth.closePopup()"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <div class="thim-login-container has-shortcode">
+            <div class="mo-openid-app-icons">
+                <p style="color:#000000"> Login with social networks</p>
+                <a rel="nofollow" style="margin-left: 4px !important;width: 240px !important;padding-top:11px !important;padding-bottom:11px !important;margin-bottom: -1px !important;border-radius: 4px !important;" class="btn btn-mo btn-block btn-social btn-facebook btn-custom-dec login-button"
+                    onclick="moOpenIdLogin(&#39;facebook&#39;,&#39;true&#39;);"> <i style="padding-top:5px !important" class="fa fa-facebook"></i> Facebook</a>
+                <a rel="nofollow" style="margin-left: 4px !important;width: 240px !important;padding-top:11px !important;padding-bottom:11px !important;margin-bottom: -1px !important;border-radius: 4px !important;" class="btn btn-mo btn-block btn-social btn-google btn-custom-dec login-button"
+                    onclick="moOpenIdLogin(&#39;google&#39;,&#39;false&#39;);"> <i style="padding-top:5px !important" class="fa fa-google"></i> Google</a>
+                <a rel="nofollow" style="margin-left: 4px !important;width: 240px !important;padding-top:11px !important;padding-bottom:11px !important;margin-bottom: -1px !important;border-radius: 4px !important;" class="btn btn-mo btn-block btn-social btn-twitter btn-custom-dec login-button"
+                    onclick="moOpenIdLogin(&#39;twitter&#39;,&#39;false&#39;);"> <i style="padding-top:5px !important" class="fa fa-twitter"></i> Twitter</a>
+                <a rel="nofollow" style="margin-left: 4px !important;width: 240px !important;padding-top:11px !important;padding-bottom:11px !important;margin-bottom: -1px !important;border-radius: 4px !important;" class="btn btn-mo btn-block btn-social btn-linkedin btn-custom-dec login-button"
+                    onclick="moOpenIdLogin(&#39;linkedin&#39;,&#39;false&#39;);"> <i style="padding-top:5px !important" class="fa fa-linkedin"></i> LinkedIn</a>
+            </div>
+            <br>
+            <div class="thim-popup-inner">
+                <div class="thim-login">
+                    <h4 class="title">Login with your site account</h4>
+                    <form name="loginpopopform">
+                        <p class="login-username"> <input [ngClass]="{'text-error':showErrorMessage === true}" [(ngModel)]="loginUserData.userid" type="text" name="log" placeholder="Username or email" class="input required" value="" size="20"></p>
+                        <p class="login-password"> <input [ngClass]="{'text-error':showErrorMessage === true}" [(ngModel)]="loginUserData.password" type="password" name="pwd" placeholder="Password" id="password" class="input required" value="" size="20"><span id="show_pass" (click)="togglePassword()"><i class="fa fa-eye"></i></span></p>
+                        <a class="lost-pass-link" href="//account/?action=lostpassword" title="Lost Password">Lost your password?</a>
+                        <p class="forgetmenot login-remember"> <label for="popupRememberme"><input name="rememberme" type="checkbox" value="forever" id="popupRememberme"> Remember Me </label></p>
+                        <p class="submit login-submit"> <input type="button" (click)="loginUser()" name="wp-submit" class="button button-primary button-large" value="Login"> <input type="hidden" name="redirect_to"> <input type="hidden" name="testcookie" value="1"></p>
+                        <div id="error_message" *ngIf="showErrorMessage" class="popup-message">
+                            <div>{{errorMessage}}</div>
+                        </div>
+                    </form>
+                    <p class="link-bottom">Not a member yet? <a class="register" (click)="_auth.activateRegistration()" href="javascript:void(0);">Register now</a></p>
+                </div>
+                <div class="thim-register">
+                    <h4 class="title">Register a new account</h4>
+                    <form class="auto_login" name="registerformpopup" method="post" novalidate="novalidate">
+                        <input type="hidden" id="register_security" name="register_security" value="1cc6d1b528"><input type="hidden" name="_wp_http_referer" value="/">
+                        <p> <input placeholder="Email" type="text" name="user_login" [(ngModel)]="registerUserData.userid" class="input required"></p>
+
+                        <p> <input placeholder="Password" type="password" [(ngModel)]="registerUserData.password" name="password" class="input required"></p>
+                        <p> <input placeholder="Repeat Password" type="password" name="repeat_password" class="input required"></p>
+                        <p> <input placeholder="Firstname" type="text" name="firstname" [(ngModel)]="registerUserData.firstname" class="input required"></p>
+                        <p> <input placeholder="Lastname" type="email" name="user_email" [(ngModel)]="registerUserData.lastname" class="input required"></p>
+                        <p> <input placeholder="City" type="text" name="city" [(ngModel)]="registerUserData.city" class="input required"></p>
+                        <p> <input placeholder="State" type="email" name="user_email" [(ngModel)]="registerUserData.state" class="input required"></p>
+                        <p> <input placeholder="Address" type="text" name="user_login" [(ngModel)]="registerUserData.address_line1" class="input required"></p>
+                        <p> <input placeholder="Country" type="text" name="country" [(ngModel)]="registerUserData.country" class="input required"></p>
+                        <p> <input placeholder="Pincode" type="text" name="pincode" [(ngModel)]="registerUserData.pincode" class="input required"></p>
+                        <p> <input placeholder="Phone number" type="phone" name="phone_numbers" [(ngModel)]="registerUserData.phone_numbers" class="input required"></p>
+                        <p> <input placeholder="College Id" type="text" name="college_id" [(ngModel)]="registerUserData.college_id" class="input required"></p>
+                        <p> <input type="hidden" name="redirect_to"> <input type="hidden" name="modify_user_notification" value="1"></p>
+                        <p class="submit"> <input (click)="registerUser()" type="submit" name="wp-submit" class="button button-primary button-large" value="Sign up"></p>
+                    </form>
+                    <p class="link-bottom">Are you a member? <a class="login" (click)="_auth.activateLogin()" href="javascript:void(0);">Login now</a></p>
+                    <div id="error_message" *ngIf="showErrorMessage" class="popup-message">
+                        <div>{{errorMessage}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>

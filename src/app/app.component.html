@@ -1,15 +1,16 @@
-
-<app-sidemenu></app-sidemenu>
+<app-sidemenu *ngIf="!quizService.isTestStarted()">
+</app-sidemenu>
 <!-- <app-loader></app-loader> -->
-<div id="wrapper-container" class="wrapper-container">
-  <div class="content-pusher">
-     <app-header></app-header>
-     <div id="main-content">
-        <router-outlet></router-outlet>
-        <app-footer></app-footer>
-     </div>
-     <app-bottomfooter></app-bottomfooter>
-  </div>
-  <a href="#" id="back-to-top" class=""> <i class="fa fa-chevron-up" aria-hidden="true"></i> </a>
-  <app-login></app-login>
+<app-test *ngIf="quizService.isTestStarted()"></app-test>
+<div *ngIf="!quizService.isTestStarted()" id="wrapper-container" class="wrapper-container">
+    <div class="content-pusher">
+        <app-header></app-header>
+        <div id="main-content">
+            <router-outlet></router-outlet>
+            <app-footer></app-footer>
+        </div>
+        <app-bottomfooter></app-bottomfooter>
+    </div>
+    <a href="#" id="back-to-top" class=""> <i class="fa fa-chevron-up" aria-hidden="true"></i> </a>
+    <app-login></app-login>
 </div>

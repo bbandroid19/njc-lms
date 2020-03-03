@@ -10,7 +10,7 @@ export class RestserviceService {
 
   constructor(private http: HttpClient) { }
   getCourseContent() : Observable<any>{
-    return this.http.get<any>('http://localhost:1337/getContent',{
+    return this.http.get<any>('https://localhost:5000/courses',{
 
     }).pipe(
       tap((result) => console.log(result)),
@@ -18,7 +18,7 @@ export class RestserviceService {
     );
   }
   getCourses() : Observable<any>{
-    return this.http.get<any>('http://localhost:1337/getCourses',{
+    return this.http.get<any>('https://localhost:5000/courses',{
 
     }).pipe(
       tap((result) => console.log(result)),
