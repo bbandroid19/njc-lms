@@ -1,0 +1,296 @@
+{
+    "enrollment": {
+        "_id": "5e53d7a0eb05af1cbb0a69a6",
+        "course_id": "5e53d7a0eb05af1cbb0a69a5",
+        "modules": [{
+                "module_id": "5e53d7a0eb05af1cbb0a6986",
+                "name": "P1 M1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6985",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6989",
+                "name": "P1 M2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6985",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a698d",
+                "name": "P2 M1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a698c",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6990",
+                "name": "P2 M2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a698c",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6994",
+                "name": "P3 M1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6993",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6997",
+                "name": "P3 M2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6993",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a699b",
+                "name": "P4 M1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a699e",
+                "name": "P4 M2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a69a1",
+                "name": "P4 M3",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "test": {
+                    "attempt_number": 0,
+                    "score": 0,
+                    "status": "not_started"
+                }
+            }
+        ],
+        "phases": [{
+                "name": "Phase 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6985",
+                "status": "not_started"
+            },
+            {
+                "name": "Phase 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a698c",
+                "status": "not_started"
+            },
+            {
+                "name": "Phase 3",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6993",
+                "status": "not_started"
+            },
+            {
+                "name": "Phase 4",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started"
+            }
+        ],
+        "start_time": "Mon, 24 Feb 2020 19:33:12 GMT",
+        "status": "registered",
+        "steps": [{
+                "module_id": "5e53d7a0eb05af1cbb0a6986",
+                "name": "Phase 1 Module 1 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6985",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a6987"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6986",
+                "name": "Phase 1 Module 1 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6985",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a6988"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6989",
+                "name": "Phase 1 Module 2 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6985",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a698a"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6989",
+                "name": "Phase 1 Module 2 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6985",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a698b"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a698d",
+                "name": "Phase 2 Module 1 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a698c",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a698e"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a698d",
+                "name": "Phase 2 Module 1 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a698c",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a698f"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6990",
+                "name": "Phase 2 Module 2 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a698c",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a6991"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6990",
+                "name": "Phase 2 Module 2 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a698c",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a6992"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6994",
+                "name": "Phase 3 Module 1 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6993",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a6995"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6994",
+                "name": "Phase 3 Module 1 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6993",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a6996"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6997",
+                "name": "Phase 3 Module 2 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6993",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a6998"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a6997",
+                "name": "Phase 3 Module 2 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a6993",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a6999"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a699b",
+                "name": "Phase 4 Module 1 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a699c"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a699b",
+                "name": "Phase 4 Module 1 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a699d"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a699e",
+                "name": "Phase 4 Module 2 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a699f"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a699e",
+                "name": "Phase 4 Module 2 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a69a0"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a69a1",
+                "name": "Phase 4 Module 3 Step 1",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a69a2"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a69a1",
+                "name": "Phase 4 Module 3 Step 2",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a69a3"
+            },
+            {
+                "module_id": "5e53d7a0eb05af1cbb0a69a1",
+                "name": "Phase 4 Module 3 Step 3",
+                "percentage_completed": 0,
+                "phase_id": "5e53d7a0eb05af1cbb0a699a",
+                "status": "not_started",
+                "step_id": "5e53d7a0eb05af1cbb0a69a4"
+            }
+        ],
+        "user_id": "twofaulty@gmail.com"
+    }
+}

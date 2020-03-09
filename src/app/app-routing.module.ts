@@ -17,6 +17,7 @@ import { ProfileComponent } from './components/sites/profile/profile.component';
 import { TestComponent } from './components/layout/test/test.component';
 import { ManagecourseComponent } from './components/sites/admin/managecourse/managecourse.component';
 import { AdminGuard } from './admin.guard';
+import { EditcourseComponent } from './components/sites/admin/editcourse/editcourse.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
 { path: 'profile', component: ProfileComponent, canActivate : [AuthGuard]},
 { path: 'tests', component: TestComponent, canActivate : [AuthGuard]},
 { path: 'manage-course', component: ManagecourseComponent, canActivate : [AdminGuard]},
+{ path: 'edit-course', component: EditcourseComponent, canActivate : [AdminGuard]},
 ];
 
 @NgModule({

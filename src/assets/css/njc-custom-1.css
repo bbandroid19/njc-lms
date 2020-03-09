@@ -38067,7 +38067,8 @@ body.home-page #masthead.header_v4 .navigation .width-logo img {
 }
 
 .site-header .navbar-nav {
-    text-align: right
+    text-align: right;
+    display: block;
 }
 
 .site-header .navbar-nav>li {

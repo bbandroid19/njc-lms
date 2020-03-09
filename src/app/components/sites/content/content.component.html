@@ -7,7 +7,7 @@
                     <div class="entry-content">
                         <div id="lp-single-course" class="lp-single-course">
                             <div id="learn-press-course" class="course-summary learn-press">
-                                <h1 class="entry-title" itemprop="name">{{contentData[0].title}}</h1>
+                                <h1 class="entry-title" itemprop="name">{{contentData.name}}</h1>
                                 <div class="course-meta">
                                     <!-- <div class="course-author"> <img alt="Admin bar avatar"learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2.jpg" class="avatar avatar-96 photo" height="96" width="96">
                                         <div class="author-contain">
@@ -48,16 +48,16 @@
                                         <form name="enroll-course" class="enroll-course form-purchase-course" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="enroll-course" value="5428">
                                             <input type="hidden" name="enroll-course-nonce" value="0aeb4e897b">
-                                            <button class="lp-button button button-enroll-course" *ngIf="!enrolled" (click)="courseService.enrollCourse()"> Take this course </button>
-                                            <button class="lp-button button button-enroll-course" *ngIf="enrolled" (click)="quizService.startTest()"> Take this course </button>
+                                            <button class="lp-button button button-enroll-course" *ngIf="!enrolled" (click)="enrollCourse()"> Take this course </button>
+                                            <button class="lp-button button button-enroll-course" *ngIf="enrolled" (click)="quizService.startTest()"> Start this course </button>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="course-summary">
                                     <div class="course-thumbnail">
-                                        <div class="media-intro">
+                                        <!-- <div class="media-intro">
                                             <iframe width="900" height="500" [src]="sanitizer.bypassSecurityTrustResourceUrl(contentData[0].videoSrc)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div id="course-landing" class="course-landing-summary">
                                         <div id="learn-press-course-tabs" class="course-tabs">
@@ -84,13 +84,13 @@
                                                                 {{contentData.description}}
                                                             </p>
                                                             <h4>CERTIFICATION</h4>
-                                                            <p>{{contentData[0].certification}}</p>
+                                                            <!-- <p>{{contentData[0.certification}}</p> -->
                                                             <h4>LEARNING OUTCOMES</h4>
-                                                            <ul class="thim-list-content">
+                                                            <!-- <ul class="thim-list-content">
                                                                 <li *ngFor="let list of contentData[0].outcomes">
                                                                     {{list}}
                                                                 </li>
-                                                            </ul>
+                                                            </ul> -->
                                                         </div>
                                                         <div class="thim-course-info">
                                                             <h3 class="title">Course Features</h3>
@@ -116,27 +116,36 @@
                                                                 <li class="section" *ngFor="let phases of contentData.phases" id="section-learnpress-interactive-content-27" data-id="learnpress-interactive-content-27" data-section-id="27">
                                                                     <!-- <mat-expansion-panel-header> -->
 
-                                                                    <h4 class="section-header"> {{phases.name}}<span class="collapse"></span>
+                                                                    <h4 class="section-header h4-container"> {{phases.name}}<span class="collapse plus" [ngClass]="{'plus':!phases.opened }" (click)="phases.opened= !phases.opened"></span>
+                                                                        <span *ngIf="ifCourseStarted(phases.percentage_completed)">
+                                                                          <mat-progress-bar mode="determinate" class="green-progress" [value]="phases.percentage_completed"></mat-progress-bar> {{phases.percentage_completed}}% completed</span>
                                                                     </h4>
                                                                     <!-- </mat-expansion-panel-header> -->
 
-                                                                    <ul class="section-content" *ngFor="let modules of phases.modules">
-                                                                        <h4 class="section-header"> {{modules.name}}<span class="collapse"></span>
-                                                                        </h4>
-                                                                        <li *ngFor="let steps of modules.steps" class="course-item course-item-lp_lesson course-item-9206 item-preview has-status course-lesson" data-type="lp_lesson">
-                                                                            <!-- <mat-expansion-panel-header> -->
-                                                                            <!-- {{modules.name}} -->
-                                                                            <!-- </mat-expansion-panel-header> -->
-                                                                            <div class="meta-left"> <span class="course-format-icon"><i class="fa fa-file-o"></i></span>
-                                                                                <div class="index"><span class="label">{{modules.name}}</span>1.1</div>
-                                                                            </div> <a class="lesson-title course-item-title button-load-item" href="/getting-started/"> {{steps.name}}</a> <span class="meta duration">05 min</span>
-                                                                            <div class="course-item-meta" *ngFor="let modules of phases.modules">
-                                                                                <a title="Previews" class="lesson-preview button-load-item" href="/getting-started/" data-id="9206" data-complete-nonce="a4264b96cd">
-                                                                                    <!-- <i class="fa fa-eye" data-preview="Preview"></i> -->
-                                                                                </a>
+                                                                    <div *ngIf="phases.opened" @OpenInOut class="phase-modules">
+                                                                        <ul class="section-content" *ngFor="let modules of phases.modules">
+                                                                            <h4 class="section-header h4-container"> {{modules.name}}<span class="collapse plus" [ngClass]="{'plus':!modules.opened }" (click)="modules.opened= !modules.opened"></span>
+                                                                                <span *ngIf="ifCourseStarted(phases.percentage_completed)">
+                                                                                <mat-progress-bar mode="determinate" class="yellow-progress"
+                                                                                    [value]="modules.percentage_completed"></mat-progress-bar> {{modules.percentage_completed}}% completed</span>
+                                                                            </h4>
+                                                                            <div *ngIf="modules.opened" @OpenInOut class="module-steps">
+                                                                                <li *ngFor="let steps of modules.steps" class="course-item course-item-lp_lesson item-preview has-status course-lesson">
+                                                                                    <!-- <mat-expansion-panel-header> -->
+                                                                                    <!-- {{modules.name}} -->
+                                                                                    <!-- </mat-expansion-panel-header> -->
+                                                                                    <div class="meta-left"> <span class="course-format-icon"><i class="fa fa-file-o"></i></span>
+                                                                                        <div class="index"><span class="label">{{modules.name}}</span>1.1</div>
+                                                                                    </div> <a class="lesson-title course-item-title button-load-item" (click)="quizService.startTest()" href="javascript:void(0)"> {{steps.name}}</a> <span class="meta duration">05 min</span>
+                                                                                    <div class="course-item-meta" *ngFor="let modules of phases.modules">
+                                                                                        <a title="Previews" class="lesson-preview button-load-item" href="javascript:void(0)">
+                                                                                            <!-- <i class="fa fa-eye" data-preview="Preview"></i> -->
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </li>
                                                                             </div>
-                                                                        </li>
-                                                                    </ul>
+                                                                        </ul>
+                                                                    </div>
                                                                 </li>
                                                             </ul>
                                                         </div>

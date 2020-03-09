@@ -1,0 +1,16 @@
+.h4-container {
+    display: inline-block;
+}
+
+.curriculum-sections .phase-modules,
+.curriculum-sections .modules-steps {
+    margin-left: 2%;
+}
+
+.green-progress .mat-progress-bar-fill::after {
+    background-color: green !important;
+}
+
+.yellow-progress .mat-progress-bar-fill::after {
+    background-color: yellow !important;
+}

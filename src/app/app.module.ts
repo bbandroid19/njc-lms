@@ -66,7 +66,9 @@ import {
   MatTreeModule,
 
 } from '@angular/material';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { EditcourseComponent} from './components/sites/admin/editcourse/editcourse.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +93,8 @@ import {
     ProfileComponent,
     TestComponent,
     ManagecourseComponent,
-    ManagequestionComponent
+    ManagequestionComponent,
+    EditcourseComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +124,9 @@ import {
     MatSliderModule,
     MatSlideToggleModule,
     MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    AngularEditorModule,
+    DragDropModule
   ],
   providers: [RestserviceService, AuthGuard, CommonService, AuthService,
     {

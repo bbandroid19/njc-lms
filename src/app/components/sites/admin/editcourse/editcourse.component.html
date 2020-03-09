@@ -1,0 +1,67 @@
+<section class="content-area" style="transform: none; min-height: 330px;">
+    <app-subheader [title]='childTitle'></app-subheader>
+    <div class="container site-content sidebar-right" style="transform: none;">
+        <div class="row" style="transform: none;">
+            <main id="main" class="site-main col-sm-12 alignleft">
+                <article id="post-0" class="post-0 post type-post status-publish format-standard hentry pmpro-has-access page type-page">
+                    <div class="entry-content">
+                        <div id="lp-archive-courses">
+
+                            <div id="thim-course-archive" class="thim-course-grid">
+                                <div class="">
+                                    <mat-card class="example-card">
+                                        <mat-card-header>
+                                            <div mat-card-avatar class="example-header-image"></div>
+                                            <mat-card-title>Shiba Inu</mat-card-title>
+                                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                                        <mat-card-content>
+                                            <p>
+                                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                                            </p>
+                                            <div class="form-group">
+                                                <label class="form-label" for="title">Title</label>
+                                                <input type="text" id="title" class="form-control" placeholder="Write a title" value="Basics of Vue.js">
+                                            </div>
+                                            <div>
+                                                <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+                                            </div>
+                                        </mat-card-content>
+                                        <mat-card-actions>
+                                            <button mat-button>LIKE</button>
+                                            <button mat-button>SHARE</button>
+                                        </mat-card-actions>
+                                    </mat-card>
+
+                                    <mat-card class="lessons">
+                                        <mat-card-header>
+                                            Lessons
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                                                <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+            </main>
+            <div id="sidebar" class="widget-area col-sm-3 sticky-sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static;">
+                    <aside class="thim-course-filter-wrapper">
+
+                    </aside>
+                    <aside class="widget widget_course-categories">
+
+                    </aside>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

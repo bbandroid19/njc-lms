@@ -65,6 +65,7 @@ export class TestComponent implements OnInit {
   phaseIndex=0;
   moduleIndex=0;
   stepsIndex=0;
+  currentIndex=0;
   constructor(private _authService: AuthService, private quizService: QuizService, private courseService: CourseService) { }
 
   ngOnInit() {
@@ -165,6 +166,20 @@ export class TestComponent implements OnInit {
     let quizData={"quiz_id": "5e53d7a0eb05af1cbb0a6984", "answers": [{"question_id": "5e53d79feb05af1cbb0a6967", "selected_answers": ["8.0"]}, {"question_id": "5e53d79feb05af1cbb0a6960", "selected_answers": ["7.0"]}, {"question_id": "5e53d79feb05af1cbb0a6976", "selected_answers": ["54"]}, {"question_id": "5e53d79feb05af1cbb0a6974", "selected_answers": ["always less than either of the original fractions"]}, {"question_id": "5e53d79feb05af1cbb0a6968", "selected_answers": ["46.0"]}, {"question_id": "5e53d79feb05af1cbb0a6965", "selected_answers": ["10.0"]}, {"question_id": "5e53d79feb05af1cbb0a6971", "selected_answers": ["6xy2z2"]}, {"question_id": "5e53d79feb05af1cbb0a696c", "selected_answers": ["(x - z)2 y is even"]}, {"question_id": "5e53d79feb05af1cbb0a6977", "selected_answers": ["832"]}, {"question_id": "5e53d79feb05af1cbb0a6975", "selected_answers": ["February 8, 2012"]}]};
   }
   nextModule(){
+    if (this.stepsIndex > this.courseContent.phases[0].modules[0].steps.length){
+      this.stepsIndex =0;
+      this.moduleIndex++;
+    }else{
+      this.stepsIndex++;
+    }
+    if (this.moduleIndex > this.courseContent.phases[0].modules.length){
+      this.stepsIndex =0;
+      this.moduleIndex=0;
+      this.phaseIndex++;
+    }else{
+      this.moduleIndex++;
+    }
+    this.moduleChange(this.phaseIndex, this.moduleContent,this.stepsIndex,null);
     console.log("next");
   }
   goTo(index: number) {
@@ -192,7 +207,7 @@ export class TestComponent implements OnInit {
     }else {
       steps.content=this.videContent;
     }
-    this.moduleContent=steps;
+    this.moduleContent=this.courseContent.phases[phaseIndex].modules[moduleIndex].steps[stepsIndex];
   }
   onSubmit() {
     let answers = [];

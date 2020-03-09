@@ -9,6 +9,7 @@ import swal from 'sweetalert2';
 })
 export class CourseService {
   courseContent=null;
+  editedCourse=null;
   constructor(private http:HttpClient) { }
   getCourseContent(url) : Observable<any>{
     return this.http.get(url);
@@ -21,6 +22,15 @@ export class CourseService {
   }
   setCourseContent(content){
     this.courseContent = content;
+  }
+  getCourseCompletionState(): Observable<any>{
+    return this.http.get('data/mulesoft-course-completed.json');
+    // return this.http.get<any>('https://localhost:5000/courses',{
+
+    // }).pipe(
+    //   tap((result) => console.log(result)),
+    //   catchError(this.handleError<any>('getCourseContetn'))
+    // );
   }
   getCourses() : Observable<any>{
     return this.http.get<any>('https://localhost:5000/courses',{

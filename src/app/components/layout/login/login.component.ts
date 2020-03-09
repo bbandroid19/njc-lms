@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/manage-course']);
         }
         else{
-          this._router.navigate(['/courses']);
+          this._router.navigate(['/content']);
         }
       },
       err => {
