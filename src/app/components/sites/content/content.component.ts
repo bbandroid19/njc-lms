@@ -1,119 +1,97 @@
-import { Component, OnInit } from '@angular/core';
-import { RestserviceService } from 'src/app/service/restservice.service';
-import { SafeUrl } from '@angular/platform-browser';
-import { DomSanitizer } from '@angular/platform-browser';
-import { AuthService } from 'src/app/auth.service';
-import swal from 'sweetalert2';
-import { QuizService } from 'src/app/service/quiz/quiz.service';
-import { CourseService } from 'src/app/service/course/course.service';
-import { trigger, transition, animate, style } from '@angular/animations';
+import { Component, OnInit } from "@angular/core";
+import { RestserviceService } from "src/app/service/restservice.service";
+import { SafeUrl } from "@angular/platform-browser";
+import { DomSanitizer } from "@angular/platform-browser";
+import { AuthService } from "src/app/auth.service";
+import swal from "sweetalert2";
+import { QuizService } from "src/app/service/quiz/quiz.service";
+import { CourseService } from "src/app/service/course/course.service";
+import { trigger, transition, animate, style } from "@angular/animations";
+import { CommonService } from "src/app/service/common.service";
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.scss'],
-  animations:[
-    trigger('OpenInOut', [
-      transition(':enter', [
-        style({ display: 'none'}),
-        animate('100ms', style({ display: 'block' })),
+  selector: "app-content",
+  templateUrl: "./content.component.html",
+  styleUrls: ["./content.component.scss"],
+  animations: [
+    trigger("OpenInOut", [
+      transition(":enter", [
+        style({ display: "none" }),
+        animate("100ms", style({ display: "block" }))
       ]),
-      transition(':leave', [
-        animate('100ms', style({ display: 'none' }))
-      ])
-    ]),
+      transition(":leave", [animate("100ms", style({ display: "none" }))])
+    ])
   ]
 })
 export class ContentComponent implements OnInit {
-  enrolled= false;
+  enrolled = false;
   contentData = null;
-  isDataAvailable:boolean = false;
-  videoUrl="";
-  childTitle:string = '';
-  quizes=null;
-  quizName=null;
-  enrolledCourse= null;
-  viewMode ='tab-overview';
-  constructor(private restService: RestserviceService ,
-              public sanitizer: DomSanitizer, private _authService: AuthService,
-              private quizService: QuizService, private courseService: CourseService) { }
+  isDataAvailable: boolean = false;
+  videoUrl = "";
+  childTitle: string = "";
+  quizes = null;
+  quizName = null;
+  enrolledCourse = null;
+  viewMode = "tab-overview";
+  constructor(
+    private restService: RestserviceService,
+    public sanitizer: DomSanitizer,
+    private _authService: AuthService,
+    private quizService: QuizService,
+    private courseService: CourseService,
+    private commonService: CommonService
+  ) {}
 
   ngOnInit() {
     this.quizes = this.quizService.getAll();
     this.quizName = this.quizes[4].id;
-    this.courseService.getCourseContent(this.quizName).subscribe(
-      (result) =>{
-        console.log(result);
-        this.contentData=result.course;
-        this.courseService.courseContent= this.contentData;
-        this.isDataAvailable = true;
-        // this.childTitle=this.contentData[0].name;
-        this.courseService.getCourseCompletionState().subscribe(
-            (completedState) =>{
+    this.enrolledCourse = this.commonService.getEnrollment()[0];
 
-            }
-        );
-        console.log(this.contentData);
-      }
-    )
+    this.courseService.getCourseContent(this.quizName).subscribe(result => {
+      console.log(result);
+      this.contentData = result.course;
+      this.courseService.courseContent = this.contentData;
+      this.isDataAvailable = true;
+      // this.childTitle=this.contentData[0].name;
+      this.checkEnrolled();
+    });
   }
-  enrollCourse(){
-    this.courseService.enrollCourse(this.courseService.courseContent._id).subscribe(
-      (result) => {
-        if(!result){
-          console.log(result);
-
-          this.courseService.getCourseCompletionState().subscribe(
-
-            (res) => {
-              this.enrolledCourse = res;
-              this.syncEnrollMent();
-            }
-          )
-          // if get enrollment is not working fetching local data from project structure
-        } else {
-          this.enrolledCourse = result;
-          this.syncEnrollMent();
-        }
+  checkEnrolled() {
+    this.enrolled = this.enrolledCourse.course_id === this.contentData._id;
+    this.syncEnrollMent();
+  }
+  enrollCourse() {
+    this.courseService
+      .enrollCourse(this.courseService.courseContent._id)
+      .subscribe(result => {
         this.enrolled = true;
-
-      }
-    )
+        this.syncEnrollMent();
+      });
   }
-  ifCourseStarted(val){
-    if(val == undefined){
-      return false;
-    }else{
-      return true;
-    }
-
+  ifCourseStarted(val) {
+    return val !== undefined;
   }
-  syncEnrollMent(){
-    if(this.enrolled){
-      this.contentData.phases.forEach(
-        (phase,i) =>{
-          this.enrolledCourse.enrollment.phases.forEach(
-            (phaseState, j) =>{
-              if(phase.phase_id === phaseState.phase_id){
-                phase.status= phaseState.status;
-                phase.percentage_completed= phaseState.percentage_completed;
-                phase.opened= false;
-              }
+  syncEnrollMent() {
+    if (this.enrolled) {
+      this.contentData.phases.forEach((phase, i) => {
+        this.enrolledCourse.phases.forEach((phaseState, j) => {
+          if (phase.phase_id === phaseState.phase_id) {
+            phase.status = phaseState.status;
+            phase.percentage_completed = phaseState.percentage_completed;
+            console.log(phase.percentage_completed);
+            phase.opened = false;
+          }
+        });
+        phase.modules.forEach((module, k) => {
+          this.enrolledCourse.modules.forEach((modState, j) => {
+            if (module.module_id === modState.module_id) {
+              module.status = modState.status;
+              module.percentage_completed = modState.percentage_completed;
+              console.log(module.percentage_completed);
+              module.opened = false;
             }
-          );
-          phase.modules.forEach(
-            (module,k) =>{
-              this.enrolledCourse.enrollment.modules.forEach(
-                (modState, j) =>{
-                  if(module.module_id === modState.module_id){
-                    module.status = modState.status;
-                    module.percentage_completed = modState.percentage_completed;
-                    module.opened = false;
-                  }
-                });
-            },
-          );
-        }
-      );
+          });
+        });
+      });
     }
   }
 }

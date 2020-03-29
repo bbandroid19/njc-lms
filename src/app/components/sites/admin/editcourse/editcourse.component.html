@@ -3,65 +3,88 @@
     <div class="container site-content sidebar-right" style="transform: none;">
         <div class="row" style="transform: none;">
             <main id="main" class="site-main col-sm-12 alignleft">
-                <article id="post-0" class="post-0 post type-post status-publish format-standard hentry pmpro-has-access page type-page">
-                    <div class="entry-content">
-                        <div id="lp-archive-courses">
+                <div class="course-tabs">
+                    <div id="course-landing" class="course-landing-summary">
+                        <div class="">
+                            <div class="container">
+                                <ul class="nav nav-tabs">
+                                    <li role="presentation" class="course-nav-tab-overview " [ngClass]="{'active':viewMode == 'genral'}"> <a href="javascript:void(0)" (click)='viewMode = "general"'>Genral</a></li>
+                                    <li role="presentation" class="course-nav-tab-curriculum" [ngClass]="{'active':viewMode == 'curriculum'}"> <a href="javascript:void(0)" (click)='viewMode = "curriculum"'>Curriculum</a></li>
+                                    <li role="presentation" class="course-nav-tab-instructor" [ngClass]="{'active':viewMode == 'settings'}"> <a href="javascript:void(0)" (click)='viewMode = "settings"'>Settings</a></li>
+                                </ul>
+                                <div class="tab-content" [ngSwitch]="viewMode">
+                                    <div class="tab-pane course-tab-panel-overview course-tab-panel" *ngSwitchCase="'general'" [ngClass]="{'active':viewMode == 'general'}" id="tab-overview">
+                                        <h2>Title</h2>
+                                        <input type="text" class="course-title">
+                                        <div>
+                                            <h2>
+                                                Description
+                                            </h2>
+                                            <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
 
-                            <div id="thim-course-archive" class="thim-course-grid">
-                                <div class="">
-                                    <mat-card class="example-card">
-                                        <mat-card-header>
-                                            <div mat-card-avatar class="example-header-image"></div>
-                                            <mat-card-title>Shiba Inu</mat-card-title>
-                                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                                        </mat-card-header>
-                                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                                        <mat-card-content>
-                                            <p>
-                                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-                                            </p>
-                                            <div class="form-group">
-                                                <label class="form-label" for="title">Title</label>
-                                                <input type="text" id="title" class="form-control" placeholder="Write a title" value="Basics of Vue.js">
-                                            </div>
-                                            <div>
-                                                <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
-                                            </div>
-                                        </mat-card-content>
-                                        <mat-card-actions>
-                                            <button mat-button>LIKE</button>
-                                            <button mat-button>SHARE</button>
-                                        </mat-card-actions>
-                                    </mat-card>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane course-tab-panel-overview course-tab-panel" *ngSwitchCase="'curriculum'" [ngClass]="{'active':viewMode == 'curriculum'}" id="tab-overview">
 
-                                    <mat-card class="lessons">
-                                        <mat-card-header>
-                                            Lessons
-                                        </mat-card-header>
-                                        <mat-card-content>
-                                            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                                                <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xs-6 edit-curriculum-side-panel">
+                                                    <div class="side-panel-content">
+                                                        <!-- <div class="header">
+                                                            <h3> </h3>
+                                                        </div> -->
+                                                        <div *ngFor="let phase of courseContent.phases" class="course-phases">
+                                                            <div class="header-content">
+                                                                <span *ngIf="!phase.edited">
+                                                                {{phase.name}}
+                                                              </span>
+                                                                <input type="text" *ngIf="phase.edited" [(ngModel)]="phase.name">
+
+                                                                <span (click)="phase.edited = true" class="span-btn" *ngIf="!phase.edited"> <i class="fa fa-edit"></i> </span>
+                                                                <span (click)="phase.edited = false" class="span-btn" *ngIf="phase.edited"> <i class="fa fa-save"></i>  </span>
+                                                            </div>
+                                                            <div *ngFor="let module of phase.modules" class="course-modules">
+                                                                <div class="module-headerfa">
+                                                                    <span>
+                                                                    {{module.name}}
+                                                                  </span>
+                                                                    <input type="text" *ngIf="module.edited" [ngModel]="module.name">
+
+                                                                    <span (click)="module.edited = true" *ngIf="!module.edited"> <i class="fa fa-edit"></i> </span>
+                                                                    <span (click)="module.edited = false" *ngIf="module.edited"><i class="fa fa-save"></i>  </span>
+                                                                </div>
+                                                                <div (click)="selectedStep=steps" *ngFor="let steps of module.steps" class="module-steps">
+                                                                    <div>{{steps.name}}</div>
+                                                                </div>
+                                                                <span (click)="addStep(module)">Add Step</span>
+                                                            </div>
+                                                            <span (click)="addModule(phase)">Add Modules</span>
+                                                        </div>
+                                                        <span (click)="addPhase()">Add Phases</span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-xs-6 edit-curiculum-content">
+                                                    <div *ngIf="selectedStep">
+                                                        <div class="step-name">
+                                                            <input type="text" [ngModel]="selectedStep.name">
+                                                        </div>
+                                                        <div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                             </div>
-                                        </mat-card-content>
-                                    </mat-card>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
-                </article>
-            </main>
-            <div id="sidebar" class="widget-area col-sm-3 sticky-sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
-                <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static;">
-                    <aside class="thim-course-filter-wrapper">
-
-                    </aside>
-                    <aside class="widget widget_course-categories">
-
-                    </aside>
-
                 </div>
-            </div>
+            </main>
         </div>
     </div>
 </section>

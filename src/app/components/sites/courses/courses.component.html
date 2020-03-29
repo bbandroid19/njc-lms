@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <div id="thim-course-archive" class="thim-course-grid" data-cookie="grid-layout">
-                                <div id="post-5428" *ngFor="let course of courses" class="course-grid-3 lpr_course post-5428 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-general pmpro-has-access course">
+                                <div *ngFor="let course of courses" class="course-grid-3 lpr_course post-5428 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-general pmpro-has-access course">
                                     <div class="course-item">
                                         <div class="course-thumbnail">
                                             <a class="thumb" routerLink="/content"><img src="{{course.imageUrl}}" alt="Dummy Content" title="course-4" width="400" height="320"></a><a class="course-readmore" href="//courses/learnpress-101/">Read More</a></div>
@@ -36,7 +36,7 @@
                                                     <div class="value" itemprop="name"> <a href="//profile/keny/">{{course.author}}</a></div>
                                                 </div>
                                             </div>
-                                            <h2 class="course-title"><a routerLink="/content" rel="bookmark">{{course.title}}</a></h2>
+                                            <h2 class="course-title"><a routerLink="/content" rel="bookmark">{{course.name}}</a></h2>
                                             <div class="course-meta">
                                                 <div class="course-author" itemscope="" itemtype="http://schema.org/Person"> <img src="course.imageUrl" alt="author-avatar" title="author-avatar">
                                                     <div class="author-contain">
@@ -86,15 +86,15 @@
                                     </div>
                                 </div>
 
-                                <div class="cssload-loading"> <i></i><i></i><i></i><i></i></div>
+
                             </div>
-                            <nav class="learn-press-pagination navigation pagination">
+                            <!-- <nav class="learn-press-pagination navigation pagination">
                                 <ul class="page-numbers">
                                     <li><span aria-current="page" class="page-numbers current">1</span></li>
                                     <li><a class="page-numbers" href="//courses/page/2/">2</a></li>
                                     <li><a class="next page-numbers" href="//courses/page/2/">2</a></li>
                                 </ul>
-                            </nav>
+                            </nav> -->
                         </div>
                     </div>
                 </article>
