@@ -17,15 +17,10 @@ export class CoursesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.courses = [];
     this.restService.getCourses().subscribe(result => {
-      this.courses = result;
-      if (!result) {
-        this.courses = [];
-        this.courseService.getCoursesDummy().subscribe(res => {
-          this.courses.push(res.course);
-        });
-      }
-
+      this.courses.push(result.course);
+      this.courseService.courseContent = result.course;
       this.isDataAvailable = true;
       console.log(this.courses);
     });

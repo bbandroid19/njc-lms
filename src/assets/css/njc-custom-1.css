@@ -39708,7 +39708,6 @@ footer#colophon .copyright-area ul li a {
     line-height: 30px
 }
 
-
 footer#colophon .thim-social {
     margin: 0 0 0
 }
@@ -58764,7 +58763,7 @@ form#lostpasswordform p input[type=submit] {
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: 9999;
+    z-index: 100;
     filter: alpha(opacity=0);
     -ms-filter: "alpha(opacity=0)";
     -webkit-opacity: 0;
@@ -63542,7 +63541,8 @@ body.single-lp_course .course-summary .course-students-list .students>li .user-i
     max-width: 100%
 }
 
-body #popup_container {
+
+/* body #popup_container {
     z-index: 99999999!important
 }
 
@@ -63552,7 +63552,7 @@ body #popup_overlay {
 
 body #course-curriculum-popup {
     z-index: 99999997
-}
+} */
 
 body #course-curriculum-popup #popup-main #popup-footer {
     border-top: 1px dashed #ddd;
@@ -67088,7 +67088,7 @@ body #course-curriculum-popup #popup-header .popup-close {
     color: #fff;
     font-size: 13px;
     font-weight: 700;
-    z-index: 99999;
+    z-index: 100;
     position: absolute;
     top: 0;
     right: 0;

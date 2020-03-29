@@ -45,15 +45,17 @@ export class ContentComponent implements OnInit {
     this.quizes = this.quizService.getAll();
     this.quizName = this.quizes[4].id;
     this.enrolledCourse = this.commonService.getEnrollment()[0];
-
-    this.courseService.getCourseContent(this.quizName).subscribe(result => {
-      console.log(result);
-      this.contentData = result.course;
-      this.courseService.courseContent = this.contentData;
-      this.isDataAvailable = true;
-      // this.childTitle=this.contentData[0].name;
-      this.checkEnrolled();
-    });
+    this.contentData = this.courseService.courseContent;
+    this.isDataAvailable = true;
+    this.checkEnrolled();
+    // this.courseService.getCourseContent(this.quizName).subscribe(result => {
+    //   console.log(result);
+    //   this.contentData = result.course;
+    //   this.courseService.courseContent = this.contentData;
+    //   this.isDataAvailable = true;
+    //   // this.childTitle=this.contentData[0].name;
+    //   this.checkEnrolled();
+    // });
   }
   checkEnrolled() {
     this.enrolled = this.enrolledCourse.course_id === this.contentData._id;

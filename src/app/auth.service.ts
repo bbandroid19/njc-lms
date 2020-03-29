@@ -2,6 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { JwtHelperService } from "@auth0/angular-jwt";
+import { catchError, tap } from "rxjs/operators";
+import { Observable, of } from "rxjs";
 const helper = new JwtHelperService();
 @Injectable({
   providedIn: "root"
@@ -11,12 +13,26 @@ export class AuthService {
   registerUrl = "https://localhost:5000/auth/register";
   isloader = false;
   testStarted = false;
+  showLoader() {
+    this.isloader = true;
+  }
+  hideLoader() {
+    this.isloader = false;
+  }
   loginUser(user) {
+    this.showLoader();
     const headers = new HttpHeaders({
       "Content-Type": "application/json"
     });
     const options = { headers };
-    return this.http.post<any>(this.loginUrl, JSON.stringify(user), options);
+    return this.http
+      .post<any>(this.loginUrl, JSON.stringify(user), options)
+      .pipe(
+        tap(result => {
+          this.hideLoader();
+        }),
+        catchError(this.handleError<any>("Login error"))
+      );
   }
   register(registerData) {
     console.log(registerData);
@@ -80,6 +96,12 @@ export class AuthService {
   }
   isTestStarted() {
     return this.testStarted;
+  }
+  private handleError<T>(operation = "operation", result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    };
   }
   constructor(private http: HttpClient, private _router: Router) {}
 }

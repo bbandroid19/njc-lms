@@ -95,9 +95,10 @@ export class TestComponent implements OnInit {
   }
   loadQuiz(quizName: string, moduleId: string) {
     this.quizService
-      .getTestQuestionIds("5e53d7a0eb05af1cbb0a69a6", moduleId)
+      .getTestQuestionIds(this.enrollment._id, moduleId)
       .subscribe(res => {
         console.log(res);
+        let quizId = res.quiz_id;
         this.startTime = new Date();
         this.ellapsedTime = "00:00";
         this.timer = setInterval(() => {
@@ -118,19 +119,11 @@ export class TestComponent implements OnInit {
         // this.quiz = new Quiz(res);
         this.quizService.getTestQuestions(qids).subscribe(questions => {
           console.log(questions);
+          questions.id = res.test.quiz_id;
           this.quiz = new Quiz(questions);
           this.pager.count = this.quiz.questions.length;
         });
       });
-
-    // this.quizService.get(quizName).subscribe(res => {
-    //   this.quiz = new Quiz(res);
-    //   this.pager.count = this.quiz.questions.length;
-    //   this.startTime = new Date();
-    //   this.ellapsedTime = '00:00';
-    //   this.timer = setInterval(() => { this.tick(); }, 1000);
-    //   this.duration = this.parseTime(this.config.duration);
-    // });
     this.mode = "quiz";
   }
 
@@ -161,11 +154,14 @@ export class TestComponent implements OnInit {
   }
 
   onSelect(question: Question, option: Option) {
-    if (question.questionTypeId === 1) {
-      question.options.forEach(x => {
-        if (x.id !== option.id) x.selected = false;
-      });
-    }
+    question.options.forEach(x => {
+      console.log(x);
+      if (x.selected === true) {
+        question.selected_answer = x.name;
+      }
+      console.log(option);
+      if (x.id !== option.id) x.selected = false;
+    });
 
     if (this.config.autoMove) {
       this.goTo(this.pager.index + 1);
@@ -185,37 +181,7 @@ export class TestComponent implements OnInit {
       console.log(result);
     });
   }
-  quizComplete() {
-    let quizData = {
-      quiz_id: "5e53d7a0eb05af1cbb0a6984",
-      answers: [
-        { question_id: "5e53d79feb05af1cbb0a6967", selected_answers: ["8.0"] },
-        { question_id: "5e53d79feb05af1cbb0a6960", selected_answers: ["7.0"] },
-        { question_id: "5e53d79feb05af1cbb0a6976", selected_answers: ["54"] },
-        {
-          question_id: "5e53d79feb05af1cbb0a6974",
-          selected_answers: [
-            "always less than either of the original fractions"
-          ]
-        },
-        { question_id: "5e53d79feb05af1cbb0a6968", selected_answers: ["46.0"] },
-        { question_id: "5e53d79feb05af1cbb0a6965", selected_answers: ["10.0"] },
-        {
-          question_id: "5e53d79feb05af1cbb0a6971",
-          selected_answers: ["6xy2z2"]
-        },
-        {
-          question_id: "5e53d79feb05af1cbb0a696c",
-          selected_answers: ["(x - z)2 y is even"]
-        },
-        { question_id: "5e53d79feb05af1cbb0a6977", selected_answers: ["832"] },
-        {
-          question_id: "5e53d79feb05af1cbb0a6975",
-          selected_answers: ["February 8, 2012"]
-        }
-      ]
-    };
-  }
+  quizComplete() {}
   nextModule() {
     if (
       this.stepsIndex > this.courseContent.phases[0].modules[0].steps.length
@@ -252,7 +218,6 @@ export class TestComponent implements OnInit {
   }
 
   isCorrect(question: Question) {
-    console.log(question);
     return question.options.some(x => x.selected === x.isAnswer)
       ? "correct"
       : "wrong";
@@ -270,17 +235,33 @@ export class TestComponent implements OnInit {
     this.moduleContent = this.courseContent.phases[phaseIndex].modules[
       moduleIndex
     ].steps[stepsIndex];
+    console.log(this.moduleContent);
   }
   onSubmit() {
+    let answerObj = {
+      quiz_id: this.quiz.id,
+      anwers: []
+    };
     let answers = [];
     this.quiz.questions.forEach(x =>
       answers.push({
-        quizId: this.quiz.id,
-        questionId: x.id,
-        answered: x.answered
+        question_id: x.id,
+        selected_answers: x.selected_answer
       })
     );
+    answerObj.anwers = answers;
+    debugger;
     console.log(answers);
+    this.quizService
+      .evaluateTest(
+        this.enrollment._id,
+        this.courseContent.phases[this.phaseIndex].modules[this.moduleIndex]
+          .module_id,
+        answerObj
+      )
+      .subscribe(res => {
+        console.log(res);
+      });
     // Post your data to the server here. answers contains the questionId and the users' answer.
     console.log(this.quiz.questions);
     this.mode = "result";

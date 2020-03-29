@@ -11,12 +11,16 @@ export class TokenInterceptorService {
     const re = /register/;
     let tokenizedReq;
     console.log(localStorage.getItem("token"));
-    tokenizedReq = req.clone({
-      headers: req.headers.set(
-        "X-Auth-Token",
-        JSON.stringify(localStorage.getItem("token"))
-      )
-    });
+    if (localStorage.getItem("token")) {
+      tokenizedReq = req.clone({
+        headers: req.headers.set("X-Auth-Token", localStorage.getItem("token"))
+      });
+    } else {
+      tokenizedReq = req.clone({
+        headers: req.headers.set("X-Auth-Token", "")
+      });
+    }
+
     return next.handle(tokenizedReq);
   }
 }
