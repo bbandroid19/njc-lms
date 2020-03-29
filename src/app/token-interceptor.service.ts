@@ -10,9 +10,12 @@ export class TokenInterceptorService {
     console.log(req);
     const re = /register/;
     let tokenizedReq;
-    let token = localStorage.getItem("token");
+    console.log(localStorage.getItem("token"));
     tokenizedReq = req.clone({
-      headers: req.headers.set("X-Auth-Token", token)
+      headers: req.headers.set(
+        "X-Auth-Token",
+        JSON.stringify(localStorage.getItem("token"))
+      )
     });
     return next.handle(tokenizedReq);
   }
