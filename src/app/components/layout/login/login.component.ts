@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   registerUser() {
     this._auth.register(this.registerUserData).subscribe(
       res => {
+        console.log(res.token);
         localStorage.setItem("token", res.token);
         this._auth.closePopup();
         this._router.navigate(["/courses"]);

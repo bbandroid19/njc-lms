@@ -7,8 +7,8 @@ const helper = new JwtHelperService();
   providedIn: "root"
 })
 export class AuthService {
-  loginUrl = "apiauth/login";
-  registerUrl = "api/auth/register";
+  loginUrl = "https://localhost:5000/auth/login";
+  registerUrl = "https://localhost:5000/auth/register";
   isloader = false;
   testStarted = false;
   loginUser(user) {

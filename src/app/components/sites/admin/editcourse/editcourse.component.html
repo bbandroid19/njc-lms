@@ -44,11 +44,11 @@
                                                                 <span (click)="phase.edited = false" class="span-btn" *ngIf="phase.edited"> <i class="fa fa-save"></i>  </span>
                                                             </div>
                                                             <div *ngFor="let module of phase.modules" class="course-modules">
-                                                                <div class="module-headerfa">
-                                                                    <span>
+                                                                <div class="module-header">
+                                                                    <span *ngIf="!module.edited">
                                                                     {{module.name}}
                                                                   </span>
-                                                                    <input type="text" *ngIf="module.edited" [ngModel]="module.name">
+                                                                    <input type="text" *ngIf="module.edited" [(ngModel)]="module.name">
 
                                                                     <span (click)="module.edited = true" *ngIf="!module.edited"> <i class="fa fa-edit"></i> </span>
                                                                     <span (click)="module.edited = false" *ngIf="module.edited"><i class="fa fa-save"></i>  </span>
@@ -56,18 +56,29 @@
                                                                 <div (click)="selectedStep=steps" *ngFor="let steps of module.steps" class="module-steps">
                                                                     <div>{{steps.name}}</div>
                                                                 </div>
-                                                                <span (click)="addStep(module)">Add Step</span>
+                                                                <span class="add-btn" (click)="addStep(module)">Add Step</span>
                                                             </div>
-                                                            <span (click)="addModule(phase)">Add Modules</span>
+                                                            <span class="add-btn module" (click)="addModule(phase)">Add Modules</span>
                                                         </div>
-                                                        <span (click)="addPhase()">Add Phases</span>
+                                                        <span class="add-btn phase" (click)="addPhase()">Add Phases</span>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-xs-6 edit-curiculum-content">
                                                     <div *ngIf="selectedStep">
                                                         <div class="step-name">
-                                                            <input type="text" [ngModel]="selectedStep.name">
+                                                            <!-- <input type="text" [ngModel]="selectedStep.name"> -->
+                                                            <div class="tab-pane course-tab-panel-overview course-tab-panel">
+                                                                <h2>Title</h2>
+                                                                <input type="text" [(ngModel)]="selectedStep.name" class="course-title">
+                                                                <div>
+                                                                    <h2>
+                                                                        Description
+                                                                    </h2>
+                                                                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div>
 
