@@ -22,35 +22,48 @@ svg {
     transform: translate(-50%, -50%);
 }
 
-#loader path:nth-child(1) {}
+path {
+    fill: #fff;
+}
 
-#loader path:nth-child(2) {}
+path:nth-child(1) {
+    animation: draw1 2s linear infinite
+}
 
-#loader path:nth-child(3) {}
+path:nth-child(2) {
+    animation: draw2 2s linear infinite
+}
 
-// .circle-1 {
-//     animation: hideshow 10s ease infinite;
-//     animation-iteration-count: infinite;
-// }
-// .circle-2 {
-//     animation: hideshow 20s ease infinite;
-//     animation-iteration-count: infinite;
-// }
-// .circle-3 {
-//     animation: hideshow 30s ease infinite;
-//     animation-iteration-count: infinite;
-// }
-// @keyframes hideshow {
-//     0% {
-//         opacity: 0;
-//     }
-//     10% {
-//         opacity: 0;
-//     }
-//     15% {
-//         opacity: 1;
-//     }
-//     100% {
-//         opacity: 1;
-//     }
-// }
+path:nth-child(3) {
+    animation: draw3 2s linear infinite
+}
+
+@keyframes draw1 {
+    100% {
+        fill: #DAC92E;
+        stroke: #E4AE20
+    }
+}
+
+@keyframes draw2 {
+    20% {
+        fill: #fff;
+    }
+    40%,
+    100% {
+        fill: #2EB1DA;
+        stroke: #2EB1DA
+    }
+}
+
+@keyframes draw3 {
+    40% {
+        fill: #fff;
+        stroke: #fff;
+    }
+    60%,
+    100% {
+        fill: #075771;
+        stroke: #075771;
+    }
+}

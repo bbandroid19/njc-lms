@@ -1170,7 +1170,7 @@
         }
     };
     $(function() {
-        // back_to_top();
+        back_to_top();
         if (typeof jQuery.fn.waypoint !== 'undefined') {
             jQuery('.wpb_animate_when_almost_visible:not(.wpb_start_animation)').waypoint(function() {
                 jQuery(this).addClass('wpb_start_animation');
@@ -1179,7 +1179,21 @@
             });
         }
     });
-
+    var back_to_top = function() {
+        jQuery(window).scroll(function() {
+            if (jQuery(this).scrollTop() > 400) {
+                jQuery('#back-to-top').addClass('active');
+            } else {
+                jQuery('#back-to-top').removeClass('active');
+            }
+        });
+        jQuery('#back-to-top').on('click', function() {
+            jQuery('html, body').animate({
+                scrollTop: '0px'
+            }, 800);
+            return false;
+        });
+    };
     $(document).ready(function() {
         thim_njc.ready();
     });
