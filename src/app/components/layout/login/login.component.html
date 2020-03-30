@@ -44,9 +44,8 @@
                         <p> <input placeholder="Address" type="text" name="user_login" [(ngModel)]="registerUserData.address_line1" class="input required"></p>
                         <p> <input placeholder="Country" type="text" name="country" [(ngModel)]="registerUserData.country" class="input required"></p>
                         <p> <input placeholder="Pincode" type="text" name="pincode" [(ngModel)]="registerUserData.pincode" class="input required"></p>
-                        <p> <input placeholder="Phone number" type="phone" name="phone_numbers" [(ngModel)]="registerUserData.phone_numbers" class="input required"></p>
+                        <p> <input placeholder="Phone number" type="text" name="phone_numbers" [(ngModel)]="registerUserData.phone_numbers" class="input required"></p>
                         <p> <input placeholder="College Id" type="text" name="college_id" [(ngModel)]="registerUserData.college_id" class="input required"></p>
-                        <p> <input type="hidden" name="redirect_to"> <input type="hidden" name="modify_user_notification" value="1"></p>
                         <p class="submit"> <input (click)="registerUser()" type="submit" name="wp-submit" class="button button-primary button-large" value="Sign up"></p>
                     </form>
                     <p class="link-bottom">Are you a member? <a class="login" (click)="_auth.activateLogin()" href="javascript:void(0);">Login now</a></p>

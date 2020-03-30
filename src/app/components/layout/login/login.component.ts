@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/auth.service";
 import { Router } from "@angular/router";
 import { CommonService } from "src/app/service/common.service";
+import { LoaderService } from "src/app/service/loader.service";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -11,7 +12,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _auth: AuthService,
     private _router: Router,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private loaderService: LoaderService
   ) {}
   loginUserData = {
     userid: null,
@@ -21,14 +23,17 @@ export class LoginComponent implements OnInit {
   showErrorMessage = false;
   errorMessage = "";
   registerUser() {
+    this.loaderService.showLoader();
     this._auth.register(this.registerUserData).subscribe(
       res => {
+        this.loaderService.hideLoader();
         console.log(res.token);
         localStorage.setItem("token", res.token);
         this._auth.closePopup();
         this._router.navigate(["/"]);
       },
       err => {
+        this.loaderService.hideLoader();
         console.log(err);
         if (err.status === 404) {
           this.showErrorMessage = true;
@@ -48,8 +53,10 @@ export class LoginComponent implements OnInit {
     }
   }
   loginUser() {
+    this.loaderService.showLoader();
     this._auth.loginUser(this.loginUserData).subscribe(
       res => {
+        this.loaderService.hideLoader();
         console.log(res);
         if (res && res.data && res.data.enrollments) {
           this.commonService.setEnrollment(res.data.enrollments);

@@ -61,7 +61,7 @@ export class ContentComponent implements OnInit {
       .subscribe(result => {
         if (result) {
           this.enrolledCourse = result.enrollment;
-          this.commonService.setEnrollment(this.enrolledCourse);
+          this.commonService.setEnrollment([this.enrolledCourse]);
           this.enrolled = true;
           this.syncEnrollMent();
         }

@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { AuthService } from "./auth.service";
 import { QuizService } from "./service/quiz/quiz.service";
+import { LoaderService } from "./service/loader.service";
 
 @Component({
   selector: "app-root",
@@ -11,6 +12,7 @@ export class AppComponent {
   title = "njc-lms";
   constructor(
     private _authService: AuthService,
-    private quizService: QuizService
+    private quizService: QuizService,
+    private loaderService: LoaderService
   ) {}
 }

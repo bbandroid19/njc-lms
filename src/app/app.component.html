@@ -1,6 +1,6 @@
 <app-sidemenu *ngIf="!quizService.isTestStarted()">
 </app-sidemenu>
-<app-loader *ngIf="_authService.isloader"></app-loader>
+<app-loader *ngIf="loaderService.isloader"></app-loader>
 <app-test *ngIf="quizService.isTestStarted()"></app-test>
 <div *ngIf="!quizService.isTestStarted()" id="wrapper-container" class="wrapper-container">
     <div class="content-pusher">

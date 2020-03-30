@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { catchError, tap } from "rxjs/operators";
 import { Observable, of } from "rxjs";
+import { LoaderService } from "./service/loader.service";
 const helper = new JwtHelperService();
 @Injectable({
   providedIn: "root"
@@ -11,16 +12,9 @@ const helper = new JwtHelperService();
 export class AuthService {
   loginUrl = "https://localhost:5000/auth/login";
   registerUrl = "https://localhost:5000/auth/register";
-  isloader = false;
   testStarted = false;
-  showLoader() {
-    this.isloader = true;
-  }
-  hideLoader() {
-    this.isloader = false;
-  }
   loginUser(user) {
-    this.showLoader();
+    this.loaderService.showLoader();
     const headers = new HttpHeaders({
       "Content-Type": "application/json"
     });
@@ -29,7 +23,7 @@ export class AuthService {
       .post<any>(this.loginUrl, JSON.stringify(user), options)
       .pipe(
         tap(result => {
-          this.hideLoader();
+          this.loaderService.hideLoader();
         }),
         catchError(this.handleError<any>("Login error"))
       );
@@ -98,11 +92,15 @@ export class AuthService {
     return this.testStarted;
   }
   private handleError<T>(operation = "operation", result?: T) {
-    this.hideLoader();
+    this.loaderService.hideLoader();
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);
     };
   }
-  constructor(private http: HttpClient, private _router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private _router: Router,
+    private loaderService: LoaderService
+  ) {}
 }
