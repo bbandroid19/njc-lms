@@ -98,6 +98,7 @@ export class AuthService {
     return this.testStarted;
   }
   private handleError<T>(operation = "operation", result?: T) {
+    this.hideLoader();
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);

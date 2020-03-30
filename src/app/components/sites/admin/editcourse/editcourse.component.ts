@@ -75,16 +75,8 @@ export class EditcourseComponent implements OnInit {
   ngOnInit() {
     this.selectedStep = null;
     this.htmlContent = "sdsdsds";
-    this.courseContent = this.courseService.courseContent;
-    this.courseService
-      .getCourseContent("data/mulesoft-course.json")
-      .subscribe(result => {
-        console.log(result);
-        this.courseService.courseContent = result.course;
-        this.courseContent = result.course;
-        this.selectedStep = this.courseContent.phases[0].modules[0].steps[0];
-        console.log(this.courseContent);
-      });
+    this.courseContent = this.courseService.editedCourse;
+    this.selectedStep = this.courseContent.phases[0].modules[0].steps[0];
   }
   addStep(module) {
     let step = { name: "", step_id: "", step_type: "" };

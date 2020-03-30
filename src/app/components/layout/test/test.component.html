@@ -110,12 +110,17 @@
         <div class="content-item-scrollable scrollbar-light scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; opacity: 1; max-height: 650px;">
             <div class="content-item-wrap">
                 <div class="learn-press-video-intro" *ngIf="moduleContent.step_type === 'video'">
-                    <div class="video-content"> <iframe width="900" height="500" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+                    <div class="video-content">
+                        <!-- <iframe width="900" height="535" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media;"></iframe> -->
+                        <iframe width="900" height="500" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
                 </div>
                 <div class="content-item-summary">
                     <h1 class="course-item-title question-title">{{moduleContent.name}}</h1>
                     <div class="content-item-description lesson-description" *ngIf="moduleContent.step_type === 'text'">
                         Content to be displayed
+                        <p> Here the contetnt is printed</p>
+                        <p>Lorereoireprewrereiowruoewureiowruewiorueworueworuewoiuoiuiou dfdfdsfdfds fd fd
+                        </p>
                     </div>
                     <form method="post" name="learn-press-form-complete-lesson" class="learn-press-form form-button">
                         <button class="lp-button button button-complete-item button-complete-lesson" [ngClass]="{'complete-step':isComplete()}" (click)="completeStep()">Complete</button>
@@ -156,7 +161,7 @@
                                     <div class="index"><span class="label">Lecture</span>1.1</div>
                                 </div> <a class="lesson-title course-item-title button-load-item" (click)="moduleChange(i,j,k,steps)" href="javascript:void(0);"> {{steps.name}} </a> <span class="meta duration">05 min</span>
                                 <div class="course-item-meta">
-                                    <i class="fa item-meta course-item-status trans" [ngClass]="{'status-completed':steps.completed}"></i></div>
+                                    <i class="fa item-meta course-item-status trans" [ngClass]="{'status-completed fa-check':steps.completed}"></i></div>
                             </li>
                             <li class="course-item course-item-lp_lesson course-lesson" [ngClass]="{'li-disabled':!modules.completed}">
                                 <div class="meta-left"> <span class="course-format-icon"><i class="a fa-puzzle-piece"></i></span>

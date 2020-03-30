@@ -4515,7 +4515,7 @@ span.wpcf7-list-item-label:after {
     position: fixed;
     right: 300px;
     display: none;
-    z-index: 9999999
+    z-index: 80
 }
 
 .tp-preview-images img {
@@ -4579,7 +4579,7 @@ span.wpcf7-list-item-label:after {
     position: fixed;
     bottom: -100px;
     right: 50px;
-    z-index: 99
+    z-index: 29
 }
 
 .tp-chameleon-btn-buy:hover .number {
@@ -4598,7 +4598,7 @@ span.wpcf7-list-item-label:after {
     position: relative;
     top: 20px;
     left: 40px;
-    z-index: 99;
+    z-index: 29;
     background-color: #82b440
 }
 
@@ -4970,7 +4970,7 @@ html[dir=rtl] #tp_style_selector .style-toggle:before {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 999999999999999;
+    z-index: 8099999999;
     background-color: rgba(0, 0, 0, .5);
     display: none
 }
@@ -5052,7 +5052,7 @@ html[dir=rtl] #tp_style_selector .style-toggle:before {
     position: absolute;
     text-align: center;
     border-radius: 6px;
-    z-index: 9999
+    z-index: 49
 }
 
 .tipso_title {
@@ -5206,7 +5206,7 @@ html[dir=rtl] #tp_style_selector .style-toggle:before {
     position: fixed;
     bottom: 30px;
     left: 30px;
-    z-index: 9999
+    z-index: 49
 }
 
 .tp-email-form .button-email.active {
@@ -5229,7 +5229,7 @@ html[dir=rtl] #tp_style_selector .style-toggle:before {
     padding: 30px;
     bottom: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 49;
     transition: .3s ease;
     transform: translateX(-300px);
     background: #fff;
@@ -6074,7 +6074,7 @@ p.demo_store {
     text-align: center;
     background-color: #a46497;
     color: #fff;
-    z-index: 99998;
+    z-index: 498;
     box-shadow: 0 1px 1em rgba(0, 0, 0, .2);
     display: none
 }
@@ -9671,7 +9671,7 @@ rs-debug {
 
 rs-modal {
     position: fixed!important;
-    z-index: 9999999!important;
+    z-index: 80!important;
     pointer-events: none!important
 }
 
@@ -9718,7 +9718,7 @@ rs-modal-cover {
 
 body>rs-modal-cover {
     position: fixed;
-    z-index: 9999995!important
+    z-index: 75!important
 }
 
 rs-sbg-px {
@@ -9764,7 +9764,7 @@ rs-sbg-px {
     height: 100%!important;
     top: 0!important;
     left: 0!important;
-    z-index: 9999999!important;
+    z-index: 80!important;
     background: #fff
 }
 
@@ -32124,7 +32124,7 @@ a:hover {
 }
 
 body #tp_style_selector.show {
-    z-index: 9999999
+    z-index: 80
 }
 
 body .cp-affilate-link {
@@ -32261,7 +32261,7 @@ button:focus {
     height: 32px;
     background: #333;
     color: #fff;
-    z-index: 997;
+    z-index: 297;
     cursor: pointer;
     filter: alpha(opacity=0);
     -ms-filter: "alpha(opacity=0)";
@@ -34226,7 +34226,7 @@ body .box-title {
 }
 
 body #tp_style_selector {
-    z-index: 999
+    z-index: 39
 }
 
 body #tp_style_selector .box-title {
@@ -34264,7 +34264,7 @@ body #tp_style_selector .box-title {
     width: 30px;
     left: 50%;
     margin-left: -15px;
-    z-index: 990;
+    z-index: 290;
     bottom: 30px;
     color: #999;
     text-align: center
@@ -36858,7 +36858,7 @@ div#preload {
     width: 100%;
     height: 100%;
     background-color: #fff;
-    z-index: 9999999;
+    z-index: 80;
     display: flex;
     align-content: center;
     justify-content: center
@@ -36876,7 +36876,7 @@ div#preload>img {
 
 .thim-loading-container {
     position: absolute;
-    z-index: 999999;
+    z-index: 79;
     width: 100%;
     height: 100%;
     top: 0;
@@ -37311,7 +37311,7 @@ div#preload>img {
     position: absolute;
     top: -5px;
     right: 0;
-    z-index: 999
+    z-index: 39
 }
 
 #toolbar .widget_search .search-form label .search-field:focus {
@@ -37360,7 +37360,7 @@ div#preload>img {
 }
 
 #toolbar .menu li:hover .sub-menu {
-    z-index: 9999
+    z-index: 49
 }
 
 .thim-language {
@@ -37378,7 +37378,7 @@ div#preload>img {
     position: absolute;
     padding: 5px 20px;
     left: -20px;
-    z-index: 99;
+    z-index: 29;
     background: #2b2b2b;
     display: none
 }
@@ -38585,7 +38585,7 @@ body.home-page #masthead.header_v4 .navigation .width-logo img {
         visibility: hidden;
         position: absolute;
         top: auto;
-        z-index: 9999;
+        z-index: 49;
         transition: opacity .3s
     }
     .navbar-nav li .sub-menu li {
@@ -38662,7 +38662,7 @@ body.home-page #masthead.header_v4 .navigation .width-logo img {
     }
     .navbar-nav li .sub-menu li:hover .sub-menu {
         height: auto;
-        z-index: 999
+        z-index: 39
     }
     .navbar-nav li.multicolumn .megacol>li>a:hover,
     .navbar-nav li.multicolumn .megacol>li>span:hover {
@@ -46931,7 +46931,7 @@ form.pmpro_form .lp-pmpro-name h4 {
 }
 
 .thim-widget-courses-searching .courses-searching ul.courses-list-search {
-    z-index: 999;
+    z-index: 39;
     overflow: hidden;
     padding: 0 20px;
     list-style: none;
@@ -47025,7 +47025,7 @@ form.pmpro_form .lp-pmpro-name h4 {
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: 9999999;
+    z-index: 80;
     filter: alpha(opacity=0);
     -ms-filter: "alpha(opacity=0)";
     -webkit-opacity: 0;
@@ -47554,7 +47554,7 @@ body.admin-bar .thim-search-light-style {
 .thim-owl-carousel-post .content {
     text-align: center;
     margin-top: -15px;
-    z-index: 999;
+    z-index: 39;
     position: relative
 }
 
@@ -52638,7 +52638,7 @@ body tr {
 }
 
 .wapper_portfolio.standard.effect-layla .portfolio_hover a.link_hover {
-    z-index: 999
+    z-index: 39
 }
 
 .wapper_portfolio.standard.effect-layla .portfolio_hover .cat_portfolio,
@@ -52809,7 +52809,7 @@ body tr {
 }
 
 .wapper_portfolio.gallery.effect-layla .portfolio_hover a.link_hover {
-    z-index: 999
+    z-index: 39
 }
 
 .wapper_portfolio.gallery.effect-layla .portfolio_hover .cat_portfolio,
@@ -53762,7 +53762,7 @@ body tr {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 999999
+    z-index: 79
 }
 
 .close-slider {
@@ -54213,7 +54213,7 @@ section.tags ul li:last-child:after {
 .portfolio_container .wapper_portfolio .portfolio_column .style02 li .portfolio-image .portfolio-hover,
 .thim-widget-portfolio .wapper_portfolio .portfolio_column .style02 li .portfolio-image .portfolio-hover {
     position: absolute;
-    z-index: 99;
+    z-index: 29;
     top: 0;
     left: 0;
     padding: 20px;
@@ -54405,7 +54405,7 @@ section.tags ul li:last-child:after {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 29;
     height: 100%;
     width: 50%;
     opacity: 0;
@@ -54586,7 +54586,7 @@ section.tags ul li:last-child:after {
 .quick-view,
 .thim-widget-portfolio .wapper_portfolio .portfolio_column .style08 li:hover,
 body.thim-popup-active #learn-press-block-content {
-    z-index: 999
+    z-index: 39
 }
 
 .portfolio_container .wapper_portfolio .portfolio_column .style08 li .portfolio-image .portfolio-hover,
@@ -55528,7 +55528,7 @@ article.testimonials .content .regency {
     padding: 0 15px;
     height: 40px;
     line-height: 40px;
-    z-index: 9999;
+    z-index: 49;
     border-radius: 0;
     font-size: 13px;
     font-weight: 700;
@@ -58116,7 +58116,7 @@ screen and (max-height:300px) {
     min-width: 350px;
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .1);
     -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .1);
-    z-index: 9999;
+    z-index: 49;
     overflow: hidden;
     padding: 10px 20px 25px
 }
@@ -58972,7 +58972,7 @@ body.thim-popup-active .mfp-container {
 }
 
 body.thim-popup-active .fc-tab {
-    z-index: 99
+    z-index: 29
 }
 
 #main .cptch_block {
@@ -59868,7 +59868,7 @@ body.single-lp_quiz #popup_container {
 
 #review {
     position: fixed;
-    z-index: 99999;
+    z-index: 69;
     align-self: center;
     background-color: rgba(0, 0, 0, .25);
     border-radius: 2px;
@@ -60975,7 +60975,7 @@ body.single-lp_quiz #popup_container {
     margin: 2px 0 0;
     left: 0;
     right: 0;
-    z-index: 99;
+    z-index: 29;
     overflow: hidden;
     line-height: 30px;
     background: #f6f6f6;
@@ -62304,7 +62304,7 @@ body.learnpress-page.archive .site-main .entry-content>p {
     top: 0;
     line-height: 30px;
     right: 13px;
-    z-index: 9999;
+    z-index: 49;
     font-size: 17px
 }
 
@@ -62754,7 +62754,7 @@ body .course-meta .course-review .value {
     bottom: -60px;
     left: 0;
     right: 0;
-    z-index: 999999;
+    z-index: 79;
     overflow: hidden;
     background: #fff;
     box-shadow: 0 3px 6px 2px rgba(42, 42, 42, .4);
@@ -63543,15 +63543,15 @@ body.single-lp_course .course-summary .course-students-list .students>li .user-i
 
 
 /* body #popup_container {
-    z-index: 99999999!important
+    z-index: 809!important
 }
 
 body #popup_overlay {
-    z-index: 99999998!important
+    z-index: 90!important
 }
 
 body #course-curriculum-popup {
-    z-index: 99999997
+    z-index: 807
 } */
 
 body #course-curriculum-popup #popup-main #popup-footer {
@@ -66936,7 +66936,7 @@ body #course-curriculum-popup #popup-header {
     height: 90px;
     right: 0;
     position: absolute;
-    z-index: 9999
+    z-index: 49
 }
 
 body #course-curriculum-popup #popup-header .courses-searching {
@@ -67180,7 +67180,7 @@ body #course-curriculum-popup #popup-main #popup-content #popup-content-inner {
 
 body #learn-press-block-content {
     position: fixed;
-    z-index: 99999998;
+    z-index: 90;
     left: 400px;
     top: 90px;
     right: 0;
@@ -68112,7 +68112,7 @@ body .filter-loading {
     right: 0;
     bottom: 0;
     top: 0;
-    z-index: 9999999
+    z-index: 80
 }
 
 #toolbar .widget_search .search-form label .search-field {
@@ -68615,7 +68615,7 @@ body.course-item-popup .scroll-wrapper>.scroll-element.scroll-y .scroll-bar {
 
 body.course-item-popup #learn-press-content-item {
     position: fixed;
-    z-index: 99999;
+    z-index: 69;
     background: #fff;
     left: 400px;
     top: 90px;
@@ -68779,7 +68779,7 @@ body.course-item-popup #learn-press-content-item #course-item-content-header .ba
     color: #fff;
     font-size: 13px;
     font-weight: 700;
-    z-index: 99999;
+    z-index: 69;
     position: absolute;
     top: 0;
     right: 0;
@@ -68824,7 +68824,7 @@ body.course-item-popup #learn-press-content-item #course-item-content-header .to
     color: #fff;
     font-size: 13px;
     font-weight: 700;
-    z-index: 99999;
+    z-index: 69;
     position: absolute;
     top: 0;
     right: 90px;
@@ -68889,7 +68889,7 @@ body.course-item-popup .lp-single-course #course-curriculum-popup {
     bottom: 0;
     background-color: #fff;
     width: 400px;
-    z-index: 9999
+    z-index: 49
 }
 
 body.course-item-popup #course-curriculum-popup #popup-sidebar {
@@ -69637,7 +69637,7 @@ body.thim-demo-university-4 .counter-group .counter-block .counter {
 
 .list-event-slider .item-event .event-wrapper .box-time {
     position: relative;
-    z-index: 99;
+    z-index: 29;
     min-height: 100px
 }
 
@@ -70006,7 +70006,7 @@ footer#colophon .footer .thim-footer-info-4 .info .contact-list li {
     position: absolute;
     top: 50%;
     margin: -20px 0 0;
-    z-index: 99;
+    z-index: 29;
     width: 40px;
     height: 40px;
     line-height: 40px;

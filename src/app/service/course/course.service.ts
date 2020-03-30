@@ -46,13 +46,15 @@ export class CourseService {
   }
   enrollCourse(courseId): Observable<any> {
     this.authService.showLoader();
-    return this.http.get<any>("api/enrollment/course/" + courseId, {}).pipe(
-      tap(result => {
-        console.log(result), this.setCourseContent(result);
-        this.authService.hideLoader();
-      }),
-      catchError(this.handleError<any>("Course enrollment"))
-    );
+    return this.http
+      .post<any>("api/enrollment/course/" + courseId, JSON.stringify({}))
+      .pipe(
+        tap(result => {
+          console.log(result), this.setCourseContent(result);
+          this.authService.hideLoader();
+        }),
+        catchError(this.handleError<any>("Course enrollment"))
+      );
   }
   completeModule(moduleId, module): Observable<any> {
     this.authService.showLoader();

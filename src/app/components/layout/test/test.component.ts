@@ -250,7 +250,6 @@ export class TestComponent implements OnInit {
       })
     );
     answerObj.anwers = answers;
-    debugger;
     console.log(answers);
     this.quizService
       .evaluateTest(

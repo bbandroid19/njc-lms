@@ -42,31 +42,29 @@ export class ContentComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.quizes = this.quizService.getAll();
-    this.quizName = this.quizes[4].id;
+    // this.quizes = this.quizService.getAll();
+    // this.quizName = this.quizes[4].id;
     this.enrolledCourse = this.commonService.getEnrollment()[0];
     this.contentData = this.courseService.courseContent;
     this.isDataAvailable = true;
     this.checkEnrolled();
-    // this.courseService.getCourseContent(this.quizName).subscribe(result => {
-    //   console.log(result);
-    //   this.contentData = result.course;
-    //   this.courseService.courseContent = this.contentData;
-    //   this.isDataAvailable = true;
-    //   // this.childTitle=this.contentData[0].name;
-    //   this.checkEnrolled();
-    // });
   }
   checkEnrolled() {
-    this.enrolled = this.enrolledCourse.course_id === this.contentData._id;
-    this.syncEnrollMent();
+    if (this.enrolledCourse) {
+      this.enrolled = this.enrolledCourse.course_id === this.contentData._id;
+      this.syncEnrollMent();
+    }
   }
   enrollCourse() {
     this.courseService
       .enrollCourse(this.courseService.courseContent._id)
       .subscribe(result => {
-        this.enrolled = true;
-        this.syncEnrollMent();
+        if (result) {
+          this.enrolledCourse = result.enrollment;
+          this.commonService.setEnrollment(this.enrolledCourse);
+          this.enrolled = true;
+          this.syncEnrollMent();
+        }
       });
   }
   ifCourseStarted(val) {

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         console.log(res.token);
         localStorage.setItem("token", res.token);
         this._auth.closePopup();
-        this._router.navigate(["/courses"]);
+        this._router.navigate(["/"]);
       },
       err => {
         console.log(err);
@@ -51,7 +51,10 @@ export class LoginComponent implements OnInit {
     this._auth.loginUser(this.loginUserData).subscribe(
       res => {
         console.log(res);
-        this.commonService.setEnrollment(res.data.enrollments);
+        if (res && res.data && res.data.enrollments) {
+          this.commonService.setEnrollment(res.data.enrollments);
+        }
+
         localStorage.setItem("token", res.token);
         this._auth.closePopup();
         if (this._auth.isAdminLoggedIn()) {
