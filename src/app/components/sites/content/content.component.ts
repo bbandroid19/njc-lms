@@ -77,7 +77,7 @@ export class ContentComponent implements OnInit {
           if (phase.phase_id === phaseState.phase_id) {
             phase.status = phaseState.status;
             phase.percentage_completed = phaseState.percentage_completed;
-            console.log(phase.percentage_completed);
+
             phase.opened = false;
           }
         });
@@ -86,7 +86,7 @@ export class ContentComponent implements OnInit {
             if (module.module_id === modState.module_id) {
               module.status = modState.status;
               module.percentage_completed = modState.percentage_completed;
-              console.log(module.percentage_completed);
+
               module.opened = false;
             }
           });

@@ -695,23 +695,22 @@
 (function($) {
     'use strict';
 
-    function thim_get_url_parameters(sParam) {
-        var sPageURL = window.location.search.substring(1);
-        var sURLVariables = sPageURL.split('&');
-        for (var i = 0; i < sURLVariables.length; i++) {
-            var sParameterName = sURLVariables[i].split('=');
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1];
-            }
-        }
-    }
+    // function thim_get_url_parameters(sParam) {
+    //     var sPageURL = window.location.search.substring(1);
+    //     var sURLVariables = sPageURL.split('&');
+    //     for (var i = 0; i < sURLVariables.length; i++) {
+    //         var sParameterName = sURLVariables[i].split('=');
+    //         if (sParameterName[0] === sParam) {
+    //             return sParameterName[1];
+    //         }
+    //     }
+    // }
     var thim_njc = {
         ready: function() {
             this.login_form_popup();
             this.form_submission_validate();
             this.thim_TopHeader();
             this.ctf7_input_effect();
-            this.thim_course_filter();
             this.mobile_menu_toggle();
             this.thim_backgroud_gradient();
             this.thim_single_image_popup();
@@ -878,135 +877,6 @@
             });
             $submit_wrapper.on('click', function() {
                 $(this).closest('form').submit();
-            });
-        },
-        thim_course_filter: function() {
-            let $body = $('body');
-            if (!$body.hasClass('learnpress') || !$body.hasClass('archive')) {
-                return;
-            }
-            let ajaxCall = function(data) {
-                return $.ajax({
-                    url: $('#lp-archive-courses').data('allCoursesUrl'),
-                    type: 'POST',
-                    data: data,
-                    dataType: 'html',
-                    beforeSend: function() {
-                        $('#thim-course-archive').addClass('loading');
-                    },
-                }).fail(function() {
-                    $('#thim-course-archive').removeClass('loading');
-                }).done(function(data) {
-                    let $document = $($.parseHTML(data));
-                    $('#thim-course-archive').replaceWith($document.find('#thim-course-archive'));
-                    $('.learn-press-pagination ul.page-numbers').replaceWith($document.find('.learn-press-pagination ul.page-numbers'));
-                    $('.thim-course-top .course-index span').replaceWith($document.find('.thim-course-top .course-index span'));
-                });
-            };
-            let sendData = {
-                s: '',
-                ref: 'course',
-                post_type: 'lp_course',
-                course_orderby: 'newly-published',
-                course_paged: 1,
-            };
-            $(document).on('change', '.thim-course-order > select', function() {
-                sendData.s = $('.courses-searching .course-search-filter').val();
-                sendData.course_orderby = $(this).val();
-                sendData.course_paged = 1;
-                ajaxCall(sendData);
-            });
-            $(document).on('click', '#lp-archive-courses > .learn-press-pagination a.page-numbers', function(e) {
-                e.preventDefault();
-                $('html, body').animate({
-                    'scrollTop': $('.site-content').offset().top - 140,
-                }, 1000);
-                let pageNum = parseInt($(this).text()),
-                    paged = pageNum ? pageNum : 1,
-                    cateArr = [],
-                    instructorArr = [],
-                    cpage = $('.learn-press-pagination.navigation.pagination ul.page-numbers li span.page-numbers.current').text(),
-                    isNext = $(this).hasClass('next') && $(this).hasClass('page-numbers'),
-                    isPrev = $(this).hasClass('prev') && $(this).hasClass('page-numbers');
-                if (!pageNum) {
-                    if (isNext) {
-                        paged = parseInt(cpage) + 1;
-                    }
-                    if (isPrev) {
-                        paged = parseInt(cpage) - 1;
-                    }
-                }
-                $('form.thim-course-filter').find('input.filtered').each(function() {
-                    switch ($(this).attr('name')) {
-                        case 'course-cate-filter':
-                            cateArr.push($(this).val());
-                            break;
-                        case 'course-instructor-filter':
-                            instructorArr.push($(this).val());
-                            break;
-                        case 'course-price-filter':
-                            sendData.course_price_filter = $(this).val();
-                            break;
-                        default:
-                            break;
-                    }
-                });
-                if ($body.hasClass('category') && $('.list-cate-filter').length <= 0) {
-                    let bodyClass = $body.attr('class'),
-                        cateClass = bodyClass.match(/category\-\d+/gi)[0],
-                        cateID = cateClass.split('-').pop();
-                    cateArr.push(cateID);
-                }
-                sendData.course_cate_filter = cateArr;
-                sendData.course_instructor_filter = instructorArr;
-                sendData.s = $('.courses-searching .course-search-filter').val();
-                sendData.course_orderby = $('.thim-course-order > select').val();
-                sendData.course_paged = paged;
-                ajaxCall(sendData);
-            });
-            $('form.thim-course-filter').on('submit', function(e) {
-                e.preventDefault();
-                let formData = $(this).serializeArray(),
-                    cateArr = [],
-                    instructorArr = [];
-                if (!formData.length) {
-                    return;
-                }
-                $('html, body').animate({
-                    'scrollTop': $('.site-content').offset().top - 140,
-                }, 1000);
-                $(this).find('input').each(function() {
-                    let form_input = $(this);
-                    form_input.removeClass('filtered');
-                    if (form_input.is(':checked')) {
-                        form_input.addClass('filtered');
-                    }
-                });
-                $.each(formData, function(index, filter) {
-                    switch (filter.name) {
-                        case 'course-cate-filter':
-                            cateArr.push(filter.value);
-                            break;
-                        case 'course-instructor-filter':
-                            instructorArr.push(filter.value);
-                            break;
-                        case 'course-price-filter':
-                            sendData.course_price_filter = filter.value;
-                            break;
-                        default:
-                            break;
-                    }
-                });
-                if ($body.hasClass('category') && $('.list-cate-filter').length <= 0) {
-                    let bodyClass = $body.attr('class'),
-                        cateClass = bodyClass.match(/category\-\d+/gi)[0],
-                        cateID = cateClass.split('-').pop();
-                    cateArr.push(cateID);
-                }
-                sendData.course_cate_filter = cateArr;
-                sendData.course_instructor_filter = instructorArr;
-                sendData.course_paged = 1;
-                ajaxCall(sendData);
             });
         },
         mobile_menu_toggle: function() {

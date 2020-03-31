@@ -25,7 +25,6 @@ export class CoursesComponent implements OnInit {
         this.courses.push(result.course);
         this.courseService.courseContent = result.course;
         this.isDataAvailable = true;
-        console.log(this.courses);
       } else {
         this.router.navigate(["/"]);
       }
