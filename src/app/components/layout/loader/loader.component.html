@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div id="wrapper" *ngIf="loaderService.isLoaderObs | async">
     <svg id="loader" width="468" height="226" viewBox="0 0 468 226" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path id="yellow" class="circle-1" d="M233.5 113C233.5 175.116 181.358 225.5 117 225.5C52.6423 225.5 0.5 175.116 0.5 113C0.5 50.8842 52.6423 0.5 117 0.5C181.358 0.5 233.5 50.8842 233.5 113Z" >
     </path>

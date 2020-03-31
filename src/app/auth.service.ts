@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { catchError, tap } from "rxjs/operators";
-import { Observable, of } from "rxjs";
+import { Observable, of, BehaviorSubject } from "rxjs";
 import { LoaderService } from "./service/loader.service";
 const helper = new JwtHelperService();
 @Injectable({
@@ -12,6 +12,10 @@ const helper = new JwtHelperService();
 export class AuthService {
   loginUrl = "https://localhost:5000/auth/login";
   registerUrl = "https://localhost:5000/auth/register";
+  private _isLoginSubject: BehaviorSubject<boolean> = new BehaviorSubject<
+    boolean
+  >(false);
+  public isLoginObs: Observable<boolean> = this._isLoginSubject.asObservable();
   testStarted = false;
   loginUser(user) {
     this.loaderService.showLoader();
@@ -23,9 +27,9 @@ export class AuthService {
       .post<any>(this.loginUrl, JSON.stringify(user), options)
       .pipe(
         tap(result => {
+          console.log("2");
           this.loaderService.hideLoader();
-        }),
-        catchError(this.handleError<any>("Login error"))
+        })
       );
   }
   register(registerData) {
@@ -46,12 +50,15 @@ export class AuthService {
   }
   activateLogin() {
     this.openPopup();
+    this._isLoginSubject.next(true);
     document.getElementById("thim-popup-login").classList.add("active");
     document.getElementById("thim-popup-login").classList.remove("sign-up");
     document.getElementById("thim-popup-login").classList.add("sign-in");
   }
   activateRegistration() {
     this.openPopup();
+    this._isLoginSubject.next(false);
+
     document.getElementById("thim-popup-login").classList.add("active");
     document.getElementById("thim-popup-login").classList.remove("sign-in");
     document.getElementById("thim-popup-login").classList.add("sign-up");
@@ -92,6 +99,7 @@ export class AuthService {
     return this.testStarted;
   }
   private handleError<T>(operation = "operation", result?: T) {
+    console.log("1");
     this.loaderService.hideLoader();
     return (error: any): Observable<T> => {
       console.error(error);

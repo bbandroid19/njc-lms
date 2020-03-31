@@ -15,7 +15,7 @@
             </div>
             <br>
             <div class="thim-popup-inner">
-                <div class="thim-login">
+                <div class="thim-login" *ngIf="_auth.isLoginObs | async">
                     <h4 class="title">Login with your site account</h4>
                     <form name="loginpopopform">
                         <p class="login-username"> <input [ngClass]="{'text-error':showErrorMessage === true}" [(ngModel)]="loginUserData.userid" type="text" name="log" placeholder="Username or email" class="input required" value="" size="20"></p>
@@ -29,10 +29,10 @@
                     </form>
                     <p class="link-bottom">Not a member yet? <a class="register" (click)="_auth.activateRegistration()" href="javascript:void(0);">Register now</a></p>
                 </div>
-                <div class="thim-register">
+                <div class="thim-register" *ngIf="!(_auth.isLoginObs | async)">
                     <h4 class="title">Register a new account</h4>
                     <form class="auto_login" name="registerformpopup" method="post" novalidate="novalidate">
-                        <input type="hidden" id="register_security" name="register_security" value="1cc6d1b528"><input type="hidden" name="_wp_http_referer" value="/">
+
                         <p> <input placeholder="Email" type="text" name="user_login" [(ngModel)]="registerUserData.userid" class="input required"></p>
 
                         <p> <input placeholder="Password" type="password" [(ngModel)]="registerUserData.password" name="password" class="input required"></p>

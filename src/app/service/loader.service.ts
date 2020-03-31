@@ -1,15 +1,21 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class LoaderService {
   constructor() {}
-  isloader = false;
+  private _isLoaderSubject: BehaviorSubject<boolean> = new BehaviorSubject<
+    boolean
+  >(false);
+  public isLoaderObs: Observable<
+    boolean
+  > = this._isLoaderSubject.asObservable();
   showLoader() {
-    this.isloader = true;
+    this._isLoaderSubject.next(true);
   }
   hideLoader() {
-    this.isloader = false;
+    this._isLoaderSubject.next(false);
   }
 }

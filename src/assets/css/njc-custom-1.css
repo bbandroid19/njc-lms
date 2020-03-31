@@ -57491,7 +57491,7 @@ body.thim-popup-active .fc-tab {}
 }
 
 #thim-popup-login.active.sign-up .thim-popup-inner {
-    transform: translateX(-100%)
+    /* transform: translateX(-100%) */
 }
 
 #thim-popup-login .thim-login-container .mo-openid-app-icons~.thim-popup-inner {
