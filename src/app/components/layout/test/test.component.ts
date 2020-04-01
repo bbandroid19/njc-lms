@@ -113,7 +113,7 @@ export class TestComponent implements OnInit {
             if (i === Object.keys(res.test.answers).length) {
               qids = qids.substring(1, qids.length - 1);
             } else {
-              qids += q.question_id + ", ";
+              qids += q.question_id + ",";
             }
           });
           this.quizService.getTestQuestions(qids).subscribe(questions => {

@@ -78,10 +78,10 @@ export class QuizService {
         catchError(this.handleError<any>("Course enrollment"))
       );
   }
-  getTestQuestions(quizId): Observable<any> {
+  getTestQuestions(qids): Observable<any> {
     // return this.http.get("data/mulesoft-questions.json");
     this.loaderService.showLoader();
-    return this.http.get<any>("api/questions?ids=" + quizId, {}).pipe(
+    return this.http.get<any>("api/questions?ids=" + qids, {}).pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),
