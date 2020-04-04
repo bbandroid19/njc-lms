@@ -66,7 +66,8 @@ export class EditcourseComponent implements OnInit {
     "Episode VIII - The Last Jedi",
     "Episode IX – The Rise of Skywalker"
   ];
-
+  previewMode = false;
+  previewHtml = null;
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
@@ -77,6 +78,13 @@ export class EditcourseComponent implements OnInit {
     this.htmlContent = "sdsdsds";
     this.courseContent = this.courseService.editedCourse;
     this.selectedStep = this.courseContent.phases[0].modules[0].steps[0];
+  }
+  preview() {
+    this.previewHtml = this.selectedStep.htmlContent;
+    this.previewMode = true;
+  }
+  closePreview() {
+    this.previewMode = false;
   }
   addStep(module) {
     let step = { name: "", step_id: "", step_type: "" };

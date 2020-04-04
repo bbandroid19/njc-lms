@@ -257,6 +257,26 @@ export class TestComponent implements OnInit {
     });
     this.quizService.evaluateTest(this.test_id, answerObj).subscribe(res => {
       console.log(res);
+      let completeObj = {
+        categories: [
+          {
+            category: "",
+            category_id: "",
+            status: "completed"
+          }
+        ]
+      };
+      if (res) {
+        completeObj.categories[0].category = "module";
+        completeObj.categories[0].category_id = this.courseContent.phases[
+          this.phaseIndex
+        ].modules[this.moduleIndex].module_id;
+        this.courseService
+          .completeStep(completeObj, this.enrollment._id)
+          .subscribe(res => {
+            console.log("module complete");
+          });
+      }
     });
     this.mode = "result";
   }

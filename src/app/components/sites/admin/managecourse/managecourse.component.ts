@@ -20,9 +20,9 @@ export class ManagecourseComponent implements OnInit {
 
   ngOnInit() {
     this.courses = [];
-    this.restService.getCourses().subscribe(result => {
-      this.courses.push(result.course);
-      this.courseService.courseContent = result.course;
+    this.courseService.getCourses().subscribe(result => {
+      this.courses = result.courses;
+      this.courseService.courseContent = result.courses[0];
       this.isDataAvailable = true;
       console.log(this.courses);
     });
