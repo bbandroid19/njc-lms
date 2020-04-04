@@ -86,45 +86,44 @@ export class TestComponent implements OnInit {
   ngOnInit() {
     this.quizes = this.quizService.getAll();
     this.quizName = this.quizes[0].id;
-    this.courseContent = this.courseService.courseContent;
+    this.courseContent = this.courseService.courseContent[0];
     this.moduleContent = this.courseContent.phases[0].modules[0].steps[0];
+    console.log(this.courseContent);
     this.enrollment = this.commonService.getEnrollment()[0];
+    console.log(this.enrollment);
   }
   startQuiz(moduleId) {
-    this.testStarted = true;
-    this.loadQuiz(this.quizName, moduleId);
+    this.loadQuiz(moduleId);
   }
-  loadQuiz(quizName: string, moduleId: string) {
+  loadQuiz(moduleId: string) {
     this.quizService
       .getTestQuestionIds(this.enrollment._id, moduleId)
       .subscribe(res => {
         if (res) {
-          let quizId = res.quiz_id;
+          this.testStarted = true;
           this.startTime = new Date();
           this.ellapsedTime = "00:00";
           this.timer = setInterval(() => {
             this.tick();
           }, 1000);
           this.duration = this.parseTime(this.config.duration);
-          let qids = "";
-
+          let qids = [];
+          console.log(res.test.answers);
           res.test.answers.forEach((q, i) => {
             i += 1;
-            if (i === Object.keys(res.test.answers).length) {
-              qids = qids.substring(1, qids.length - 1);
-            } else {
-              qids += q.question_id + ",";
-            }
+            qids.push(q.question_id);
           });
-          this.quizService.getTestQuestions(qids).subscribe(questions => {
-            this.courseService.getEnrollment().subscribe(enrollmentData => {
-              this.enrollment = enrollmentData.enrollments[0];
-              this.commonService.setEnrollment(enrollmentData.enrollments);
+          this.quizService
+            .getTestQuestions(qids.toString())
+            .subscribe(questions => {
+              this.courseService.getEnrollment().subscribe(enrollmentData => {
+                this.enrollment = enrollmentData.enrollments[0];
+                this.commonService.setEnrollment(enrollmentData.enrollments);
+              });
+              questions.id = res.test.quiz_id;
+              this.quiz = new Quiz(questions);
+              this.pager.count = this.quiz.questions.length;
             });
-            questions.id = res.test.quiz_id;
-            this.quiz = new Quiz(questions);
-            this.pager.count = this.quiz.questions.length;
-          });
           this.mode = "quiz";
         }
       });

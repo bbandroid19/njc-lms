@@ -45,7 +45,12 @@ export class ContentComponent implements OnInit {
     // this.quizes = this.quizService.getAll();
     // this.quizName = this.quizes[4].id;
     this.enrolledCourse = this.commonService.getEnrollment()[0];
-    this.contentData = this.courseService.courseContent;
+    if (!this.enrolledCourse) {
+      this.courseService.getEnrollment().subscribe(result => {
+        this.enrolledCourse = result.enrollments[0];
+      });
+    }
+    this.contentData = this.courseService.courseContent[0];
     this.isDataAvailable = true;
     this.checkEnrolled();
   }
@@ -56,16 +61,14 @@ export class ContentComponent implements OnInit {
     }
   }
   enrollCourse() {
-    this.courseService
-      .enrollCourse(this.courseService.courseContent._id)
-      .subscribe(result => {
-        if (result) {
-          this.enrolledCourse = result.enrollment;
-          this.commonService.setEnrollment([this.enrolledCourse]);
-          this.enrolled = true;
-          this.syncEnrollMent();
-        }
-      });
+    this.courseService.enrollCourse(this.contentData._id).subscribe(result => {
+      if (result) {
+        this.enrolledCourse = result.enrollment;
+        this.commonService.setEnrollment([this.enrolledCourse]);
+        this.enrolled = true;
+        this.syncEnrollMent();
+      }
+    });
   }
   ifCourseStarted(val) {
     return val !== undefined;

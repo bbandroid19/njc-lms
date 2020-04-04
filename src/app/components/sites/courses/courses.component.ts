@@ -19,11 +19,10 @@ export class CoursesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.courses = [];
-    this.restService.getCourses().subscribe(result => {
+    this.courseService.getCourses().subscribe(result => {
       if (result) {
-        this.courses.push(result.course);
-        this.courseService.courseContent = result.course;
+        this.courses = result.courses;
+        this.courseService.courseContent = result.courses;
         this.isDataAvailable = true;
       } else {
         this.router.navigate(["/"]);

@@ -53,3 +53,17 @@ body {
         padding: 6px;
     }
 }
+
+@media (max-width: 767px) {
+    #pg-0>.panel-grid-cell,
+    #pg-0>.panel-row-style>.panel-grid-cell {
+        width: 100%;
+        margin-right: 0;
+    }
+    #pg-0.panel-no-style,
+    #pg-0.panel-has-style>.panel-row-style {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
