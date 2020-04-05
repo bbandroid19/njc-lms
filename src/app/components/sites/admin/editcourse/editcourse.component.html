@@ -8,8 +8,8 @@
                         <div class="">
                             <div class="container">
                                 <ul class="nav nav-tabs">
-                                    <li role="presentation" class="course-nav-tab-overview " [ngClass]="{ active: viewMode == 'genral' }">
-                                        <a href="javascript:void(0)" (click)="viewMode = 'general'">Genral</a
+                                    <li role="presentation" class="course-nav-tab-overview " [ngClass]="{ active: viewMode == 'general' }">
+                                        <a href="javascript:void(0)" (click)="viewMode = 'general'">General</a
                     >
                   </li>
                   <li
@@ -180,7 +180,9 @@
                                     [(ngModel)]="selectedStep.htmlContent"
                                   ></angular-editor>
                                 </div>
-                                <button (click)="preview()">Preview</button>
+                                <button class="add-btn" (click)="preview()">
+                                  Preview
+                                </button>
                               </div>
                             </div>
                             <div></div>
@@ -189,6 +191,11 @@
                       </div>
                     </div>
                     <div class="container" *ngIf="previewMode">
+                      <div class="content-item-summary single-quiz">
+                        <h1 class="course-item-title quiz-title">
+                          {{ selectedStep.name }}
+                        </h1>
+                      </div>
                       <div
                         class="htmlContainer"
                         [innerHtml]="previewHtml"

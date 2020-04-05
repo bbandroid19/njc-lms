@@ -78,9 +78,9 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td class="column-course "> <a href="/courses/rjs-101/ "> Reactjs </a></td>
-                                                            <td class="column-date ">22/01/2020</td>
+                                                        <tr *ngFor="let item of enrollments">
+                                                            <td class="column-course "> <a href="/courses/rjs-101/ "> {{item.course_id}} </a></td>
+                                                            <td class="column-date ">{{item.start_time}}</td>
                                                             <td class="column-passing-grade ">80%</td>
                                                             <td class="column-status "> <span class="result-percent ">0%</span> <span class="lp-label label-in-progress "> In Progress </span></td>
                                                         </tr>

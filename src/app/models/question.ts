@@ -6,6 +6,7 @@ export class Question {
   questionTypeId: number;
   options: Option[];
   answered: boolean;
+  isCorrect: boolean;
   selected_answer: string;
 
   constructor(data: any) {
@@ -15,6 +16,7 @@ export class Question {
     this.questionTypeId = data.questionTypeId;
     this.selected_answer = "";
     this.options = [];
+    this.isCorrect = false;
     data.options.forEach(o => {
       this.options.push(new Option(o));
     });

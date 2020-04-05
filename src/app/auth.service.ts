@@ -27,7 +27,6 @@ export class AuthService {
       .post<any>(this.loginUrl, JSON.stringify(user), options)
       .pipe(
         tap(result => {
-          console.log("2");
           this.loaderService.hideLoader();
         })
       );
@@ -99,7 +98,6 @@ export class AuthService {
     return this.testStarted;
   }
   private handleError<T>(operation = "operation", result?: T) {
-    console.log("1");
     this.loaderService.hideLoader();
     return (error: any): Observable<T> => {
       console.error(error);

@@ -50,6 +50,7 @@ export class ContentComponent implements OnInit {
         this.enrolledCourse = result.enrollments[0];
       });
     }
+    console.log(this.enrolledCourse);
     this.contentData = this.courseService.courseContent[0];
     this.isDataAvailable = true;
     this.checkEnrolled();
@@ -63,12 +64,18 @@ export class ContentComponent implements OnInit {
   enrollCourse() {
     this.courseService.enrollCourse(this.contentData._id).subscribe(result => {
       if (result) {
+        console.log(result);
         this.enrolledCourse = result.enrollment;
         this.commonService.setEnrollment([this.enrolledCourse]);
         this.enrolled = true;
         this.syncEnrollMent();
       }
     });
+  }
+  goToCourse() {
+    if (this.enrolled) {
+      this.quizService.startTest();
+    }
   }
   ifCourseStarted(val) {
     return val !== undefined;
@@ -93,8 +100,20 @@ export class ContentComponent implements OnInit {
               module.opened = false;
             }
           });
+          module.steps.forEach((step, k) => {
+            this.enrolledCourse.steps.forEach((stepState, k) => {
+              if (step.step_id === stepState.step_id) {
+                step.status = stepState.status;
+                step.percentage_completed = stepState.percentage_completed;
+                step.opened = false;
+              }
+            });
+          });
         });
       });
+      this.commonService.setEnrollment([this.enrolledCourse]);
+      this.courseService.courseContent[0] = this.contentData;
+      console.log(this.contentData);
     }
   }
 }
