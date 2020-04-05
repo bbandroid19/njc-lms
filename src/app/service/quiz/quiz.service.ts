@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient,HttpHeaders } from "@angular/common/http";
 import swal from "sweetalert2";
 import { Observable, of } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
@@ -54,8 +54,12 @@ export class QuizService {
   evaluateTest(testId, quizObj) {
     console.log(quizObj);
     this.loaderService.showLoader();
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+    const options = { headers };
     return this.http
-      .put<any>("api/tests/" + testId + "/evaluation", JSON.stringify(quizObj))
+      .put<any>("api/tests/" + testId + "/evaluation", JSON.stringify(quizObj), options)
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();
