@@ -1,5 +1,5 @@
 <section class="content-area" style="transform: none; min-height: 330px;">
-    <app-subheader [title]='childTitle'></app-subheader>
+    <app-subheader [title]="childTitle"></app-subheader>
     <div class="container site-content sidebar-right" style="transform: none;">
         <div class="row" style="transform: none;">
             <main id="main" class="site-main col-sm-12 alignleft">
@@ -8,94 +8,207 @@
                         <div class="">
                             <div class="container">
                                 <ul class="nav nav-tabs">
-                                    <li role="presentation" class="course-nav-tab-overview " [ngClass]="{'active':viewMode == 'genral'}"> <a href="javascript:void(0)" (click)='viewMode = "general"'>Genral</a></li>
-                                    <li role="presentation" class="course-nav-tab-curriculum" [ngClass]="{'active':viewMode == 'curriculum'}"> <a href="javascript:void(0)" (click)='viewMode = "curriculum"'>Curriculum</a></li>
-                                    <li role="presentation" class="course-nav-tab-instructor" [ngClass]="{'active':viewMode == 'settings'}"> <a href="javascript:void(0)" (click)='viewMode = "settings"'>Settings</a></li>
-                                </ul>
-                                <div class="tab-content" [ngSwitch]="viewMode">
-                                    <div class="tab-pane course-tab-panel-overview course-tab-panel" *ngSwitchCase="'general'" [ngClass]="{'active':viewMode == 'general'}" id="tab-overview">
-                                        <h2>Title</h2>
-                                        <input type="text" class="course-title">
-                                        <div>
-                                            <h2>
-                                                Description
-                                            </h2>
-                                            <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
-
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane course-tab-panel-overview course-tab-panel" *ngSwitchCase="'curriculum'" [ngClass]="{'active':viewMode == 'curriculum'}" id="tab-overview">
-
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-xs-6 edit-curriculum-side-panel">
-                                                    <div class="side-panel-content">
-                                                        <!-- <div class="header">
+                                    <li role="presentation" class="course-nav-tab-overview " [ngClass]="{ active: viewMode == 'general' }">
+                                        <a href="javascript:void(0)" (click)="viewMode = 'general'">General</a
+                    >
+                  </li>
+                  <li
+                    role="presentation"
+                    class="course-nav-tab-curriculum"
+                    [ngClass]="{ active: viewMode == 'curriculum' }"
+                  >
+                    <a
+                      href="javascript:void(0)"
+                      (click)="viewMode = 'curriculum'"
+                      >Curriculum</a
+                    >
+                  </li>
+                  <li
+                    role="presentation"
+                    class="course-nav-tab-instructor"
+                    [ngClass]="{ active: viewMode == 'settings' }"
+                  >
+                    <a href="javascript:void(0)" (click)="viewMode = 'settings'"
+                      >Settings</a
+                    >
+                  </li>
+                </ul>
+                <div class="tab-content" [ngSwitch]="viewMode">
+                  <div
+                    class="tab-pane course-tab-panel-overview course-tab-panel"
+                    *ngSwitchCase="'general'"
+                    [ngClass]="{ active: viewMode == 'general' }"
+                    id="tab-overview"
+                  >
+                    <h2>Title</h2>
+                    <input type="text" class="course-title" />
+                    <div>
+                      <h2>
+                        Description
+                      </h2>
+                      <angular-editor
+                        [placeholder]="'Enter text here...'"
+                        [(ngModel)]="htmlContent"
+                      ></angular-editor>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane course-tab-panel-overview course-tab-panel"
+                    *ngSwitchCase="'curriculum'"
+                    [ngClass]="{ active: viewMode == 'curriculum' }"
+                    id="tab-overview"
+                  >
+                    <div class="container" *ngIf="!previewMode">
+                      <div class="row">
+                        <div class="col-xs-6 edit-curriculum-side-panel">
+                          <div class="side-panel-content">
+                            <!-- <div class="header">
                                                             <h3> </h3>
                                                         </div> -->
-                                                        <div *ngFor="let phase of courseContent.phases" class="course-phases">
-                                                            <div class="header-content">
-                                                                <span *ngIf="!phase.edited">
-                                                                {{phase.name}}
-                                                              </span>
-                                                                <input type="text" *ngIf="phase.edited" [(ngModel)]="phase.name">
+                            <div
+                              *ngFor="let phase of courseContent.phases"
+                              class="course-phases"
+                            >
+                              <div class="header-content">
+                                <span *ngIf="!phase.edited">
+                                  {{ phase.name }}
+                                </span>
+                                <input
+                                  type="text"
+                                  *ngIf="phase.edited"
+                                  [(ngModel)]="phase.name"
+                                />
 
-                                                                <span (click)="phase.edited = true" class="span-btn" *ngIf="!phase.edited"> <i class="fa fa-edit"></i> </span>
-                                                                <span (click)="phase.edited = false" class="span-btn" *ngIf="phase.edited"> <i class="fa fa-save"></i>  </span>
-                                                            </div>
-                                                            <div *ngFor="let module of phase.modules" class="course-modules">
-                                                                <div class="module-header">
-                                                                    <span *ngIf="!module.edited">
-                                                                    {{module.name}}
-                                                                  </span>
-                                                                    <input type="text" *ngIf="module.edited" [(ngModel)]="module.name">
+                                <span
+                                  (click)="phase.edited = true"
+                                  class="span-btn"
+                                  *ngIf="!phase.edited"
+                                >
+                                  <i class="fa fa-edit"></i>
+                                </span>
+                                <span
+                                  (click)="phase.edited = false"
+                                  class="span-btn"
+                                  *ngIf="phase.edited"
+                                >
+                                  <i class="fa fa-save"></i>
+                                </span>
+                              </div>
+                              <div
+                                *ngFor="let module of phase.modules"
+                                class="course-modules"
+                              >
+                                <div class="module-header">
+                                  <span *ngIf="!module.edited">
+                                    <i
+                                      class="fa fa-book"
+                                      aria-hidden="true"
+                                    ></i>
+                                    {{ module.name }}
+                                  </span>
+                                  <input
+                                    type="text"
+                                    *ngIf="module.edited"
+                                    [(ngModel)]="module.name"
+                                  />
 
-                                                                    <span (click)="module.edited = true" *ngIf="!module.edited"> <i class="fa fa-edit"></i> </span>
-                                                                    <span (click)="module.edited = false" *ngIf="module.edited"><i class="fa fa-save"></i>  </span>
-                                                                </div>
-                                                                <div (click)="selectedStep=steps" *ngFor="let steps of module.steps" class="module-steps">
-                                                                    <div>{{steps.name}}</div>
-                                                                </div>
-                                                                <span class="add-btn" (click)="addStep(module)">Add Step</span>
-                                                            </div>
-                                                            <span class="add-btn module" (click)="addModule(phase)">Add Modules</span>
-                                                        </div>
-                                                        <span class="add-btn phase" (click)="addPhase()">Add Phases</span>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-xs-6 edit-curiculum-content">
-                                                    <div *ngIf="selectedStep">
-                                                        <div class="step-name">
-                                                            <!-- <input type="text" [ngModel]="selectedStep.name"> -->
-                                                            <div class="tab-pane course-tab-panel-overview course-tab-panel">
-                                                                <h2>Title</h2>
-                                                                <input type="text" [(ngModel)]="selectedStep.name" class="course-title">
-                                                                <div>
-                                                                    <h2>
-                                                                        Description
-                                                                    </h2>
-                                                                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  <span
+                                    (click)="module.edited = true"
+                                    *ngIf="!module.edited"
+                                  >
+                                    <i class="fa fa-edit"></i>
+                                  </span>
+                                  <span
+                                    (click)="module.edited = false"
+                                    *ngIf="module.edited"
+                                    ><i class="fa fa-save"></i>
+                                  </span>
                                 </div>
-
+                                <div
+                                  (click)="selectedStep = steps"
+                                  *ngFor="let steps of module.steps"
+                                  class="module-steps"
+                                >
+                                  <div>
+                                    <i
+                                      class="fa fa-tasks"
+                                      aria-hidden="true"
+                                    ></i>
+                                    {{ steps.name }}
+                                  </div>
+                                </div>
+                                <button
+                                  class="add-btn"
+                                  (click)="addStep(module)"
+                                >
+                                  <i class="fa fa-plus" aria-hidden="true"></i>
+                                  Add Step
+                                </button>
+                              </div>
+                              <button
+                                class="add-btn module"
+                                (click)="addModule(phase)"
+                              >
+                                <i class="fa fa-plus" aria-hidden="true"></i>Add
+                                Modules
+                              </button>
                             </div>
+                            <button class="add-btn phase" (click)="addPhase()">
+                              Add Phases
+                            </button>
+                          </div>
                         </div>
+                        <div class="col-xs-6 edit-curiculum-content">
+                          <div *ngIf="selectedStep">
+                            <div class="step-name">
+                              <!-- <input type="text" [ngModel]="selectedStep.name"> -->
+                              <div
+                                class="tab-pane course-tab-panel-overview course-tab-panel"
+                              >
+                                <h2>Title</h2>
+                                <input
+                                  type="text"
+                                  [(ngModel)]="selectedStep.name"
+                                  class="course-title"
+                                />
+                                <div>
+                                  <h2>
+                                    Description
+                                  </h2>
+                                  <angular-editor
+                                    [placeholder]="'Enter text here...'"
+                                    [(ngModel)]="selectedStep.htmlContent"
+                                  ></angular-editor>
+                                </div>
+                                <button class="add-btn" (click)="preview()">
+                                  Preview
+                                </button>
+                              </div>
+                            </div>
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="container" *ngIf="previewMode">
+                      <div class="content-item-summary single-quiz">
+                        <h1 class="course-item-title quiz-title">
+                          {{ selectedStep.name }}
+                        </h1>
+                      </div>
+                      <div
+                        class="htmlContainer"
+                        [innerHtml]="previewHtml"
+                      ></div>
+                      <button (click)="closePreview()">Close Preview</button>
+                    </div>
+                  </div>
                 </div>
-            </main>
+              </div>
+            </div>
+          </div>
         </div>
+      </main>
     </div>
+  </div>
 </section>

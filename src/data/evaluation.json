@@ -1,0 +1,80 @@
+{
+    "test": {
+        "_id": "5e53d7a0eb05af1cbb0a69a7",
+        "answers": [{
+                "question_id": "5e53d79feb05af1cbb0a6967",
+                "score": 1,
+                "selected_answers": ["8.0"],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a6960",
+                "score": 1,
+                "selected_answers": ["7.0"],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a6976",
+                "score": 1,
+                "selected_answers": ["54"],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a6974",
+                "score": 1,
+                "selected_answers": [
+                    "always less than either of the original fractions"
+                ],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a6968",
+                "score": 1,
+                "selected_answers": ["46.0"],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a6965",
+                "score": 1,
+                "selected_answers": ["10.0"],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a6971",
+                "score": 1,
+                "selected_answers": ["6xy2z2"],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a696c",
+                "score": 1,
+                "selected_answers": ["(x - z)2 y is even"],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a6977",
+                "score": 1,
+                "selected_answers": ["832"],
+                "status": "correct"
+            },
+            {
+                "question_id": "5e53d79feb05af1cbb0a6975",
+                "score": 1,
+                "selected_answers": ["February 8, 2012"],
+                "status": "correct"
+            }
+        ],
+        "attempt_number": 1,
+        "category": {
+            "category_id": "5e53d7a0eb05af1cbb0a6986",
+            "category_name": "module"
+        },
+        "end_time": "Mon, 24 Feb 2020 19:33:12 GMT",
+        "enrollment_id": "5e53d7a0eb05af1cbb0a69a6",
+        "percentage_score": 100.0,
+        "quiz_id": "5e53d7a0eb05af1cbb0a6984",
+        "status": "passed",
+        "total_score": 10,
+        "user_id": "twofaulty@gmail.com"
+    }
+}

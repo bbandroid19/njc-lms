@@ -40,41 +40,23 @@
                     </div>
                     <div class="lp-quiz-buttons">
                         <div class="quiz-buttons">
-                            <!-- <button type="submit" class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(0);">First</button>
-                            <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
-
-                            <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);">Last</button> -->
+                           
                             <form name="next-question" class="button-next-question next-question form-button lp-form" method="post">
                                 <button type="submit" *ngIf="config.allowBack" (click)="goTo(0);">First</button>
                             </form>
                             <form name="next-question" class="button-next-question next-question form-button lp-form" method="post">
                                 <button type="submit" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
                             </form>
-                            <form name="next-question" class="button-next-question next-question form-button lp-form" method="post">
+                            <form name="next-question" *ngIf="pager.index < pager.count" class="button-next-question next-question form-button lp-form" method="post">
                                 <button type="submit" (click)="goTo(pager.index + 1);">Next</button>
                             </form>
                             <form name="skip-question" class="button-skip-question skip-question form-button" method="post">
                                 <button *ngIf="config.allowBack" (click)="goTo(pager.count - 1);" type="submit">Last</button>
                             </form>
                         </div>
-                        <!-- <form name="check-answer-question" class="check-answer-question form-button lp-form" method="post" enctype="multipart/form-data"> <button type="submit">Check</button> <input type="hidden" name="noajax" value="yes"> <input type="hidden" name="quiz-id" value="8810"> <input type="hidden" name="course-id" value="5428"> <input type="hidden" name="lp-ajax" value="check-answer-quiz">                            <input type="hidden" name="check-answer-quiz-nonce" value="a403ed37eb"> <input type="hidden" name="question-id" value="8811"> <input type="hidden" name="question-id" value="8811"></form>
-                        <form name="complete-quiz" class="complete-quiz form-button lp-form" method="post" enctype="multipart/form-data"> <button type="submit" class="button-finish-quiz">Complete</button> <input type="hidden" name="quiz-id" value="8810"> <input type="hidden" name="course-id" value="5428"> <input type="hidden" name="lp-complete-quiz" value="8810">                            <input type="hidden" name="complete-quiz-nonce" value="2453e277c4"> <input type="hidden" name="noajax" value="yes"></form> -->
-
-
+                       
                     </div>
                 </div>
-
-                <!-- <div class="row">
-                    <div class="col-6">
-                        <h3>Quiz Application</h3>
-                    </div>
-                    <div class="col-6 text-right">
-                        Select Quiz:
-                        <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
-                      <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
-                    </select>
-                    </div>
-                </div> -->
             </div>
             <div class="row text-center" *ngIf="mode=='review'">
                 <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index;">
@@ -82,7 +64,20 @@
                 </div>
             </div>
             <div class="result" *ngIf="mode=='result'">
-                <h2>Quiz Result</h2>
+
+                <div class="row test-results-header">
+                    <h1>Quiz Result</h1>
+                    <div class="col-12">
+                        <h2>Score: </h2>{{testResults.total_score}}
+                    </div>
+                    <div class="col-12">
+                        <h2>Test Status: </h2>{{testResults.status}}
+                    </div>
+                    <div class="col-12">
+                        <h2>Percentage </h2>{{testResults.percentage_score}}
+                    </div>
+                </div>
+
                 <div *ngFor="let question of quiz.questions; let index = index">
                     <div class="result-question">
                         <h5>{{index + 1}}. {{question.name}}</h5>
@@ -91,7 +86,7 @@
                                 <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{Option.name}}
                             </div>
                         </div>
-                        <div class="p-1 m-2 alert {{ isCorrect(question) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is {{isCorrect(question)}}.</div>
+                        <div class="p-1 m-2 alert {{ question.isCorrect ? 'alert-success': 'alert-danger'}}">Your answer is {{question.isCorrect }}</div>
                     </div>
                 </div>
                 <h4 (click)="testStarted=!testStarted" class="alert alert-info text-center">You may close this window now.</h4>
@@ -149,7 +144,7 @@
     <div class="course-curriculum" id="learn-press-course-curriculum" [@openClose]="isOpen ? true : false">
         <div class="scroll-wrapper curriculum-scrollable scrollbar-light" style="position: absolute; top: 0px; bottom: 0px; width: 100%; opacity: 1;">
             <div class="curriculum-scrollable scrollbar-light scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; opacity: 1;">
-                <nav class="thim-font-heading learn-press-breadcrumb" itemprop="breadcrumb"><a href="">Courses</a><i class="fa-angle-right fa"></i><a href="/course-category/general/">General</a><i class="fa-angle-right fa"></i><span class="item-name">Sample Test</span></nav>
+                <nav class="thim-font-heading learn-press-breadcrumb" itemprop="breadcrumb"><a href="">Courses</a><i class="fa-angle-right fa"></i><a href="/course-category/general/">General</a><i class="fa-angle-right fa"></i><span class="item-name">{{courseContent.name}}</span></nav>
                 <ul class="curriculum-sections">
                     <li *ngFor="let phases of courseContent.phases;index as i" class="section">
                         <h4 class="section-header"> <span class="collapse"></span> {{phases.name}}<span class="meta"> <span class="step">0/{{phases.modules.length}}</span> </span>
@@ -161,13 +156,13 @@
                                     <div class="index"><span class="label">Lecture</span>1.1</div>
                                 </div> <a class="lesson-title course-item-title button-load-item" (click)="moduleChange(i,j,k,steps)" href="javascript:void(0);"> {{steps.name}} </a> <span class="meta duration">05 min</span>
                                 <div class="course-item-meta">
-                                    <i class="fa item-meta course-item-status trans" [ngClass]="{'status-completed fa-check':steps.completed}"></i></div>
+                                    <i class="fa item-meta course-item-status trans" [ngClass]="{'status-completed fa-check':steps.status ==='completed'}"></i></div>
                             </li>
-                            <li class="course-item course-item-lp_lesson course-lesson" [ngClass]="{'li-disabled':!modules.completed}">
-                                <div class="meta-left"> <span class="course-format-icon"><i class="a fa-puzzle-piece"></i></span>
+                            <li class="course-item course-item-lp_lesson course-lesson" [ngClass]="{'li-disabled':modules.percentage_completed != 100}">
+                                <div class="meta-left"> <span class="course-format-icon"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></span>
                                     <div class="index"><span class="label">Test</span>1.1</div>
                                 </div>
-                                <a class="lesson-title course-item-title button-load-item" (click)="modules.completed?startQuiz(modules.module_id):false;$event.stopPropagation();" href="javascript:void(0)"> {{modules.description}} Test</a> <span class="meta duration ">05 min</span>
+                                <a class="lesson-title course-item-title button-load-item" (click)="startQuiz(modules)" href="javascript:void(0)"> {{modules.description}} Test</a> <span class="meta duration ">05 min</span>
 
                             </li>
 

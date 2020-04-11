@@ -34,7 +34,7 @@ export class QuizService {
       .fire({
         title: "<strong>Start Course?</strong>",
         icon: "info",
-        html: "Do you want to  <b>start course?</b>, ",
+        html: "Do you want to  <b>go to course?</b>, ",
         showCloseButton: true,
         showCancelButton: true,
         focusConfirm: false,

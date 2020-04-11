@@ -71,22 +71,26 @@
     }
 }
 
+.nav-tabs>li.active {
+    border-top: 2px solid #ffb606 !important;
+}
+
+.add-btn {
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+}
+
 .course-phases {
     box-shadow: 0px 0px 4px 0px #ccc;
     input {
-        width: 90%
-    }
-    .add-btn {
-        text-align: center;
-        display: block;
-        background: grey;
-        margin: 4px;
-        padding: 1%;
-        color: #ffb606;
-        border-radius: 5px;
+        width: 90%;
     }
     .add-btn.module {
-        background-color: green;
+        background-color: #77777785;
     }
     .add-btn.phase {
         background-color: blue;

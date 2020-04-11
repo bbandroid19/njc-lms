@@ -26,17 +26,12 @@ export class LoginComponent implements OnInit {
     this.loaderService.showLoader();
     this._auth.register(this.registerUserData).subscribe(
       res => {
-        console.log("3");
         this.loaderService.hideLoader();
-        console.log(res.token);
-        localStorage.setItem("token", res.token);
         this._auth.closePopup();
         this._router.navigate(["/"]);
       },
       err => {
-        console.log("4");
         this.loaderService.hideLoader();
-
         console.log(err);
         if (err.status === 404) {
           this.showErrorMessage = true;
@@ -59,7 +54,6 @@ export class LoginComponent implements OnInit {
     this.loaderService.showLoader();
     this._auth.loginUser(this.loginUserData).subscribe(
       res => {
-        console.log("5");
         this.loaderService.hideLoader();
         console.log(res);
         if (res && res.data && res.data.enrollments) {
@@ -75,6 +69,7 @@ export class LoginComponent implements OnInit {
         }
       },
       err => {
+        this.loaderService.hideLoader();
         console.log(err);
         if (err.status === 404) {
           this.errorMessage = "Invalid username and password Please try again";

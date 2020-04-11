@@ -14,6 +14,7 @@ import { QuizService } from "src/app/service/quiz/quiz.service";
 import { CourseService } from "src/app/service/course/course.service";
 import swal from "sweetalert2";
 import { CommonService } from "src/app/service/common.service";
+import { TestResults } from "src/app/models/test-results";
 @Component({
   selector: "app-test",
   animations: [
@@ -36,6 +37,7 @@ export class TestComponent implements OnInit {
   quiz: Quiz = new Quiz(null);
   mode = "quiz";
   test_id = "";
+  testResults = null;
   quizName: string;
   config: QuizConfig = {
     allowBack: true,
@@ -90,16 +92,26 @@ export class TestComponent implements OnInit {
     this.moduleContent = this.courseContent.phases[0].modules[0].steps[0];
     console.log(this.courseContent);
     this.enrollment = this.commonService.getEnrollment()[0];
+    if (!this.enrollment) {
+      this.courseService.getEnrollment().subscribe(result => {
+        this.enrollment = result.enrollments[0];
+      });
+    }
     console.log(this.enrollment);
   }
-  startQuiz(moduleId) {
-    this.loadQuiz(moduleId);
+  startQuiz(modules) {
+    if (modules.percentage_completed === 100) {
+      this.loadQuiz(modules.module_id);
+    }
   }
   loadQuiz(moduleId: string) {
     this.quizService
       .getTestQuestionIds(this.enrollment._id, moduleId)
       .subscribe(res => {
         if (res) {
+          console.log("Start test");
+          console.log(res);
+          this.test_id = res.test._id;
           this.testStarted = true;
           this.startTime = new Date();
           this.ellapsedTime = "00:00";
@@ -116,10 +128,6 @@ export class TestComponent implements OnInit {
           this.quizService
             .getTestQuestions(qids.toString())
             .subscribe(questions => {
-              this.courseService.getEnrollment().subscribe(enrollmentData => {
-                this.enrollment = enrollmentData.enrollments[0];
-                this.commonService.setEnrollment(enrollmentData.enrollments);
-              });
               questions.id = res.test.quiz_id;
               this.quiz = new Quiz(questions);
               this.pager.count = this.quiz.questions.length;
@@ -214,12 +222,6 @@ export class TestComponent implements OnInit {
     return question.options.find(x => x.selected) ? "Answered" : "Not Answered";
   }
 
-  isCorrect(question: Question) {
-    return question.options.some(x => x.selected === x.isAnswer)
-      ? "correct"
-      : "wrong";
-  }
-
   moduleChange(phaseIndex, moduleIndex, stepsIndex, steps) {
     this.phaseIndex = phaseIndex;
     this.moduleIndex = moduleIndex;
@@ -246,20 +248,25 @@ export class TestComponent implements OnInit {
       })
     );
     answerObj.answers = answers;
-    this.enrollment.modules.forEach(module => {
-      if (
-        module.module_id ===
-        this.courseContent.phases[this.phaseIndex].modules[this.moduleIndex]
-          .module_id
-      ) {
-        this.test_id = module.test.test_id;
-      }
-    });
     this.quizService.evaluateTest(this.test_id, answerObj).subscribe(res => {
       console.log(res);
+      var data = res.test;
+      if (res) {
+        this.testResults = data;
+        this.quiz.questions.forEach(x => {
+          this.testResults.answers.forEach(answer => {
+            if (answer.question_id === x.id) {
+              if (answer.selected_answer === [x.selected_answer]) {
+                x.isCorrect = true;
+              }
+            }
+          });
+        });
+      }
     });
     this.mode = "result";
   }
+
   completeStep() {
     let completeObj = {
       categories: [
@@ -272,7 +279,7 @@ export class TestComponent implements OnInit {
     };
     this.courseContent.phases[this.phaseIndex].modules[this.moduleIndex].steps[
       this.stepsIndex
-    ].completed = true;
+    ].status = "completed";
     completeObj.categories[0].category = "step";
     completeObj.categories[0].category_id = this.courseContent.phases[
       this.phaseIndex
@@ -287,23 +294,14 @@ export class TestComponent implements OnInit {
     ].steps;
     let stepsCompleted = 0;
     steps.forEach((step, i) => {
-      if (step.completed) {
+      if (step.status == "completed") {
         stepsCompleted++;
       }
     });
     if (stepsCompleted === steps.length) {
       this.courseContent.phases[this.phaseIndex].modules[
         this.moduleIndex
-      ].completed = true;
-      completeObj.categories[0].category = "module";
-      completeObj.categories[0].category_id = this.courseContent.phases[
-        this.phaseIndex
-      ].modules[this.moduleIndex].module_id;
-      this.courseService
-        .completeStep(completeObj, this.enrollment._id)
-        .subscribe(res => {
-          console.log("complete");
-        });
+      ].percentage_completed = 100;
     }
   }
   isComplete() {
