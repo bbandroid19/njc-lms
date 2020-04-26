@@ -72964,3 +72964,17 @@ body #sb_instagram .sbi_photo:hover:before {
 .fa-meetup:before {
     content: "\f2e0"
 }
+
+#your-profile ul {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+#your-profile ul.learn-press-subtabs li {
+    float: left;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}

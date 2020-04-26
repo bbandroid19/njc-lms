@@ -40,7 +40,7 @@
                     </div>
                     <div class="lp-quiz-buttons">
                         <div class="quiz-buttons">
-                           
+
                             <form name="next-question" class="button-next-question next-question form-button lp-form" method="post">
                                 <button type="submit" *ngIf="config.allowBack" (click)="goTo(0);">First</button>
                             </form>
@@ -54,7 +54,7 @@
                                 <button *ngIf="config.allowBack" (click)="goTo(pager.count - 1);" type="submit">Last</button>
                             </form>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
@@ -68,13 +68,13 @@
                 <div class="row test-results-header">
                     <h1>Quiz Result</h1>
                     <div class="col-12">
-                        <h2>Score: </h2>{{testResults.total_score}}
+                        <h2>Score: <span class="quiz-results">{{testResults.total_score}}</span></h2>
                     </div>
                     <div class="col-12">
-                        <h2>Test Status: </h2>{{testResults.status}}
+                        <h2>Test Status: <span class="quiz-results">{{testResults.status}}</span></h2>
                     </div>
                     <div class="col-12">
-                        <h2>Percentage </h2>{{testResults.percentage_score}}
+                        <h2>Percentage <span class="quiz-results">{{testResults.percentage_score}}</span></h2>
                     </div>
                 </div>
 

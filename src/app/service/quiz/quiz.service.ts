@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient,HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import swal from "sweetalert2";
 import { Observable, of } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
@@ -15,19 +15,6 @@ export class QuizService {
     private authService: AuthService,
     private loaderService: LoaderService
   ) {}
-  get(url: string) {
-    return this.http.get(url);
-  }
-
-  getAll() {
-    return [
-      { id: "data/javascript.json", name: "JavaScript" },
-      { id: "data/aspnet.json", name: "Asp.Net" },
-      { id: "data/csharp.json", name: "C Sharp" },
-      { id: "data/designPatterns.json", name: "Design Patterns" },
-      { id: "data/mulesoft-course.json", name: "Mulesoft" }
-    ];
-  }
 
   startTest() {
     swal
@@ -59,7 +46,11 @@ export class QuizService {
     });
     const options = { headers };
     return this.http
-      .put<any>("api/tests/" + testId + "/evaluation", JSON.stringify(quizObj), options)
+      .put<any>(
+        "api/tests/" + testId + "/evaluation",
+        JSON.stringify(quizObj),
+        options
+      )
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();
@@ -83,7 +74,6 @@ export class QuizService {
       );
   }
   getTestQuestions(qids): Observable<any> {
-    // return this.http.get("data/mulesoft-questions.json");
     this.loaderService.showLoader();
     return this.http.get<any>("api/questions?ids=" + qids, {}).pipe(
       tap(result => {

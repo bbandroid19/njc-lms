@@ -86,8 +86,6 @@ export class TestComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.quizes = this.quizService.getAll();
-    this.quizName = this.quizes[0].id;
     this.courseContent = this.courseService.courseContent[0];
     this.moduleContent = this.courseContent.phases[0].modules[0].steps[0];
     console.log(this.courseContent);
@@ -256,7 +254,7 @@ export class TestComponent implements OnInit {
         this.quiz.questions.forEach(x => {
           this.testResults.answers.forEach(answer => {
             if (answer.question_id === x.id) {
-              if (answer.selected_answer === [x.selected_answer]) {
+              if (answer.selected_answers === x.selected_answer) {
                 x.isCorrect = true;
               }
             }
