@@ -7,7 +7,7 @@ import { LoaderService } from "src/app/service/loader.service";
   styleUrls: ["./loader.component.scss"]
 })
 export class LoaderComponent implements OnInit {
-  constructor(private loaderService: LoaderService) {}
+  constructor(public loaderService: LoaderService) {}
 
   ngOnInit() {}
 }

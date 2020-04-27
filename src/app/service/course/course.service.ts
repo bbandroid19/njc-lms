@@ -13,9 +13,9 @@ export class CourseService {
   courseContent = null;
   editedCourse = null;
   constructor(
-    private http: HttpClient,
-    private authService: AuthService,
-    private loaderService: LoaderService
+    public http: HttpClient,
+    public authService: AuthService,
+    public loaderService: LoaderService
   ) {}
 
   completeStep(obj, id): Observable<any> {
@@ -81,7 +81,7 @@ export class CourseService {
         catchError(this.handleError<any>("Course enrollment"))
       );
   }
-  private handleError<T>(operation = "operation", result?: T) {
+  public handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       this.loaderService.hideLoader();
       swal

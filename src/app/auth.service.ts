@@ -10,8 +10,6 @@ const helper = new JwtHelperService();
   providedIn: "root"
 })
 export class AuthService {
-  loginUrl = "https://localhost:5000/auth/login";
-  registerUrl = "https://localhost:5000/auth/register";
   private _isLoginSubject: BehaviorSubject<boolean> = new BehaviorSubject<
     boolean
   >(false);
@@ -24,7 +22,7 @@ export class AuthService {
     });
     const options = { headers };
     return this.http
-      .post<any>(this.loginUrl, JSON.stringify(user), options)
+      .post<any>("api/auth/login", JSON.stringify(user), options)
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();
@@ -38,7 +36,7 @@ export class AuthService {
     });
     const options = { headers };
     return this.http.post<any>(
-      this.registerUrl,
+      "api/auth/register",
       JSON.stringify(registerData),
       options
     );

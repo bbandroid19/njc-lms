@@ -79,10 +79,10 @@ export class TestComponent implements OnInit {
   currentIndex = 0;
   enrollment = null;
   constructor(
-    private _authService: AuthService,
-    private quizService: QuizService,
-    private courseService: CourseService,
-    private commonService: CommonService
+    public _authService: AuthService,
+    public quizService: QuizService,
+    public courseService: CourseService,
+    public commonService: CommonService
   ) {}
 
   ngOnInit() {

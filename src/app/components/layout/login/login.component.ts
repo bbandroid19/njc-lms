@@ -3,6 +3,8 @@ import { AuthService } from "src/app/auth.service";
 import { Router } from "@angular/router";
 import { CommonService } from "src/app/service/common.service";
 import { LoaderService } from "src/app/service/loader.service";
+import { LoginModel } from "src/app/models/login-model";
+
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -10,16 +12,13 @@ import { LoaderService } from "src/app/service/loader.service";
 })
 export class LoginComponent implements OnInit {
   constructor(
-    private _auth: AuthService,
-    private _router: Router,
-    private commonService: CommonService,
-    private loaderService: LoaderService
+    public _auth: AuthService,
+    public _router: Router,
+    public commonService: CommonService,
+    public loaderService: LoaderService
   ) {}
-  loginUserData = {
-    userid: null,
-    password: null
-  };
-  registerUserData = {};
+  loginUserData: any;
+  registerUserData: any;
   showErrorMessage = false;
   errorMessage = "";
   registerUser() {
@@ -79,5 +78,8 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.loginUserData = new LoginModel();
+    this.registerUserData = new LoginModel();
+  }
 }

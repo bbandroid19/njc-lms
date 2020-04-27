@@ -33,12 +33,12 @@ export class ContentComponent implements OnInit {
   enrolledCourse = null;
   viewMode = "tab-overview";
   constructor(
-    private restService: RestserviceService,
+    public restService: RestserviceService,
     public sanitizer: DomSanitizer,
-    private _authService: AuthService,
-    private quizService: QuizService,
-    private courseService: CourseService,
-    private commonService: CommonService
+    public _authService: AuthService,
+    public quizService: QuizService,
+    public courseService: CourseService,
+    public commonService: CommonService
   ) {}
 
   ngOnInit() {

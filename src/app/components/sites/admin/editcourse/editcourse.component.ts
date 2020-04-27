@@ -71,7 +71,7 @@ export class EditcourseComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
-  constructor(private courseService: CourseService) {}
+  constructor(public courseService: CourseService) {}
 
   ngOnInit() {
     this.selectedStep = null;

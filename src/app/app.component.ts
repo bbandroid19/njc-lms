@@ -11,8 +11,8 @@ import { LoaderService } from "./service/loader.service";
 export class AppComponent {
   title = "njc-lms";
   constructor(
-    private _authService: AuthService,
-    private quizService: QuizService,
-    private loaderService: LoaderService
+    public _authService: AuthService,
+    public quizService: QuizService,
+    public loaderService: LoaderService
   ) {}
 }

@@ -13,9 +13,9 @@ export class ManagecourseComponent implements OnInit {
   courses = null;
   isDataAvailable = false;
   constructor(
-    private restService: RestserviceService,
-    private courseService: CourseService,
-    private router: Router
+    public restService: RestserviceService,
+    public courseService: CourseService,
+    public router: Router
   ) {}
 
   ngOnInit() {

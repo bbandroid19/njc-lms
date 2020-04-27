@@ -11,9 +11,9 @@ import { LoaderService } from "../loader.service";
 export class QuizService {
   testStarted = false;
   constructor(
-    private http: HttpClient,
-    private authService: AuthService,
-    private loaderService: LoaderService
+    public http: HttpClient,
+    public authService: AuthService,
+    public loaderService: LoaderService
   ) {}
 
   startTest() {
@@ -91,7 +91,7 @@ export class QuizService {
   isTestStarted() {
     return this.testStarted;
   }
-  private handleError<T>(operation = "operation", result?: T) {
+  public handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       this.loaderService.hideLoader();
       swal

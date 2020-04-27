@@ -14,8 +14,8 @@ export class ProfileComponent implements OnInit {
   userId = "";
   enrollments = null;
   constructor(
-    private commonService: CommonService,
-    private courseService: CourseService
+    public commonService: CommonService,
+    public courseService: CourseService
   ) {}
 
   ngOnInit() {
