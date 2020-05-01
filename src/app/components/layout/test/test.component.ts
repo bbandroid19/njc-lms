@@ -123,14 +123,16 @@ export class TestComponent implements OnInit {
             i += 1;
             qids.push(q.question_id);
           });
-          this.quizService
-            .getTestQuestions(qids.toString())
-            .subscribe(questions => {
-              questions.id = res.test.quiz_id;
-              this.quiz = new Quiz(questions);
-              this.pager.count = this.quiz.questions.length;
-            });
-          this.mode = "quiz";
+          if (qids) {
+            this.quizService
+              .getTestQuestions(qids.toString())
+              .subscribe(questions => {
+                questions.id = res.test.quiz_id;
+                this.quiz = new Quiz(questions);
+                this.pager.count = this.quiz.questions.length;
+              });
+            this.mode = "quiz";
+          }
         }
       });
   }

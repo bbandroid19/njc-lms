@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from "@angular/core";
+import { NgModule, ErrorHandler } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
@@ -68,6 +68,13 @@ import {
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { EditcourseComponent } from "./components/sites/admin/editcourse/editcourse.component";
 import { AngularEditorModule } from "@kolkov/angular-editor";
+export class MyErrorHandler implements ErrorHandler {
+  handleError(error: any): void {
+    console.log(error);
+    debugger;
+    throw new Error(error);
+  }
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -147,7 +154,8 @@ import { AngularEditorModule } from "@kolkov/angular-editor";
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-    }
+    },
+    { provide: ErrorHandler, useClass: MyErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
