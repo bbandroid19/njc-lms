@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { CommonService } from "src/app/service/common.service";
 import { LoaderService } from "src/app/service/loader.service";
 import { LoginModel } from "src/app/models/login-model";
+import { RegisterModel } from "src/app/models/register-model";
 
 @Component({
   selector: "app-login",
@@ -80,6 +81,6 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit() {
     this.loginUserData = new LoginModel();
-    this.registerUserData = new LoginModel();
+    this.registerUserData = new RegisterModel();
   }
 }

@@ -10,13 +10,13 @@ export class TokenInterceptorService {
     console.log(req);
     let tokenizedReq;
     console.log(localStorage.getItem("token"));
-    if (req.url.startsWith("api")) {
-      console.log(environment);
-      const url = environment.backendBaseUrl;
-      req = req.clone({
-        url: url + req.url
-      });
-    }
+    // if (req.url.startsWith("api")) {
+    console.log(environment);
+    const url = environment.backendBaseUrl;
+    req = req.clone({
+      url: url + req.url
+    });
+    // }
     if (localStorage.getItem("token")) {
       tokenizedReq = req.clone({
         headers: req.headers.set("X-Auth-Token", localStorage.getItem("token"))

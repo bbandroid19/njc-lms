@@ -52,7 +52,7 @@ export class CourseService {
   enrollCourse(courseId): Observable<any> {
     this.loaderService.showLoader();
     return this.http
-      .post<any>("api/enrollment/course/" + courseId, JSON.stringify({}))
+      .post<any>("/enrollment/course/" + courseId, JSON.stringify({}))
       .pipe(
         tap(result => {
           console.log(result);
@@ -63,7 +63,7 @@ export class CourseService {
   }
   getEnrollment(): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>("api/enrollments").pipe(
+    return this.http.get<any>("/enrollments").pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),
@@ -73,7 +73,7 @@ export class CourseService {
   completeModule(moduleId, module): Observable<any> {
     this.loaderService.showLoader();
     return this.http
-      .post<any>("api/enrollment" + moduleId, JSON.stringify(module), {})
+      .post<any>("/enrollment" + moduleId, JSON.stringify(module), {})
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();

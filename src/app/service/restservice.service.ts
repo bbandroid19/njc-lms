@@ -13,13 +13,13 @@ import { map, catchError, tap } from "rxjs/operators";
 export class RestserviceService {
   constructor(public http: HttpClient) {}
   getCourseContent(): Observable<any> {
-    return this.http.get<any>("api/courses/5e7f6e153090dbd18d03d8af", {}).pipe(
+    return this.http.get<any>("/courses/5e7f6e153090dbd18d03d8af", {}).pipe(
       tap(result => console.log(result)),
       catchError(this.handleError<any>("getCourseContetn"))
     );
   }
   getCourses(): Observable<any> {
-    return this.http.get<any>("api/courses/5e7f6e153090dbd18d03d8af", {}).pipe(
+    return this.http.get<any>("/courses/5e7f6e153090dbd18d03d8af", {}).pipe(
       tap(result => console.log(result)),
       catchError(this.handleError<any>("getCourseContetn"))
     );
