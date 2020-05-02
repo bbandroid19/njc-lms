@@ -47,7 +47,7 @@ export class QuizService {
     const options = { headers };
     return this.http
       .put<any>(
-        "/tests/" + testId + "/evaluation",
+        "api/tests/" + testId + "/evaluation",
         JSON.stringify(quizObj),
         options
       )
@@ -63,7 +63,7 @@ export class QuizService {
     this.loaderService.showLoader();
     return this.http
       .post<any>(
-        "/tests/enrollment/" + enrollmentId + "/module/" + moduleId,
+        "api/tests/enrollment/" + enrollmentId + "/module/" + moduleId,
         JSON.stringify(obj)
       )
       .pipe(
@@ -75,7 +75,7 @@ export class QuizService {
   }
   getTestQuestions(qids): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>("/questions?ids=" + qids, {}).pipe(
+    return this.http.get<any>("api/questions?ids=" + qids, {}).pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),

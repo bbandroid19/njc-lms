@@ -13,9 +13,9 @@ export class CourseService {
   courseContent = null;
   editedCourse = null;
   constructor(
-    public http: HttpClient,
-    public authService: AuthService,
-    public loaderService: LoaderService
+    private http: HttpClient,
+    private authService: AuthService,
+    private loaderService: LoaderService
   ) {}
 
   completeStep(obj, id): Observable<any> {
@@ -52,7 +52,7 @@ export class CourseService {
   enrollCourse(courseId): Observable<any> {
     this.loaderService.showLoader();
     return this.http
-      .post<any>("/enrollment/course/" + courseId, JSON.stringify({}))
+      .post<any>("api/enrollment/course/" + courseId, JSON.stringify({}))
       .pipe(
         tap(result => {
           console.log(result);
@@ -63,7 +63,7 @@ export class CourseService {
   }
   getEnrollment(): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>("/enrollments").pipe(
+    return this.http.get<any>("api/enrollments").pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),
@@ -73,7 +73,7 @@ export class CourseService {
   completeModule(moduleId, module): Observable<any> {
     this.loaderService.showLoader();
     return this.http
-      .post<any>("/enrollment" + moduleId, JSON.stringify(module), {})
+      .post<any>("api/enrollment" + moduleId, JSON.stringify(module), {})
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();
@@ -81,7 +81,7 @@ export class CourseService {
         catchError(this.handleError<any>("Course enrollment"))
       );
   }
-  public handleError<T>(operation = "operation", result?: T) {
+  private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       this.loaderService.hideLoader();
       swal
