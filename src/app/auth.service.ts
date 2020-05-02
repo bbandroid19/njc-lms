@@ -22,7 +22,7 @@ export class AuthService {
     });
     const options = { headers };
     return this.http
-      .post<any>("api/auth/login", JSON.stringify(user), options)
+      .post<any>("/auth/login", JSON.stringify(user), options)
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();
@@ -36,7 +36,7 @@ export class AuthService {
     });
     const options = { headers };
     return this.http.post<any>(
-      "api/auth/register",
+      "/auth/register",
       JSON.stringify(registerData),
       options
     );
