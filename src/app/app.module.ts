@@ -150,11 +150,6 @@ export class MyErrorHandler implements ErrorHandler {
     CommonService,
     LoaderService,
     AuthService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
-      multi: true
-    },
     { provide: ErrorHandler, useClass: MyErrorHandler }
   ],
   bootstrap: [AppComponent]
