@@ -55924,7 +55924,8 @@ body.thim-popup-active .fc-tab {}
 
 @media(max-width:767px) {
     #thim-popup-login .popup-login-wrapper {
-        padding: 30px
+        padding: 30px;
+        margin-left: 4% !important;
     }
     #thim-popup-login .mo-openid-app-icons {
         width: 100%;
