@@ -3258,16 +3258,16 @@ html[dir=rtl] #tp_style_selector .style-toggle:before {
 
 @font-face {
     font-family: star;
-    src: url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.eot);
-    src: url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.eot?#iefix) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.woff) format("woff"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.ttf) format("truetype"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.svg#star) format("svg");
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.eot); */
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.eot?#iefix) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.woff) format("woff"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.ttf) format("truetype"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/star.svg#star) format("svg"); */
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: WooCommerce;
-    src: url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.eot);
-    src: url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.eot?#iefix) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.woff) format("woff"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.ttf) format("truetype"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.svg#WooCommerce) format("svg");
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.eot); */
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.eot?#iefix) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.woff) format("woff"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.ttf) format("truetype"), url(//educationwp.thimpress.com/wp-content/plugins/woocommerce/assets/css/../fonts/WooCommerce.svg#WooCommerce) format("svg"); */
     font-weight: 400;
     font-style: normal
 }
@@ -6654,8 +6654,8 @@ screen and (max-height:300px) {
 
 @font-face {
     font-family: icomoon;
-    src: url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.eot?c3wvz6);
-    src: url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.eot?c3wvz6#iefix) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.ttf?c3wvz6) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.woff?c3wvz6) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.svg?c3wvz6#icomoon) format('svg');
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.eot?c3wvz6); */
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.eot?c3wvz6#iefix) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.ttf?c3wvz6) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.woff?c3wvz6) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/wp-events-manager/assets/css/frontend/../fonts/icomoon.svg?c3wvz6#icomoon) format('svg'); */
     font-weight: 400;
     font-style: normal
 }
@@ -7000,8 +7000,8 @@ rs-sbg-px {
 
 @font-face {
     font-family: revicons;
-    src: url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.eot?5510888);
-    src: url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.eot?5510888#iefix) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.woff?5510888) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.ttf?5510888) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.svg?5510888#revicons) format('svg');
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.eot?5510888); */
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.eot?5510888#iefix) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.woff?5510888) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.ttf?5510888) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/css/../fonts/revicons/revicons.svg?5510888#revicons) format('svg'); */
     font-weight: 400;
     font-style: normal
 }
@@ -10032,8 +10032,8 @@ body.siteorigin-panels-before-js .siteorigin-panels-stretch {
 
 @font-face {
     font-family: h5p;
-    src: url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.eot?mz1lkp);
-    src: url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.eot?mz1lkp#iefix) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.ttf?mz1lkp) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.woff?mz1lkp) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.svg?mz1lkp#h5p) format('svg');
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.eot?mz1lkp); */
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.eot?mz1lkp#iefix) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.ttf?mz1lkp) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.woff?mz1lkp) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/h5p/h5p-php-library/styles/../fonts/h5p-core-23.svg?mz1lkp#h5p) format('svg'); */
     font-weight: 400;
     font-style: normal
 }
@@ -11198,8 +11198,8 @@ iframe.h5peditor-semi-fullscreen {
 
 @font-face {
     font-family: FontAwesome;
-    src: url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.eot?v=4.7.0);
-    src: url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.woff2?v=4.7.0) format('woff2'), url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.woff?v=4.7.0) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.ttf?v=4.7.0) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.eot?v=4.7.0); */
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.woff2?v=4.7.0) format('woff2'), url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.woff?v=4.7.0) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.ttf?v=4.7.0) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/learnpress/assets/css/../fonts/awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg'); */
     font-weight: 400;
     font-style: normal
 }
@@ -14233,14 +14233,14 @@ iframe.h5peditor-semi-fullscreen {
 
 @font-face {
     font-family: roboto;
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma-child/fonts/Roboto-Regular.woff) format('woff');
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma-child/fonts/Roboto-Regular.woff) format('woff'); */
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: roboto slab;
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma-child/fonts/RobotoSlab-Bold.woff) format('woff');
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma-child/fonts/RobotoSlab-Bold.woff) format('woff'); */
     font-weight: 700;
     font-style: normal
 }
@@ -14252,8 +14252,8 @@ iframe.h5peditor-semi-fullscreen {
 
 @font-face {
     font-family: fontawesome;
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.eot?v=4.7.0);
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.woff2?v=4.7.0) format("woff2"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.woff?v=4.7.0) format("woff"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.ttf?v=4.7.0) format("truetype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg");
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.eot?v=4.7.0); */
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.woff2?v=4.7.0) format("woff2"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.woff?v=4.7.0) format("woff"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.ttf?v=4.7.0) format("truetype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg"); */
     font-weight: 400;
     font-style: normal
 }
@@ -17303,8 +17303,8 @@ Modified icons to fit ionicon’s grid from original.*/
 
 @font-face {
     font-family: ionicons;
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.eot?v=2.0.0);
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.eot?v=2.0.0#iefix) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.ttf?v=2.0.0) format("truetype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.woff?v=2.0.0) format("woff"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.svg?v=2.0.0#Ionicons) format("svg");
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.eot?v=2.0.0); */
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.eot?v=2.0.0#iefix) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.ttf?v=2.0.0) format("truetype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.woff?v=2.0.0) format("woff"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/ion-icons/ionicons.svg?v=2.0.0#Ionicons) format("svg"); */
     font-weight: 400;
     font-style: normal
 }
@@ -20991,8 +20991,8 @@ Modified icons to fit ionicon’s grid from original.*/
 
 @font-face {
     font-family: pe-icon-7-stroke;
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.eot?d7yf1v);
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.eot?#iefixd7yf1v) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.woff?d7yf1v) format('woff'), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.ttf?d7yf1v) format('truetype'), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.svg?d7yf1v#Pe-icon-7-stroke) format('svg');
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.eot?d7yf1v); */
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.eot?#iefixd7yf1v) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.woff?d7yf1v) format('woff'), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.ttf?d7yf1v) format('truetype'), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/pe-icon-7/Pe-icon-7-stroke.svg?d7yf1v#Pe-icon-7-stroke) format('svg'); */
     font-weight: 400;
     font-style: normal
 }
@@ -21820,8 +21820,8 @@ Modified icons to fit ionicon’s grid from original.*/
 
 @font-face {
     font-family: flaticon;
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.eot);
-    src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.eot?#iefix) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.woff) format("woff"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.ttf) format("truetype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.svg#Flaticon) format("svg");
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.eot); */
+    /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.eot?#iefix) format("embedded-opentype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.woff) format("woff"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.ttf) format("truetype"), url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.svg#Flaticon) format("svg"); */
     font-weight: 400;
     font-style: normal
 }
@@ -21829,7 +21829,7 @@ Modified icons to fit ionicon’s grid from original.*/
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
         font-family: flaticon;
-        src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.svg#Flaticon) format("svg")
+        /* src: url(//educationwp.thimpress.com/wp-content/themes/eduma/assets/css/../fonts/flaticon/Flaticon.svg#Flaticon) format("svg") */
     }
 }
 
@@ -69958,8 +69958,8 @@ body #sb_instagram .sbi_photo:hover:before {
 
 @font-face {
     font-family: fontawesome;
-    src: url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.eot?v=4.7.0);
-    src: url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.woff2?v=4.7.0) format('woff2'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.eot?v=4.7.0); */
+    /* src: url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.woff2?v=4.7.0) format('woff2'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'), url(//educationwp.thimpress.com/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg'); */
     font-weight: 400;
     font-style: normal
 }
