@@ -55,7 +55,8 @@ export class CourseService {
   getCourses(): Observable<any> {
     this.loaderService.showLoader();
     var header = new HttpHeaders({
-      "X-Auth-Token": localStorage.getItem("token")
+      "X-Auth-Token": localStorage.getItem("token"),
+      abc: "testing"
     });
     return this.http
       .get<any>(this.baseUrl + "/courses", { headers: header })
