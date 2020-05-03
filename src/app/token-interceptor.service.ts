@@ -14,7 +14,6 @@ export class TokenInterceptorService {
     const url = environment.backendBaseUrl;
     if (localStorage.getItem("token")) {
       tokenizedReq = req.clone({
-        url: url + req.url,
         headers: req.headers.set("X-Auth-Token", localStorage.getItem("token"))
       });
     } else {

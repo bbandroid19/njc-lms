@@ -10,6 +10,7 @@ import { LoaderService } from "../loader.service";
 })
 export class QuizService {
   testStarted = false;
+  baseUrl = "http://138.197.104.124:5555";
   constructor(
     public http: HttpClient,
     public authService: AuthService,
@@ -47,7 +48,7 @@ export class QuizService {
     const options = { headers };
     return this.http
       .put<any>(
-        "/tests/" + testId + "/evaluation",
+        this.baseUrl + "/tests/" + testId + "/evaluation",
         JSON.stringify(quizObj),
         options
       )
@@ -63,7 +64,11 @@ export class QuizService {
     this.loaderService.showLoader();
     return this.http
       .post<any>(
-        "/tests/enrollment/" + enrollmentId + "/module/" + moduleId,
+        this.baseUrl +
+          "/tests/enrollment/" +
+          enrollmentId +
+          "/module/" +
+          moduleId,
         JSON.stringify(obj)
       )
       .pipe(
@@ -75,7 +80,7 @@ export class QuizService {
   }
   getTestQuestions(qids): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>("/questions?ids=" + qids, {}).pipe(
+    return this.http.get<any>(this.baseUrl + "/questions?ids=" + qids, {}).pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),

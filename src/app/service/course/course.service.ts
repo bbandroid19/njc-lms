@@ -12,6 +12,7 @@ import { LoaderService } from "../loader.service";
 export class CourseService {
   courseContent = null;
   editedCourse = null;
+  baseUrl = "http://138.197.104.124:5555";
   constructor(
     private http: HttpClient,
     private authService: AuthService,
@@ -20,7 +21,7 @@ export class CourseService {
 
   completeStep(obj, id): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.put<any>("/enrollment/" + id, obj).pipe(
+    return this.http.put<any>(this.baseUrl + "/enrollment/" + id, obj).pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),
@@ -29,7 +30,7 @@ export class CourseService {
   }
   getCourseContent(url): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>("/courses?=", {}).pipe(
+    return this.http.get<any>(this.baseUrl + "/courses?=", {}).pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),
@@ -42,7 +43,7 @@ export class CourseService {
 
   getCourses(): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>("/courses", {}).pipe(
+    return this.http.get<any>(this.baseUrl + "/courses", {}).pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),
@@ -52,7 +53,10 @@ export class CourseService {
   enrollCourse(courseId): Observable<any> {
     this.loaderService.showLoader();
     return this.http
-      .post<any>("/enrollment/course/" + courseId, JSON.stringify({}))
+      .post<any>(
+        this.baseUrl + "/enrollment/course/" + courseId,
+        JSON.stringify({})
+      )
       .pipe(
         tap(result => {
           console.log(result);
@@ -63,7 +67,7 @@ export class CourseService {
   }
   getEnrollment(): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>("/enrollments").pipe(
+    return this.http.get<any>(this.baseUrl + "/enrollments").pipe(
       tap(result => {
         this.loaderService.hideLoader();
       }),
@@ -73,7 +77,11 @@ export class CourseService {
   completeModule(moduleId, module): Observable<any> {
     this.loaderService.showLoader();
     return this.http
-      .post<any>("/enrollment" + moduleId, JSON.stringify(module), {})
+      .post<any>(
+        this.baseUrl + "/enrollment" + moduleId,
+        JSON.stringify(module),
+        {}
+      )
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();

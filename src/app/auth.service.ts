@@ -15,6 +15,7 @@ export class AuthService {
   >(false);
   public isLoginObs: Observable<boolean> = this._isLoginSubject.asObservable();
   testStarted = false;
+  baseUrl = "http://138.197.104.124:5555";
   loginUser(user) {
     this.loaderService.showLoader();
     const headers = new HttpHeaders({
@@ -22,7 +23,7 @@ export class AuthService {
     });
     const options = { headers };
     return this.http
-      .post<any>("/auth/login", JSON.stringify(user), options)
+      .post<any>(this.baseUrl + "/auth/login", JSON.stringify(user), options)
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();
@@ -36,7 +37,7 @@ export class AuthService {
     });
     const options = { headers };
     return this.http.post<any>(
-      "/auth/register",
+      this.baseUrl + "/auth/register",
       JSON.stringify(registerData),
       options
     );
