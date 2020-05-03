@@ -5,6 +5,9 @@ import { Observable, of } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
 import { AuthService } from "src/app/auth.service";
 import { LoaderService } from "../loader.service";
+const reqHeader = new HttpHeaders({
+  "X-Auth-Token": localStorage.getItem("token")
+});
 @Injectable({
   providedIn: "root"
 })
@@ -50,7 +53,7 @@ export class QuizService {
       .put<any>(
         this.baseUrl + "/tests/" + testId + "/evaluation",
         JSON.stringify(quizObj),
-        options
+        { headers: reqHeader }
       )
       .pipe(
         tap(result => {
@@ -69,7 +72,8 @@ export class QuizService {
           enrollmentId +
           "/module/" +
           moduleId,
-        JSON.stringify(obj)
+        JSON.stringify(obj),
+        { headers: reqHeader }
       )
       .pipe(
         tap(result => {
@@ -80,12 +84,14 @@ export class QuizService {
   }
   getTestQuestions(qids): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>(this.baseUrl + "/questions?ids=" + qids, {}).pipe(
-      tap(result => {
-        this.loaderService.hideLoader();
-      }),
-      catchError(this.handleError<any>("Course enrollment"))
-    );
+    return this.http
+      .get<any>(this.baseUrl + "/questions?ids=" + qids, { headers: reqHeader })
+      .pipe(
+        tap(result => {
+          this.loaderService.hideLoader();
+        }),
+        catchError(this.handleError<any>("Course enrollment"))
+      );
   }
   stopTest() {
     this.testStarted = false;

@@ -1,17 +1,24 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import {
+  HttpClientModule,
+  HttpClient,
+  HttpHeaders
+} from "@angular/common/http";
 import { tap, catchError } from "rxjs/operators";
 import swal from "sweetalert2";
 import { AuthService } from "src/app/auth.service";
 import { LoaderService } from "../loader.service";
-
+const reqHeader = new HttpHeaders({
+  "X-Auth-Token": localStorage.getItem("token")
+});
 @Injectable({
   providedIn: "root"
 })
 export class CourseService {
   courseContent = null;
   editedCourse = null;
+
   baseUrl = "http://138.197.104.124:5555";
   constructor(
     private http: HttpClient,
@@ -21,21 +28,25 @@ export class CourseService {
 
   completeStep(obj, id): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.put<any>(this.baseUrl + "/enrollment/" + id, obj).pipe(
-      tap(result => {
-        this.loaderService.hideLoader();
-      }),
-      catchError(this.handleError<any>("complete step error"))
-    );
+    return this.http
+      .put<any>(this.baseUrl + "/enrollment/" + id, obj, { headers: reqHeader })
+      .pipe(
+        tap(result => {
+          this.loaderService.hideLoader();
+        }),
+        catchError(this.handleError<any>("complete step error"))
+      );
   }
   getCourseContent(url): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>(this.baseUrl + "/courses?=", {}).pipe(
-      tap(result => {
-        this.loaderService.hideLoader();
-      }),
-      catchError(this.handleError<any>("getCourseContetn"))
-    );
+    return this.http
+      .get<any>(this.baseUrl + "/courses?=", { headers: reqHeader })
+      .pipe(
+        tap(result => {
+          this.loaderService.hideLoader();
+        }),
+        catchError(this.handleError<any>("getCourseContetn"))
+      );
   }
   setCourseContent(content) {
     this.courseContent = content;
@@ -43,19 +54,22 @@ export class CourseService {
 
   getCourses(): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>(this.baseUrl + "/courses", {}).pipe(
-      tap(result => {
-        this.loaderService.hideLoader();
-      }),
-      catchError(this.handleError<any>("getCourseContetn"))
-    );
+    return this.http
+      .get<any>(this.baseUrl + "/courses", { headers: reqHeader })
+      .pipe(
+        tap(result => {
+          this.loaderService.hideLoader();
+        }),
+        catchError(this.handleError<any>("getCourseContetn"))
+      );
   }
   enrollCourse(courseId): Observable<any> {
     this.loaderService.showLoader();
     return this.http
       .post<any>(
         this.baseUrl + "/enrollment/course/" + courseId,
-        JSON.stringify({})
+        JSON.stringify({}),
+        { headers: reqHeader }
       )
       .pipe(
         tap(result => {
@@ -67,12 +81,14 @@ export class CourseService {
   }
   getEnrollment(): Observable<any> {
     this.loaderService.showLoader();
-    return this.http.get<any>(this.baseUrl + "/enrollments").pipe(
-      tap(result => {
-        this.loaderService.hideLoader();
-      }),
-      catchError(this.handleError<any>("Get enrollment"))
-    );
+    return this.http
+      .get<any>(this.baseUrl + "/enrollments", { headers: reqHeader })
+      .pipe(
+        tap(result => {
+          this.loaderService.hideLoader();
+        }),
+        catchError(this.handleError<any>("Get enrollment"))
+      );
   }
   completeModule(moduleId, module): Observable<any> {
     this.loaderService.showLoader();
@@ -80,7 +96,7 @@ export class CourseService {
       .post<any>(
         this.baseUrl + "/enrollment" + moduleId,
         JSON.stringify(module),
-        {}
+        { headers: reqHeader }
       )
       .pipe(
         tap(result => {
