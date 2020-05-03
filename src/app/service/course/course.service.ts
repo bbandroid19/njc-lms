@@ -54,8 +54,11 @@ export class CourseService {
 
   getCourses(): Observable<any> {
     this.loaderService.showLoader();
+    var header = new HttpHeaders({
+      "X-Auth-Token": localStorage.getItem("token")
+    });
     return this.http
-      .get<any>(this.baseUrl + "/courses", { headers: reqHeader })
+      .get<any>(this.baseUrl + "/courses", { headers: header })
       .pipe(
         tap(result => {
           this.loaderService.hideLoader();
