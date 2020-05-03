@@ -64,9 +64,9 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("userData", JSON.stringify(res));
         this._auth.closePopup();
         if (this._auth.isAdminLoggedIn()) {
-          this._router.navigate(["/courses"]);
+          this._router.navigate(["/programs"]);
         } else {
-          this._router.navigate(["/courses"]);
+          this._router.navigate(["/programs"]);
         }
       },
       err => {
