@@ -1,59 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  selector: "app-footer",
+  templateUrl: "./footer.component.html",
+  styleUrls: ["./footer.component.scss"]
 })
 export class FooterComponent implements OnInit {
-
-  footerMenu=[
+  footerMenu = [
     {
-      title:'About Us',
-      link:'/about-us',
-
+      title: "About Us",
+      link: "/about-us"
     },
     {
-      title:'Blog',
-      link:'/blog',
-      
-    },
-    {
-      title:'Contact',
-      link:'/contact',
-      
-    },{
-      title:'Become a Teacher',
-      link:'/teach',
-      
+      title: "Blog",
+      link: "/blog"
     }
   ];
 
-  menuLinks=[
+  menuLinks = [
     {
-      title:'Courses',
-      link:'/courses',
-
-    },
-    {
-      title:'Events',
-      link:'/events',
-      
-    },
-    {
-      title:'Gallery',
-      link:'/gallery',
-      
-    },{
-      title:'FAQs',
-      link:'/faq',
-      
+      title: "Programs",
+      link: "/programs"
     }
-  ]
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
